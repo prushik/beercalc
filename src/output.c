@@ -11,12 +11,12 @@ int main(int argc, char **argv)
 	write(1, str(
 		"<html>\n"
 		"<head><title>beercalc</title></head>"
-		"<body>"
+		"<body>\n"
 	));
 	if (argc > 1)
 	{
 		alpha = strtod(argv[1], NULL);
-		printf("%s = %lf\n", argv[1], alpha);
+		printf("og  = %lf\n", points_to_gravity(potential_points_to_gravity(5, 12, 32)));
 		printf("ibu = %lf\n", hop_to_tinseth(5, 0.01, 5, 1.06, 60));
 		printf("ibu = %lf\n", hop_to_rager(5, 0.01, 5, 1.06, 0.211));
 	}
