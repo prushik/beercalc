@@ -16,7 +16,7 @@ double hop_to_tinseth(double vol, double mass, double alpha, double og, double m
 }
 
 // rager method
-// ibu = (Woz * U * a * 7489) / (Vgal * Cgravity)
+// ibu = (Woz * U * a * 7489) / (Vgal * gravity)
 double hop_to_rager(double vol, double mass, double alpha, double og, double utilization)
 {
 	return (mass * utilization * alpha * 7489.0) / (vol * og);
