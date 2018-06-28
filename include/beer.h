@@ -1,24 +1,27 @@
 struct malt
 {
-	char name[32];     		// name of malt
-	double mass;       		// in lbs
-	double potential;  		// gravity potential (1.046 for pure sugar)
+	char name[32];       		// name of malt
+	double mass;         		// in lbs
+	double potential;    		// gravity potential (1.046 for pure sugar)
+	double pts_potential;		// points potential (46 for pure sugar)
 };
 
 struct hop
 {
-	char name[32];     		// name of hop
-	double mass;       		// in oz
-	double utilization;		//
-	double alpha;      		// in percent
+	char name[32];       		// name of hop
+	double mass;         		// in oz
+	double utilization;  		// for rager method
+	double alpha;        		// in percent
 };
 
 struct recipe
 {
-	double vol;        		// volume (gallons)
-	double bg,og,fg;   		// gravity
-	double ibu;        		// bitterness
-	double mash_eff;   		// mash efficiency
-	int hop_n;         		// num of hops
-	struct hop *hops;  		// array of hops
+	double vol;          		// volume (gallons)
+	double bg,og,fg;     		// gravity
+	double ibu;          		// bitterness
+	double mash_eff;     		// mash efficiency
+	int hop_n;           		// num of hops
+	struct hop *hops;    		// array of hops
+	int malt_n;          		// num of malts
+	struct malt *malts;  		// array of malts
 };
