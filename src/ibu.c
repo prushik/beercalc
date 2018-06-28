@@ -3,6 +3,7 @@
 #include <math.h>
 #include "web.h"
 #include "beer.h"
+#include "ibu.h"
 
 // tinseth method
 // ibu = (1.65 * 0.000125^(Ggravity - 1)) * ((1 - e^(-0.04*time)) * a * m * 1000

@@ -1,3 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "web.h"
+#include "beer.h"
+#include "mash.h"
+
 double gravity_to_points(double g)
 {
 	return (g - 1.00) * 1000.0;
