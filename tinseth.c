@@ -82,8 +82,7 @@ float bitterness;
 	sprintf(buffer,"<LI>Alpha acid rating = <input  NAME=\"alpha\" CHARSET=\"0123456789.\" SIZE=\"8\" MIN=\"1\" MAX=\"5\" MAXLENGTH=\"5\" VALUE=\"%.2f\"> percent \n",alpha*100.0);
 	fputs(buffer,stdout);
 
-	sprintf(buffer,"<LI>Time hops were boiled = <input  NAME=\"time\" 
-CHARSET=\"0123456789.\" SIZE=\"8\" MIN=\"1\" MAX=\"5\" MAXLENGTH=\"5\" VALUE=\"%5.1f\"> minutes \n",time);
+	sprintf(buffer,"<LI>Time hops were boiled = <input  NAME=\"time\" CHARSET=\"0123456789.\" SIZE=\"8\" MIN=\"1\" MAX=\"5\" MAXLENGTH=\"5\" VALUE=\"%5.1f\"> minutes \n",time);
 	fputs(buffer,stdout);
 
 	sprintf(buffer,"<LI><B>Approximate Bittering Units = %.1f</B>\n", bitterness);
@@ -114,8 +113,7 @@ float bitterness;
 	sprintf(buffer,"<LI>Time hops were boiled = <input  NAME=\"time\" CHARSET=\"0123456789.\" SIZE=\"8\" MIN=\"1\" MAX=\"5\" MAXLENGTH=\"5\" VALUE=\"%.1f\"> minutes \n",time);
 	fputs(buffer,stdout);
 
-	sprintf(buffer,"<LI><B>Approximate Bittering Units = %5.1f</B>\n", 
-bitterness);
+	sprintf(buffer,"<LI><B>Approximate Bittering Units = %5.1f</B>\n", bitterness);
 	fputs(buffer,stdout);
 }
 
