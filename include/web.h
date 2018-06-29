@@ -1,1 +1,1 @@
-#define str(x) x,sizeof(x)
+#define str(x) x,(sizeof(x)-1)

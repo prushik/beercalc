@@ -16,6 +16,7 @@ struct hop
 
 struct recipe
 {
+	char name[32];       		// beer name
 	double vol;          		// volume (gallons)
 	double bg,og,fg;     		// gravity
 	double ibu;          		// bitterness

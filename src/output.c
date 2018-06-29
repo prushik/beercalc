@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	if (argc > 1)
 	{
 		alpha = strtod(argv[1], NULL);
-		printf("og  = %lf\n", points_to_gravity(potential_points_to_gravity(5, 12, 32)));
+		printf("og  = %lf\n", points_to_gravity(0.75 * potential_points_to_gravity(5, 14, 37)));
 		printf("ibu = %lf\n", hop_to_tinseth(5, 0.01, 5, 1.06, 60));
 		printf("ibu = %lf\n", hop_to_rager(5, 0.01, 5, 1.06, 0.211));
 	}
