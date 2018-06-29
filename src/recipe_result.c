@@ -41,7 +41,8 @@ int main(int argc, char **argv)
 			beer.malts[0].potential = strtod(&argv[i][9], NULL);
 		}
 	}
-	printf("<br><br>BEER: \"%s\" - %lf gal <br>OG: %lf<br><br>\n", beer.name, beer.vol, potential_points_to_gravity(beer.vol, beer.malts[0].mass, gravity_to_points(beer.malts[0].potential)));
+	beer.og = points_to_gravity(potential_points_to_gravity(beer.vol, beer.malts[0].mass, gravity_to_points(beer.malts[0].potential))*(beer.mash_eff/100));
+	printf("<br><br>BEER: \"%s\" - %lf gal <br>OG: %lf<br><br>\n", beer.name, beer.vol, beer.og);
 
 	write(1, str(
 		"<form action=\"recipe_result\">"

@@ -4,6 +4,7 @@ struct malt
 	double mass;         		// in lbs
 	double potential;    		// gravity potential (1.046 for pure sugar)
 	double pts_potential;		// points potential (46 for pure sugar)
+	double srm;          		// SRM color
 };
 
 struct hop
@@ -21,6 +22,7 @@ struct recipe
 	double bg,og,fg;     		// gravity
 	double ibu;          		// bitterness
 	double mash_eff;     		// mash efficiency
+	double srm;          		// SRM color
 	int hop_n;           		// num of hops
 	struct hop *hops;    		// array of hops
 	int malt_n;          		// num of malts
