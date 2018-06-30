@@ -1,0 +1,19 @@
+IBU:
+ tinseth method
+ ibu = (1.65 * 0.000125^(Ggravity - 1)) * ((1 - e^(-0.04*time)) * a * m * 1000
+ ibu = (1.65*0.000125^(gravity-1))*(1-EXP(-0.04*time))*alpha*mass*1000
+
+ rager method
+ ibu = (Woz * U * a * 7489) / (Vgal * gravity)
+
+
+
+COLOR:
+MCU = (Grain Color * Grain Weight lbs.)/Volume in Gallons
+SRM Color = 1.4922 * (MCU * 0.6859)
+
+
+CALORIES
+From Alcohol = 1881.22 * FG * (OG - FG) / (1.775 - OG)
+From Carbs = 3550.0 * FG * ((0.1808 * OG) + (0.8192 * FG) - 1.0004)
+Total Calories = Calories From Alcohol + Calories From Carbs

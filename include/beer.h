@@ -4,7 +4,7 @@ struct malt
 	double mass;         		// in lbs
 	double potential;    		// gravity potential (1.046 for pure sugar)
 	double pts_potential;		// points potential (46 for pure sugar)
-	double srm;          		// SRM color
+	double mcu;          		// Malt color unit
 };
 
 struct hop
