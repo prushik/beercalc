@@ -1,0 +1,48 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+create table hops(
+name varchar(64),
+alpha double,
+type int,
+id unsigned int
+);
+
+create table malts(
+name varchar(64),
+potential double,
+pts_potential double,
+mcu double,
+id unsigned int
+);
+
+create table ingredient_types(
+name varchar(64),
+id unsigned int
+);
+
+create table ingredients(
+recipe_id unsigned int,
+ingredient_id unsigned int,
+quantity double,
+adjustment double null,
+type unsigned int,
+id unsigned int
+);
+
+create table recipe(
+name varchar(64),
+author varchar(64),
+volume double,
+boil_volume double,
+id unsigned int
+);
+
+insert into ingredient_types values('malt',0);
+insert into ingredient_types values('hops',1);
+insert into ingredient_types values('yeast',2);
+
+insert into hops values('tettnanger',3.7,0,0);
+insert into hops values('glacier',5.8,0,1);
+insert into hops values('eroica',13.5,0,2);
+insert into hops values('wye viking',9.0,0,3);
+COMMIT;

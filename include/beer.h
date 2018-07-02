@@ -18,6 +18,7 @@ struct hop
 struct recipe
 {
 	char name[32];       		// beer name
+	char author[32];       		// beer maker's name
 	double vol;          		// volume (gallons)
 	double bg,og,fg;     		// gravity
 	double ibu;          		// bitterness
@@ -28,3 +29,10 @@ struct recipe
 	int malt_n;          		// num of malts
 	struct malt *malts;  		// array of malts
 };
+
+#define ING_TYPE_MALT 0
+#define ING_TYPE_HOPS 1
+#define ING_TYPE_YEAST 2
+
+#define HOP_TYPE_PELLET 0
+#define HOP_TYPE_WHOLE 1

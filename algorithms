@@ -7,6 +7,9 @@ IBU:
  ibu = (Woz * U * a * 7489) / (Vgal * gravity)
 
 
+GRAVITY:
+OG = potential * grain_mass / beer_vol
+
 
 COLOR:
 MCU = (Grain Color * Grain Weight lbs.)/Volume in Gallons
