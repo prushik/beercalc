@@ -67,7 +67,23 @@ int main(int argc, char **argv)
 		beer.malts[i].mass = sqlite3_column_double(qry, 3));
 		i++;
 	}
+	sqlite3_finalize(qry);
 
+	// Get the hops
+	sqlite3_prepare_v2(db, str("select hops.name, hops.alpha, hops.type, ingredients.quantity, ingredients.time, ingredients.adjustment from ingredients left join malts on malts.id = ingredients.ingredient_id where recipe_id = ? and ingredients.type = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, ING_TYPE_HOPS);
+
+	i = 0;
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		strcpy(beer.hops[i].name, sqlite3_column_text(qry, 0));
+		beer.hops[i].alpha = sqlite3_column_double(qry, 1));
+		beer.hops[i].type = sqlite3_column_int(qry, 2));
+		beer.hops[i].mass = sqlite3_column_double(qry, 3));
+		beer.hops[i].time = sqlite3_column_int(qry, 4));
+		i++;
+	}
 	sqlite3_finalize(qry);
 
 

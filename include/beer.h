@@ -11,6 +11,7 @@ struct hop
 {
 	char name[32];       		// name of hop
 	double mass;         		// in oz
+	int time;            		// in seconds
 	double utilization;  		// for rager method
 	double alpha;        		// in percent
 };
