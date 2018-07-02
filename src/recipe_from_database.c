@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	sqlite3_open("/var/db/beer.sqlite", &db);
 
 
-	sqlite3_prepare_v2(db, str("select name, author, volume, id from recipe where id = ?;"), &qry, NULL);
+	sqlite3_prepare_v2(db, str("select name, author, volume, malt_n, hops_n, yeast_n, id from recipe where id = ?;"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
 
 	while (sqlite3_step(qry) != SQLITE_DONE)
@@ -36,29 +36,36 @@ int main(int argc, char **argv)
 		strcpy(beer.name, sqlite3_column_text(qry, 0));
 		strcpy(beer.author, sqlite3_column_text(qry, 1));
 		beer.vol = sqlite3_column_double(qry, 2);
-		if (beer_id != sqlite3_column_int(qry, 3))
+		beer.malt_n = sqlite3_column_int(qry, 3);
+		beer.hop_n = sqlite3_column_int(qry, 4);
+//		beer.yeast_n = sqlite3_column_int(qry, 5);
+		if (beer_id != sqlite3_column_int(qry, 6))
 		{
 			write(1, str("No recipe with that number found. Something is wrong."));
 			// error
 		}
 	}
-
 	sqlite3_finalize(qry);
 
+	beer.malts = malloc(beer.malt_n * sizeof(struct malt));
+	beer.hops = malloc(beer.hop_n * sizeof(struct hop));
+//	beer.yeasts = malloc(beer.hop_n * sizeof(struct yeast));
 
-	sqlite3_prepare_v2(db, str("select name, author, volume, id from ingredients where recipe_id = ?;"), &qry, NULL);
+
+
+	// Get the malts
+	sqlite3_prepare_v2(db, str("select malts.name, malts.pts_potential, malts.mcu, ingredients.quantity, ingredients.adjustment from ingredients left join malts on malts.id = ingredients.ingredient_id where recipe_id = ? and ingredients.type = ?;"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, ING_TYPE_MALT);
 
+	i = 0;
 	while (sqlite3_step(qry) != SQLITE_DONE)
 	{
-		strcpy(beer.name, sqlite3_column_text(qry, 0));
-		strcpy(beer.author, sqlite3_column_text(qry, 1));
-		beer.vol = sqlite3_column_double(qry, 2);
-		if (beer_id != sqlite3_column_int(qry, 3))
-		{
-			write(1, str("No recipe with that number found. Something is wrong."));
-			// error
-		}
+		strcpy(beer.malts[i].name, sqlite3_column_text(qry, 0));
+		beer.malts[i].potential = sqlite3_column_double(qry, 1));
+		beer.malts[i].mcu = sqlite3_column_double(qry, 2));
+		beer.malts[i].mass = sqlite3_column_double(qry, 3));
+		i++;
 	}
 
 	sqlite3_finalize(qry);

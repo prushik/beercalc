@@ -30,9 +30,11 @@ struct recipe
 	struct malt *malts;  		// array of malts
 };
 
-#define ING_TYPE_MALT 0
-#define ING_TYPE_HOPS 1
-#define ING_TYPE_YEAST 2
+#define ING_TYPE_MALT   0
+#define ING_TYPE_HOPS   1
+#define ING_TYPE_YEAST  2
 
 #define HOP_TYPE_PELLET 0
-#define HOP_TYPE_WHOLE 1
+#define HOP_TYPE_WHOLE  1
+
+#define DATABASE        "/var/db/beer.sqlite"

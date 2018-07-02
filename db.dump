@@ -24,6 +24,7 @@ create table ingredients(
 recipe_id unsigned int,
 ingredient_id unsigned int,
 quantity double,
+time unsigned int,
 adjustment double null,
 type unsigned int,
 id unsigned int
@@ -34,6 +35,9 @@ name varchar(64),
 author varchar(64),
 volume double,
 boil_volume double,
+malt_n unsigned int,
+hops_n unsigned int,
+yeast_n unsigned int,
 id unsigned int
 );
 
