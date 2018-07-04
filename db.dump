@@ -1,5 +1,6 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
+
 create table hops(
 name varchar(64),
 alpha double,
@@ -33,6 +34,7 @@ id unsigned int
 create table recipe(
 name varchar(64),
 author varchar(64),
+style_id unsigned int null,
 volume double,
 boil_volume double,
 malt_n unsigned int,
@@ -41,12 +43,49 @@ yeast_n unsigned int,
 id unsigned int
 );
 
+create table style(
+name varchar(64),
+type unsigned int,
+og_min double,
+og_max double,
+fg_min double,
+fg_max double,
+ibu_min double,
+ibu_max double,
+color_min double,
+color_max double,
+carb_min double,
+carb_max double,
+abv_min double,
+abv_max double,
+id unsigned int
+);
+
+
 insert into ingredient_types values('malt',0);
 insert into ingredient_types values('hops',1);
 insert into ingredient_types values('yeast',2);
+
+insert into malts values('pilsner malt', 1.034, 34, 1, 0);
+insert into malts values('2-row pale malt', 1.037, 37, 2, 1);
+insert into malts values('6-row pale malt', 1.033, 33, 2, 2);
+insert into malts values('red caramel malt', 1.035, 35, 20, 3);
+insert into malts values('crystal 45l malt', 1.034, 34, 45, 4);
+insert into malts values('peated malt', 1.037, 37, 1.5, 5);
 
 insert into hops values('tettnanger',3.7,0,0);
 insert into hops values('glacier',5.8,0,1);
 insert into hops values('eroica',13.5,0,2);
 insert into hops values('wye viking',9.0,0,3);
+
+insert into recipe values ("tastes like scotch ale","philip rushik",null,5,3,4,2,0,0);
+
+insert into ingredients values (0,1,12,60,null,0,0);
+insert into ingredients values (0,5,2,60,null,0,1);
+insert into ingredients values (0,3,1,60,null,0,2);
+insert into ingredients values (0,4,1,60,null,0,3);
+
+insert into ingredients values (0,0,1,45,null,1,4);
+insert into ingredients values (0,1,0.5,15,null,1,5);
+
 COMMIT;

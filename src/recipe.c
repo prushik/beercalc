@@ -1,0 +1,16 @@
+#include "beer.h"
+#include "ibu.h"
+#include "mash.h"
+
+void calculate_recipe(struct recipe * beer)
+{
+	int i;
+	double g_pts = 0, ibu = 0;
+	for (i=0; i < beer->malt_n; i++)
+		g_pts += potential_points_to_gravity(beer->vol, beer->malts[i].mass, beer->malts[i].pts_potential);
+	beer->og = points_to_gravity(0.7*g_pts);
+	for (i=0; i < beer->hop_n; i++)
+		ibu += hop_to_tinseth(beer->vol, beer->hops[i].mass, beer->hops[i].alpha/100.0, beer->og, beer->hops[i].time);
+	beer->ibu = ibu * 1.1; // *1.1 if pellets
+//	ibu = hop_to_rager(5, 0.01, 5, 1.06, 0.211);
+}
