@@ -106,7 +106,16 @@ int main(int argc, char **argv)
 
 	write(1, str(
 		"<html>\n"
-		"<head><title>beercalc</title></head>"
+		"<head>"
+		"<title>beercalc</title>"
+		"<style>"
+		"table tr td"
+		"{"
+		"border: 1px;"
+		"border-style: solid;"
+		"}"
+		"</style>"
+		"</head>"
 		"<body>\n"
 	));
 	write(1, str(
@@ -201,26 +210,6 @@ int main(int argc, char **argv)
 		write(1, str("</td></tr>\n"));
 	}
 	write(1, str("</table>\n"));
-
-/*
-		"<table>"
-		"<tr><td></td><td> Name </td><td> Volume </td><td> Efficiency </td></tr>"
-		"<tr><td>Brew:</td><td><input name=\"beer_name\"></input></td><td><input name=\"beer_gal\"></input></td><td><input name=\"mash_eff\"></input></td></tr>"
-		"<tr><td colspan=\"5\"></td></tr>"
-		"<tr><td>Ingredient</td><td> Name </td><td> Weight (lbs) </td><td> Potential Gravity </td></tr>"
-		"<tr><td>Malt:</td><td><input name=\"malt_name\"></input></td><td><input name=\"malt_lbs\"></input></td><td><input name=\"malt_pot\"></input></td></tr>"
-		"<tr><td colspan=\"5\"></td></tr>"
-		"<tr><td>Ingredient</td><td colspan=\"2\"> Name </td><td> Weight (oz) </td><td> Boil Time </td></tr>"
-		"<tr><td>Hops:</td><td colspan=\"2\"><select name=\"hop_id\">\n"
-		"<option value=\"-1\">Select Hop</option>\n"
-	));
-
-	write(1, str(
-		"</select></td><td><input name=\"hop_oz\"></input></td><td><input name=\"hop_time\"></input></td></tr>"
-		"<tr><td colspan=\"5\"></td></tr>"
-		"<tr><td colspan=\"4\"></td><td><input type=\"submit\"></input></td></tr>"
-		"</table>\n"
-	));*/
 
 	write(1, str(
 		"</body>"
