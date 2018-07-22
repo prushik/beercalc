@@ -1,0 +1,3 @@
+#define MENU_OPT_INDEX 0
+
+#define MENU_OPTIONS 1

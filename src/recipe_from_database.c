@@ -18,7 +18,8 @@ int main(int argc, char **argv)
 
 	for (i=1; i<argc; i++)
 	{
-		if (strncmp(argv[i], str("beer_id")) == 0)
+		// can't use str() hear because gcc optimizer can mess this up (strncmp is a builtin)
+		if (strncmp(argv[i], "beer_id", 7) == 0)
 		{
 			beer_id = strtoul(&argv[i][8], NULL, 0);
 		}
@@ -106,18 +107,13 @@ int main(int argc, char **argv)
 
 	write(1, str(
 		"<html>\n"
-		"<head>"
-		"<title>beercalc</title>"
-		"<style>"
-		"table tr td"
-		"{"
-		"border: 1px;"
-		"border-style: solid;"
-		"}"
-		"</style>"
-		"</head>"
+		"<head>\n"
+		"<title>beercalc</title>\n"
+		"<link rel=\"stylesheet\" href=\"include/global.css\">\n"
+		"</head>\n"
 		"<body>\n"
 	));
+	show_menu(0);
 	write(1, str(
 		"<font class=\"title\">"
 	));
