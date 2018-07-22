@@ -16,6 +16,15 @@ struct hop
 	double alpha;        		// in percent
 };
 
+struct yeast
+{
+	char name[32];       		// name of hop
+	double amount;       		// in packages
+	int time;            		// in seconds
+	double attenuation;  		// in percent
+	int flocculation;    		// 
+};
+
 struct recipe
 {
 	char name[32];       		// beer name
@@ -25,17 +34,26 @@ struct recipe
 	double ibu;          		// bitterness
 	double mash_eff;     		// mash efficiency
 	double srm;          		// SRM color
+	double abv;          		// alcohol by volume
 	int hop_n;           		// num of hops
 	struct hop *hops;    		// array of hops
 	int malt_n;          		// num of malts
 	struct malt *malts;  		// array of malts
+	int yeast_n;         		// num of yeasts
+	struct yeast *yeasts;		// array of yeasts
 };
 
-#define ING_TYPE_MALT   0
-#define ING_TYPE_HOPS   1
-#define ING_TYPE_YEAST  2
+#define ING_TYPE_MALT     0
+#define ING_TYPE_HOPS     1
+#define ING_TYPE_YEAST    2
 
-#define HOP_TYPE_PELLET 0
-#define HOP_TYPE_WHOLE  1
+#define HOP_TYPE_PELLET   0
+#define HOP_TYPE_WHOLE    1
 
-#define DATABASE        "/var/db/beer.sqlite"
+#define YEAST_FLOC_LOW    1
+#define YEAST_FLOC_MIDLOW 2
+#define YEAST_FLOC_MEDIUM 3
+#define YEAST_FLOC_MIDHI  4
+#define YEAST_FLOC_HIGH   5
+
+#define DATABASE          "/var/db/beer.sqlite"
