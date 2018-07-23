@@ -7,6 +7,7 @@ CC ?= gcc
 WEBROOT ?= /var/unweave
 WEBUSER ?= prushik
 PAGES ?= recipe_from_db
+DATABASE ?= /var/db/beer.sqlite
 
 all: $(PAGES)
 
@@ -18,7 +19,13 @@ deploy:
 	install -m 555 -o $(WEBUSER) include/global.css $(WEBROOT)/include
 	install -m 777 -o $(WEBUSER) $(PAGES) $(WEBROOT)
 
+deploy_database:
+	sqlite3 $(DATABASE) < db.dump
+
 clean:
 	rm $(PAGES)
 
-.PHONY: all deploy clean
+clean_database:
+	rm $(DATABASE)
+
+.PHONY: all deploy clean clean_database install_database

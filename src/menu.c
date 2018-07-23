@@ -34,6 +34,6 @@ void show_menu(unsigned int current)
 
 	write(1, str(
 		"</tr>"
-		"</table>"
+		"</table>\n"
 	));
 }

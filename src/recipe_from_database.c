@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
 	for (i=1; i<argc; i++)
 	{
-		// can't use str() hear because gcc optimizer can mess this up (strncmp is a builtin)
+		// can't use str() here because gcc optimizer can mess this up (strncmp is a builtin)
 		if (strncmp(argv[i], "beer_id", 7) == 0)
 		{
 			beer_id = strtoul(&argv[i][8], NULL, 0);
@@ -115,6 +115,7 @@ int main(int argc, char **argv)
 	));
 	show_menu(0);
 	write(1, str(
+		"<div class=\"main_content\">"
 		"<font class=\"title\">"
 	));
 	write(1, beer.name, strlen(beer.name));
@@ -147,7 +148,6 @@ int main(int argc, char **argv)
 	write(1, str("ibu: "));
 	sprintf(buffer, "%.1lf%n", beer.ibu, &buf_len);
 	write(1, buffer, buf_len);
-	write(1, str("</td><td>"));
 
 	write(1, str(
 		"</td></tr>"
@@ -208,6 +208,7 @@ int main(int argc, char **argv)
 	write(1, str("</table>\n"));
 
 	write(1, str(
+		"</div>"
 		"</body>"
 		"</html>\n"
 	));

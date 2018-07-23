@@ -1,0 +1,32 @@
+.main_content
+{
+	margin: 0px 35px 0px 35px;
+}
+.title
+{
+	font-size: 24;
+}
+.subtitle
+{
+	font-size: 16;
+}
+table tr td
+{
+	border: 1px;
+	border-style: solid;
+}
+.nav
+{
+	position: fixed;
+	right: 40px;
+}
+.nav table
+{
+	border: 1px;
+	border-style: solid;
+}
+.nav td
+{
+	border: 0px;
+	background-color: #aaffaa;
+}
