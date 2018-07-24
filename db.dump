@@ -2,78 +2,77 @@ PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 
 create table users(
-name varchar(64),
-salt varchar(64),
-hash blob null,
-id unsigned int primary key
+	name varchar(64),
+	salt varchar(64),
+	hash blob null,
+	id unsigned int primary key
 );
 
 create table malts(
-name varchar(64),
-potential double,
-pts_potential double,
-mcu double,
-id unsigned int primary key
+	name varchar(64),
+	potential double,
+	pts_potential double,
+	mcu double,
+	id unsigned int primary key
 );
 
 create table hops(
-name varchar(64),
-alpha double,
-type int,
-id unsigned int primary key
+	name varchar(64),
+	alpha double,
+	type int,
+	id unsigned int primary key
 );
 
 create table yeasts(
-name varchar(64),
-attenuation double,
-flocculation int,
-temperature int,
-id unsigned int primary key
+	name varchar(64),
+	attenuation double,
+	flocculation int,
+	temperature int,
+	id unsigned int primary key
 );
 
 create table ingredient_types(
-name varchar(64),
-id unsigned int primary key
+	name varchar(64),
+	id unsigned int primary key
 );
 
 create table ingredients(
-recipe_id unsigned int,
-ingredient_id unsigned int,
-quantity double,
-time unsigned int,
-adjustment double null,
-type unsigned int,
-id unsigned int primary key
+	recipe_id unsigned int,
+	ingredient_id unsigned int,
+	quantity double,
+	time unsigned int,
+	adjustment double null,
+	type unsigned int,
+	id unsigned int primary key
 );
 
 create table recipe(
-name varchar(64),
-author varchar(64),
-style_id unsigned int null,
-volume double,
-boil_volume double,
-malt_n unsigned int,
-hops_n unsigned int,
-yeast_n unsigned int,
-id unsigned int primary key
+	name varchar(64),
+	author varchar(64),
+	style_id unsigned int null,
+	volume double,
+	boil_volume double,
+	malt_n unsigned int,
+	hops_n unsigned int,
+	yeast_n unsigned int,
+	id unsigned int primary key
 );
 
 create table style(
-name varchar(64),
-type unsigned int,
-og_min double,
-og_max double,
-fg_min double,
-fg_max double,
-ibu_min double,
-ibu_max double,
-color_min double,
-color_max double,
-carb_min double,
-carb_max double,
-abv_min double,
-abv_max double,
-id unsigned int primary key
+	name varchar(64),
+	og_min double,
+	og_max double,
+	fg_min double,
+	fg_max double,
+	ibu_min double,
+	ibu_max double,
+	color_min double,
+	color_max double,
+	carb_min double,
+	carb_max double,
+	abv_min double,
+	abv_max double,
+	id unsigned int primary key
 );
 
 COMMIT;
@@ -113,7 +112,7 @@ COMMIT;
 BEGIN TRANSACTION;
 
 -- example recipes
-insert into recipe values ("tastes like scotch ale","philip rushik",null,5,3,4,2,1,0);
+insert into recipe values ("tastes like scotch ale","philip rushik",22,5,3,4,2,1,0);
 
 insert into ingredients values (0,1,12,60,null,0,0);
 insert into ingredients values (0,5,2,60,null,0,1);
@@ -126,7 +125,7 @@ insert into ingredients values (0,1,0.5,15,null,1,5);
 insert into ingredients values (0,4,1,0,null,2,6);
 
 -- 
-insert into recipe values ("president donald drunk","philip rushik",null,5,3,3,3,1,1);
+insert into recipe values ("president donald drunk","philip rushik",58,5,3,3,3,1,1);
 
 insert into ingredients values (1,2,10,60,null,0,7);
 insert into ingredients values (1,6,2,60,null,0,8);

@@ -6,10 +6,13 @@ CC ?= gcc
 
 WEBROOT ?= /var/unweave
 WEBUSER ?= prushik
-PAGES ?= recipe_from_db
+PAGES ?= recipe_from_db index
 DATABASE ?= /var/db/beer.sqlite
 
 all: $(PAGES)
+
+index: $(COMMON_SRC) src/index.c
+	$(CC) $^ $(LDFLAGS) $(DEBUG) $(CFLAGS) -o $@
 
 recipe_from_db: $(COMMON_SRC) src/recipe_from_database.c
 	$(CC) $^ $(LDFLAGS) $(DEBUG) $(CFLAGS) -o $@
