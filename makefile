@@ -19,11 +19,12 @@ recipe_from_db: $(COMMON_SRC) src/recipe_from_database.c
 
 deploy:
 	mkdir -p $(WEBROOT)/include
-	install -m 555 -o $(WEBUSER) include/global.css $(WEBROOT)/include
-	install -m 777 -o $(WEBUSER) $(PAGES) $(WEBROOT)
+	install -m 0555 -o $(WEBUSER) include/global.css $(WEBROOT)/include
+	install -m 0777 -o $(WEBUSER) $(PAGES) $(WEBROOT)
 
 deploy_database:
-	sqlite3 $(DATABASE) < db.dump
+	sqlite3 $(DATABASE) < db/db.sql
+	sqlite3 $(DATABASE) < db/styles.sql
 
 clean:
 	rm $(PAGES)
