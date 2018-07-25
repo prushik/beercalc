@@ -86,11 +86,15 @@ insert into ingredient_types values('yeast',2);
 insert into malts values('pilsner malt', 1.034, 34, 1, 0);
 insert into malts values('2-row pale malt', 1.037, 37, 2, 1);
 insert into malts values('6-row pale malt', 1.033, 33, 2, 2);
-insert into malts values('red caramel malt', 1.035, 35, 20, 3);
-insert into malts values('crystal 45l malt', 1.034, 34, 45, 4);
-insert into malts values('peated malt', 1.037, 37, 1.5, 5);
-insert into malts values('flaked maize', 1.040, 40, 1, 6);
-insert into malts values('blackstrap molasses', 1.036, 36, 1, 7);
+insert into malts values('maris otter malt', 1.038, 38, 3, 3);
+insert into malts values('red caramel malt', 1.035, 35, 20, 4);
+insert into malts values('crystal 45l malt', 1.034, 34, 45, 5);
+insert into malts values('biscuit malt', 1.030, 30, 45, 6);
+insert into malts values('black patent malt', 1.022, 22, 45, 7);
+insert into malts values('special b malt', 1.022, 22, 45, 8);
+insert into malts values('peated malt', 1.037, 37, 1.5, 9);
+insert into malts values('flaked maize', 1.040, 40, 1, 10);
+insert into malts values('molasses', 1.036, 36, 1, 11);
 
 insert into hops values('tettnanger',3.7,0,0);
 insert into hops values('glacier',5.8,0,1);
@@ -99,6 +103,7 @@ insert into hops values('wye viking',9.0,0,3);
 insert into hops values('liberty',4.5,0,4);
 insert into hops values('magnum',14.5,0,5);
 insert into hops values('ultra',3,0,6);
+insert into hops values('kent goldings',5,0,7);
 
 insert into yeasts values('american ale 1056', 75, 2, 66, 0);
 insert into yeasts values('american ale II 1272', 74, 3, 66, 1);
@@ -112,12 +117,12 @@ COMMIT;
 BEGIN TRANSACTION;
 
 -- example recipes
-insert into recipe values ("tastes like scotch ale","philip rushik",22,5,3,4,2,1,0);
+insert into recipe values ("tastes like scotch ale","philip rushik",22,5,5.5,4,2,1,0);
 
 insert into ingredients values (0,1,12,60,null,0,0);
-insert into ingredients values (0,5,2,60,null,0,1);
-insert into ingredients values (0,3,1,60,null,0,2);
-insert into ingredients values (0,4,1,60,null,0,3);
+insert into ingredients values (0,9,2,60,null,0,1);
+insert into ingredients values (0,4,1,60,null,0,2);
+insert into ingredients values (0,5,1,60,null,0,3);
 
 insert into ingredients values (0,0,1,45,null,1,4);
 insert into ingredients values (0,1,0.5,15,null,1,5);
@@ -125,16 +130,32 @@ insert into ingredients values (0,1,0.5,15,null,1,5);
 insert into ingredients values (0,4,1,0,null,2,6);
 
 -- 
-insert into recipe values ("president donald drunk","philip rushik",58,5,3,3,3,1,1);
+insert into recipe values ("president donald drunk","philip rushik",58,5,5.5,3,3,1,1);
 
 insert into ingredients values (1,2,10,60,null,0,7);
-insert into ingredients values (1,6,2,60,null,0,8);
-insert into ingredients values (1,7,1,60,null,0,9);
+insert into ingredients values (1,10,2,60,null,0,8);
+insert into ingredients values (1,11,1,60,null,0,9);
 
 insert into ingredients values (1,4,1.0,60,null,1,10);
 insert into ingredients values (1,5,0.5,15,null,1,11);
 insert into ingredients values (1,6,0.5,5,null,1,12);
 
 insert into ingredients values (1,3,1,0,null,2,13);
+
+--
+insert into recipe values ("poor richard's colonial ale","tony simmons",40,5,5.5,3,3,1,2);
+
+insert into ingredients values (2,3,8.5,90,null,0,14);
+insert into ingredients values (2,10,2.75,90,null,0,15);
+insert into ingredients values (2,6,1.75,90,null,0,16); -- biscuit
+insert into ingredients values (2,8,1,90,null,0,17); -- special roast
+insert into ingredients values (2,7,0.125,90,null,0,18); -- black patent
+insert into ingredients values (2,11,0.25,90,null,0,19);
+
+insert into ingredients values (2,7,0.5,60,null,1,20);
+insert into ingredients values (2,7,0.75,45,null,1,21);
+insert into ingredients values (2,7,0.5,30,null,1,22);
+
+insert into ingredients values (2,3,1,0,null,2,23);
 
 COMMIT;

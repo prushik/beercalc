@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	show_menu(0);
 	write(1, str(
 		"<div class=\"main_content\">\n"
-		"<font class=\"title\">beercalc</font>\n<br>\n"
+		"<div class=\"title\">beercalc</div>\n<br>\n"
 		" beercalc is an open source beer recipe calculation and planning tool. It allows you to build a recipe and estimate certain properties of the resultant beer. beercalc is written in C, designed to be served by the BetterOS Web Unweave webserver, however, almost any CGI-enabled webserver can likely be used with little modification (untested).<br>"
 		"<br>\n"
 		"Beer recipes: "

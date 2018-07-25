@@ -4,21 +4,28 @@
 #include "web.h"
 #include "menu.h"
 
-static char menu_links[MENU_OPTIONS][6] = {"index"};
-static char menu_names[MENU_OPTIONS][6] = {"index"};
+static char menu_links[MENU_OPTIONS][46] = {
+	"index",
+	"builder",
+	"http://prushik.dedyn.io:8083/prushik/beercalc"
+};
+static char menu_names[MENU_OPTIONS][15] = {
+	"index",
+	"recipe builder",
+	"source"
+};
 
 void show_menu(unsigned int current)
 {
 	int i;
 	write(1, str(
 		"<table class=\"nav\">"
-		"<tr>"
 	));
 
 	for (i = 0; i < MENU_OPTIONS; i++)
 	{
 		write(1, str(
-			"<td>"
+			"<tr><td>"
 			"<a href=\""
 		));
 		write(1, menu_links[i], strlen(menu_links[i]));
@@ -28,12 +35,11 @@ void show_menu(unsigned int current)
 		write(1, menu_names[i], strlen(menu_names[i]));
 		write(1, str(
 			"</a>"
-			"</td>"
+			"</td></tr>\n"
 		));
 	}
 
 	write(1, str(
-		"</tr>"
 		"</table>\n"
 	));
 }
