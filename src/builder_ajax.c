@@ -8,13 +8,21 @@
 #include "yeast.h"
 #include <sqlite3.h>
 
+static struct recipe beer = {0};
+static char buffer[64];
+static unsigned int buf_len = 0;
+static sqlite3 *db;
+static sqlite3_stmt *qry;
+
+
 int main(int argc, char **argv)
 {
 	int i;
 	unsigned long int beer_id = 0;
-	struct recipe beer = {0};
-	char buffer[64];
-	unsigned int buf_len = 0;
+	unsigned long int action = 0;
+	unsigned long int ing_id = 0;
+	double amount = 0, time = 0; 
+	char *beer_name;
 
 	for (i=1; i<argc; i++)
 	{
@@ -25,14 +33,61 @@ int main(int argc, char **argv)
 		}
 		if (strncmp(argv[i], "action", 6) == 0)
 		{
-			beer_id = strtoul(&argv[i][8], NULL, 0);
+			if (strncmp(&argv[i][7], "getbeer", 7) == 0)
+				action = 0;
+			if (strncmp(&argv[i][7], "addbeer", 7) == 0)
+				action = 1;
+			if (strncmp(&argv[i][7], "addmalt", 7) == 0)
+				action = 2;
+			if (strncmp(&argv[i][7], "addhop", 6) == 0)
+				action = 3;
+			if (strncmp(&argv[i][7], "addyeast", 8) == 0)
+				action = 4;
+		}
+		if (strncmp(argv[i], "ing_id", 6) == 0)
+		{
+			ing_id = strtoul(&argv[i][7], NULL, 0);
+		}
+		if (strncmp(argv[i], "amount", 6) == 0)
+		{
+			amount = strtod(&argv[i][7], NULL);
+		}
+		if (strncmp(argv[i], "time", 4) == 0)
+		{
+			time = strtod(&argv[i][5], NULL);
+		}
+		if (strncmp(argv[i], "name", 4) == 0)
+		{
+			beer_name = &argv[i][5];
 		}
 	}
 
-	sqlite3 *db;
-	sqlite3_stmt *qry;
-
 	sqlite3_open(DATABASE, &db);
+
+	if (action == 0)
+		recipe_json(beer_id);
+
+	if (action == 1)
+	{
+		add_recipe(beer_name);
+	}
+
+	sqlite3_close(db);
+}
+
+int add_recipe(const char *name)
+{
+	sqlite3_prepare_v2(db, str("insert into recipe (name, author, volume, malt_n, hops_n, yeast_n) values (?, \"\",5, 0, 0, 0);"), &qry, NULL);
+	sqlite3_bind_text(qry, 1, name, -1, SQLITE_STATIC);
+
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+
+	sqlite3_finalize(qry);
+}
+
+int recipe_json(unsigned long int beer_id)
+{
+	int i;
 
 	sqlite3_prepare_v2(db, str("select name, author, volume, malt_n, hops_n, yeast_n, id from recipe where id = ?;"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
@@ -238,5 +293,5 @@ int main(int argc, char **argv)
 		"}\n"
 	));
 
-	sqlite3_close(db);
+	return 1;
 }

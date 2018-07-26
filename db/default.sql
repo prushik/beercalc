@@ -5,7 +5,7 @@ create table users(
 	name varchar(64),
 	salt varchar(64),
 	hash blob null,
-	id unsigned int primary key
+	id integer primary key
 );
 
 create table malts(
@@ -13,14 +13,14 @@ create table malts(
 	potential double,
 	pts_potential double,
 	mcu double,
-	id unsigned int primary key
+	id integer primary key
 );
 
 create table hops(
 	name varchar(64),
 	alpha double,
 	type int,
-	id unsigned int primary key
+	id integer primary key
 );
 
 create table yeasts(
@@ -28,34 +28,34 @@ create table yeasts(
 	attenuation double,
 	flocculation int,
 	temperature int,
-	id unsigned int primary key
+	id integer primary key
 );
 
 create table ingredient_types(
 	name varchar(64),
-	id unsigned int primary key
+	id integer primary key
 );
 
 create table ingredients(
-	recipe_id unsigned int,
-	ingredient_id unsigned int,
+	recipe_id int,
+	ingredient_id int,
 	quantity double,
 	time unsigned int,
 	adjustment double null,
-	type unsigned int,
-	id unsigned int primary key
+	type int,
+	id integer primary key
 );
 
 create table recipe(
 	name varchar(64),
 	author varchar(64),
-	style_id unsigned int null,
+	style_id int null,
 	volume double,
 	boil_volume double,
 	malt_n unsigned int,
 	hops_n unsigned int,
 	yeast_n unsigned int,
-	id unsigned int primary key
+	id integer primary key
 );
 
 create table style(
@@ -72,7 +72,7 @@ create table style(
 	carb_max double,
 	abv_min double,
 	abv_max double,
-	id unsigned int primary key
+	id integer primary key
 );
 
 COMMIT;
