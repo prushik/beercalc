@@ -19,10 +19,12 @@ int main(int argc, char **argv)
 {
 	int i;
 	unsigned long int beer_id = 0;
+	unsigned long int style_id = 0;
 	unsigned long int action = 0;
 	unsigned long int ing_id = 0;
-	double amount = 0, time = 0; 
+	double amount = 0, time = 0;
 	char *beer_name;
+	char *author_name;
 
 	for (i=1; i<argc; i++)
 	{
@@ -60,6 +62,14 @@ int main(int argc, char **argv)
 		{
 			beer_name = &argv[i][5];
 		}
+		if (strncmp(argv[i], "author", 6) == 0)
+		{
+			author_name = &argv[i][7];
+		}
+		if (strncmp(argv[i], "style_id", 8) == 0)
+		{
+			style_id = strtoul(&argv[i][9], NULL, 0);
+		}
 	}
 
 	sqlite3_open(DATABASE, &db);
@@ -68,19 +78,26 @@ int main(int argc, char **argv)
 		recipe_json(beer_id);
 
 	if (action == 1)
-	{
-		add_recipe(beer_name);
-	}
+		add_recipe(beer_name, style_id, author_name);
 
 	sqlite3_close(db);
 }
 
-int add_recipe(const char *name)
+int add_recipe(const char *name, const unsigned long int style_id, const char *author)
 {
-	sqlite3_prepare_v2(db, str("insert into recipe (name, author, volume, malt_n, hops_n, yeast_n) values (?, \"\",5, 0, 0, 0);"), &qry, NULL);
+	sqlite3_prepare_v2(db, str("insert into recipe (name, style_id, author, volume, malt_n, hops_n, yeast_n) values (?, ?, ?, 5, 0, 0, 0);"), &qry, NULL);
 	sqlite3_bind_text(qry, 1, name, -1, SQLITE_STATIC);
+	sqlite3_bind_int64(qry, 2, style_id);
+	sqlite3_bind_text(qry, 3, author, -1, SQLITE_STATIC);
 
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
+
+	int beer_id = sqlite3_last_insert_rowid(db);
+
+	write(1, str("{ \"beer_id\":"));
+	sprintf(buffer, "%d%n", beer_id, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str(" }\n"));
 
 	sqlite3_finalize(qry);
 }

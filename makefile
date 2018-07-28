@@ -6,7 +6,7 @@ CC ?= gcc
 
 WEBROOT ?= /var/unweave
 WEBUSER ?= prushik
-PAGES ?= recipe_from_db index builder_ajax
+PAGES ?= recipe_from_db index builder_ajax builder_ui
 DATABASE ?= /var/db/beer.sqlite
 
 all: $(PAGES)
@@ -15,6 +15,9 @@ index: $(COMMON_SRC) src/index.c
 	$(CC) $^ $(LDFLAGS) $(DEBUG) $(CFLAGS) -o $@
 
 builder_ajax: $(COMMON_SRC) src/builder_ajax.c
+	$(CC) $^ $(LDFLAGS) $(DEBUG) $(CFLAGS) -o $@
+
+builder_ui: $(COMMON_SRC) src/builder_ui.c
 	$(CC) $^ $(LDFLAGS) $(DEBUG) $(CFLAGS) -o $@
 
 recipe_from_db: $(COMMON_SRC) src/recipe_from_database.c

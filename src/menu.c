@@ -6,7 +6,7 @@
 
 static char menu_links[MENU_OPTIONS][46] = {
 	"index",
-	"builder",
+	"builder_ui",
 	"http://prushik.dedyn.io:8083/prushik/beercalc"
 };
 static char menu_names[MENU_OPTIONS][15] = {
