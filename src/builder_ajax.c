@@ -90,7 +90,17 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 	sqlite3_bind_int64(qry, 2, style_id);
 	sqlite3_bind_text(qry, 3, author, -1, SQLITE_STATIC);
 
-	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	char sqlstr[512];
+
+	int code, len;
+	while ((code = sqlite3_step(qry)) != SQLITE_DONE)
+	{
+		sprintf(sqlstr,"%d %s\n%n", code, sqlite3_errmsg(db), &len);
+		write(2, sqlstr, len);
+		break;
+	}
+
+	sqlite3_finalize(qry);
 
 	int beer_id = sqlite3_last_insert_rowid(db);
 
@@ -99,7 +109,6 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 	write(1, buffer, buf_len);
 	write(1, str(" }\n"));
 
-	sqlite3_finalize(qry);
 }
 
 int recipe_json(unsigned long int beer_id)
