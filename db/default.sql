@@ -143,7 +143,7 @@ insert into ingredients values (1,6,0.5,5,null,1,12);
 insert into ingredients values (1,3,1,0,null,2,13);
 
 --
-insert into recipe values ("poor richard's colonial ale","tony simmons",40,5,5.5,3,3,1,2);
+insert into recipe values ("poor richard's colonial ale","tony simmons",40,5,5.5,6,3,1,2);
 
 insert into ingredients values (2,3,8.5,90,null,0,14);
 insert into ingredients values (2,10,2.75,90,null,0,15);

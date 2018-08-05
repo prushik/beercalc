@@ -6,6 +6,7 @@ CC ?= gcc
 
 WEBROOT ?= /var/unweave
 WEBUSER ?= prushik
+WEBGROUP ?= $(WEBUSER)
 PAGES ?= recipe_from_db index builder_ajax builder_ui
 DATABASE ?= /var/db/beer.sqlite
 
@@ -31,6 +32,7 @@ deploy:
 deploy_database:
 	sqlite3 $(DATABASE) < db/default.sql
 	sqlite3 $(DATABASE) < db/styles.sql
+	chown $(WEBUSER):$(WEBGROUP) $(DATABASE)
 
 clean:
 	rm $(PAGES)
