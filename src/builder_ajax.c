@@ -45,6 +45,8 @@ int main(int argc, char **argv)
 				action = 3;
 			if (strncmp(&argv[i][7], "addyeast", 8) == 0)
 				action = 4;
+			if (strncmp(&argv[i][7], "getmalt", 7) == 0)
+				action = 5;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -80,6 +82,9 @@ int main(int argc, char **argv)
 	if (action == 1)
 		add_recipe(beer_name, style_id, author_name);
 
+	if (action == 5)
+		malt_json();
+
 	sqlite3_close(db);
 }
 
@@ -109,6 +114,35 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 	write(1, buffer, buf_len);
 	write(1, str(" }\n"));
 
+}
+
+int malt_json()
+{
+	int i;
+
+	write(1, str("{ "));
+
+	sqlite3_prepare_v2(db, str("select name, potential, mcu, id from malts order by pts_potential;"), &qry, NULL);
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		if (i) write(1, str(", "));
+		write(1, str("[ \"name\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 0));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"potential\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 1));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"mcu\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 2));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"id\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 3));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\" ]"));
+	}
+	sqlite3_finalize(qry);
+
+	write(1, str(" }\n"));
 }
 
 int recipe_json(unsigned long int beer_id)

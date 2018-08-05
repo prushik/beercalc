@@ -4,13 +4,13 @@
 }
 .title
 {
-	font-size: 24;
+	font-size: 32;
 	width: 100%;
 	background-color: #aa9933;
 }
 .subtitle
 {
-	font-size: 16;
+	font-size: 24;
 }
 table tr td
 {
@@ -40,4 +40,9 @@ table tr td
 {
 	border: 0px;
 	background-color: #aaffaa;
+}
+.locked
+{
+	pointer-events: disabled;
+	opacity: 0.4;
 }
