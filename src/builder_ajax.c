@@ -118,15 +118,15 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 
 int malt_json()
 {
-	int i;
+	int i = 0;
 
-	write(1, str("{ "));
+	write(1, str("{ \"malts\": ["));
 
-	sqlite3_prepare_v2(db, str("select name, potential, mcu, id from malts order by pts_potential;"), &qry, NULL);
+	sqlite3_prepare_v2(db, str("select name, potential, mcu, id from malts order by pts_potential desc;"), &qry, NULL);
 	while (sqlite3_step(qry) != SQLITE_DONE)
 	{
-		if (i) write(1, str(", "));
-		write(1, str("[ \"name\": \""));
+		if (i) write(1, str(", ")); i++;
+		write(1, str("{ \"name\": \""));
 		strcpy(buffer, sqlite3_column_text(qry, 0));
 		write(1, buffer, strlen(buffer));
 		write(1, str("\", \"potential\": \""));
@@ -138,11 +138,11 @@ int malt_json()
 		write(1, str("\", \"id\": \""));
 		strcpy(buffer, sqlite3_column_text(qry, 3));
 		write(1, buffer, strlen(buffer));
-		write(1, str("\" ]"));
+		write(1, str("\" }"));
 	}
 	sqlite3_finalize(qry);
 
-	write(1, str(" }\n"));
+	write(1, str("] }\n"));
 }
 
 int recipe_json(unsigned long int beer_id)
