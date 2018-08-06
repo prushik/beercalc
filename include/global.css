@@ -1,6 +1,7 @@
 .main_content
 {
 	margin: 0px 128px 0px 128px;
+	width: 75%
 }
 .title
 {
@@ -22,6 +23,7 @@ table tr td
 {
 	position: fixed;
 	right: 40px;
+	border-radius: 8px;
 }
 .nav a,a:visited,a:active
 {
@@ -41,4 +43,5 @@ table tr td
 {
 	border: 0px;
 	background-color: #aaffaa;
+	border-radius: 8px;
 }

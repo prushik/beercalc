@@ -49,6 +49,8 @@ int main(int argc, char **argv)
 				action = 5;
 			if (strncmp(&argv[i][7], "gethops", 7) == 0)
 				action = 6;
+			if (strncmp(&argv[i][7], "getyeasts", 9) == 0)
+				action = 7;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -89,6 +91,9 @@ int main(int argc, char **argv)
 
 	if (action == 6)
 		hops_json();
+
+	if (action == 7)
+		yeasts_json();
 
 	sqlite3_close(db);
 }
@@ -168,6 +173,35 @@ int hops_json()
 		write(1, buffer, strlen(buffer));
 		write(1, str("\", \"id\": \""));
 		strcpy(buffer, sqlite3_column_text(qry, 2));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\" }"));
+	}
+	sqlite3_finalize(qry);
+
+	write(1, str("] }\n"));
+}
+
+int yeasts_json()
+{
+	int i = 0;
+
+	write(1, str("{ \"yeasts\": ["));
+
+	sqlite3_prepare_v2(db, str("select name, attenuation, flocculation, id from yeasts order by attenuation;"), &qry, NULL);
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		if (i) write(1, str(", ")); i++;
+		write(1, str("{ \"name\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 0));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"attenuation\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 1));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"flocculation\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 2));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"id\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 3));
 		write(1, buffer, strlen(buffer));
 		write(1, str("\" }"));
 	}
