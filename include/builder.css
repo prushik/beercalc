@@ -1,0 +1,43 @@
+table.ing_table
+{
+	border-radius: 8px;
+}
+
+table.ing_table tbody tr td
+{
+	border-radius: 8px;
+}
+
+table.ing_table tbody tr:nth-child(odd)
+{
+	background-color: #ff9944;
+}
+
+table.ing_table tbody tr:nth-child(even)
+{
+	background-color: #ee9955;
+}
+
+table.ing_table tbody tr td input[type=number]
+{
+	border-radius: 8px;
+	width: 4em;
+}
+
+.locked
+{
+	pointer-events: disabled;
+	opacity: 0.4;
+}
+
+.beername
+{
+	width: 75%;
+	height: 24px;
+	text-align: center;
+	display: inline-block;
+	background-color:#808080;
+	color: #ee9944;
+	font-weight: bold;
+	border-radius: 8px;
+}
