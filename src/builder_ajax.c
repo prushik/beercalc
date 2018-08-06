@@ -47,6 +47,8 @@ int main(int argc, char **argv)
 				action = 4;
 			if (strncmp(&argv[i][7], "getmalt", 7) == 0)
 				action = 5;
+			if (strncmp(&argv[i][7], "gethops", 7) == 0)
+				action = 6;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -84,6 +86,9 @@ int main(int argc, char **argv)
 
 	if (action == 5)
 		malt_json();
+
+	if (action == 6)
+		hops_json();
 
 	sqlite3_close(db);
 }
@@ -137,6 +142,32 @@ int malt_json()
 		write(1, buffer, strlen(buffer));
 		write(1, str("\", \"id\": \""));
 		strcpy(buffer, sqlite3_column_text(qry, 3));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\" }"));
+	}
+	sqlite3_finalize(qry);
+
+	write(1, str("] }\n"));
+}
+
+int hops_json()
+{
+	int i = 0;
+
+	write(1, str("{ \"hops\": ["));
+
+	sqlite3_prepare_v2(db, str("select name, alpha, id from hops order by alpha;"), &qry, NULL);
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		if (i) write(1, str(", ")); i++;
+		write(1, str("{ \"name\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 0));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"alpha\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 1));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"id\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 2));
 		write(1, buffer, strlen(buffer));
 		write(1, str("\" }"));
 	}
