@@ -130,7 +130,7 @@ insert into ingredients values (0,1,0.5,15,null,1,5);
 insert into ingredients values (0,4,1,0,null,2,6);
 
 -- 
-insert into recipe values ("president donald drunk","philip rushik",58,5,5.5,3,3,1,1);
+insert into recipe values ("american ale","philip rushik",58,5,5.5,3,3,1,1);
 
 insert into ingredients values (1,2,10,60,null,0,7);
 insert into ingredients values (1,10,2,60,null,0,8);
