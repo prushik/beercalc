@@ -93,14 +93,14 @@ function table_add_malt(malt_id)
 function table_add_hop(hop_id)
 {
 	var table = document.getElementById('hops_table');
-	table.innerHTML += "<tr id=\"hops_" + hops_n + "\"><td><input type=\"number\" value=\"0\"></input> oz</td><td><input type=\"number\" value=\"0\"></input> min</td><td>" + hops_array[hop_id].name + "</td><td>" + hops_array[hop_id].alpha + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('hops_" + hops_n + "'); hops_n += -1;\"></input></td></tr>";
+	table.innerHTML += "<tr id=\"hops_" + hops_n + "\" data-hop_id=\"" + hop_id + "\"><td><input type=\"number\" value=\"0\"></input> oz</td><td><input type=\"number\" value=\"0\"></input> min</td><td>" + hops_array[hop_id].name + "</td><td>" + hops_array[hop_id].alpha + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('hops_" + hops_n + "'); hops_n += -1;\"></input></td></tr>";
 	hops_n += 1;
 }
 
 function table_add_yeast(yeast_id)
 {
 	var table = document.getElementById('yeast_table');
-	table.innerHTML += "<tr id=\"yeast_" + yeast_n + "\"><td><input type=\"number\" value=\"0\"></input> pkg</td><td>" + yeast_array[yeast_id].name + "</td><td>" + yeast_array[yeast_id].attenuation + "</td><td>" + yeast_array[yeast_id].flocculation + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('yeast_" + yeast_n + "'); yeast_n += -1;\"></input></td></tr>";
+	table.innerHTML += "<tr id=\"yeast_" + yeast_n + "\" data-yeast_id=\"" + yeast_id + "\"><td><input type=\"number\" value=\"0\"></input> pkg</td><td>" + yeast_array[yeast_id].name + "</td><td>" + yeast_array[yeast_id].attenuation + "</td><td>" + (["none","very low","low","mid-low","medium","mid-high","high","extreme"])[yeast_array[yeast_id].flocculation] + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('yeast_" + yeast_n + "'); yeast_n += -1;\"></input></td></tr>";
 	yeast_n += 1;
 }
 
@@ -130,6 +130,16 @@ function save_recipe()
 		{
 			malt_n += 1;
 			recipe.malts[malt_n] = { "id": row.attributes['data-malt_id'].value, "mass": row.cells[0].children[0].value};
+		}
+	}
+
+	var table = document.getElementById('hops_table');
+	if (table.rows.length > 2)
+	{
+		for (i = 2; row = table.rows[i]; i++)
+		{
+			hops_n += 1;
+			recipe.hops[hops_n] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
 		}
 	}
 

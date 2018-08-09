@@ -105,12 +105,12 @@ insert into hops values('magnum',14.5,0,5);
 insert into hops values('ultra',3,0,6);
 insert into hops values('kent goldings',5,0,7);
 
-insert into yeasts values('american ale 1056', 75, 2, 66, 0);
-insert into yeasts values('american ale II 1272', 74, 3, 66, 1);
-insert into yeasts values('american ale wlp060', 76, 3, 70, 2);
-insert into yeasts values('liberty bell ale m36', 76, 4, 68, 3);
-insert into yeasts values('london fog ale wlp066', 68, 4, 68, 4);
-insert into yeasts values('scottish ale 1728', 76, 5, 70, 5);
+insert into yeasts values('american ale 1056', 75, 4, 66, 0);
+insert into yeasts values('american ale II 1272', 74, 5, 66, 1);
+insert into yeasts values('american ale wlp060', 76, 5, 70, 2);
+insert into yeasts values('liberty bell ale m36', 76, 6, 68, 3);
+insert into yeasts values('london fog ale wlp066', 68, 6, 68, 4);
+insert into yeasts values('scottish ale 1728', 76, 7, 70, 5);
 
 COMMIT;
 
