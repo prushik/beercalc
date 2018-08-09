@@ -26,7 +26,7 @@ recipe_from_db: $(COMMON_SRC) src/recipe_from_database.c
 
 deploy:
 	mkdir -p $(WEBROOT)/include
-	install -m 0555 -o $(WEBUSER) include/global.css include/builder.css $(WEBROOT)/include
+	install -m 0555 -o $(WEBUSER) src/builder_ui.js include/global.css include/builder.css $(WEBROOT)/include
 	install -m 0777 -o $(WEBUSER) $(PAGES) $(WEBROOT)
 
 deploy_database:
