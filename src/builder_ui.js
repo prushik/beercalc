@@ -112,7 +112,7 @@ function table_rm_row(row_id)
 
 function save_recipe()
 {
-	var i, row;
+	var i, row, table;
 	var recipe =
 	{
 		malt_n: 0,
@@ -123,7 +123,7 @@ function save_recipe()
 		yeasts: []
 	};
 
-	var table = document.getElementById('malt_table');
+	table = document.getElementById('malt_table');
 	if (table.rows.length > 2)
 	{
 		for (i = 2; row = table.rows[i]; i++)
@@ -133,7 +133,17 @@ function save_recipe()
 		}
 	}
 
-	var table = document.getElementById('hops_table');
+	table = document.getElementById('hops_table');
+	if (table.rows.length > 2)
+	{
+		for (i = 2; row = table.rows[i]; i++)
+		{
+			hops_n += 1;
+			recipe.hops[hops_n] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
+		}
+	}
+
+	table = document.getElementById('yeast_table');
 	if (table.rows.length > 2)
 	{
 		for (i = 2; row = table.rows[i]; i++)

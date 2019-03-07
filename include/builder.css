@@ -1,6 +1,8 @@
 table.ing_table
 {
 	border-radius: 8px;
+	text-align: center;
+	width: 75%;
 }
 
 table.ing_table tbody tr td
@@ -36,6 +38,7 @@ table.ing_table tbody tr td input[type=number]
 	height: 24px;
 	text-align: center;
 	display: inline-block;
+	border-style: solid;
 	background-color:#808080;
 	color: #ee9944;
 	font-weight: bold;

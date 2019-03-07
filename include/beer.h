@@ -50,10 +50,4 @@ struct recipe
 #define HOP_TYPE_PELLET   0
 #define HOP_TYPE_WHOLE    1
 
-#define YEAST_FLOC_LOW    1
-#define YEAST_FLOC_MIDLOW 2
-#define YEAST_FLOC_MEDIUM 3
-#define YEAST_FLOC_MIDHI  4
-#define YEAST_FLOC_HIGH   5
-
 #define DATABASE          "/var/db/beer.sqlite"

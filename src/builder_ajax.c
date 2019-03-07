@@ -15,6 +15,18 @@ static sqlite3 *db;
 static sqlite3_stmt *qry;
 
 
+#define ACTION_GETBEER		0x00
+#define ACTION_ADDBEER		0x01
+#define ACTION_ADDMALT		0x02
+#define ACTION_ADDHOP		0x03
+#define ACTION_ADDYEAST		0x04
+#define ACTION_GETMALT		0x05
+#define ACTION_GETHOPS		0x06
+#define ACTION_GETYEASTS	0x07
+#define ACTION_SETMALT		0x08
+#define ACTION_SETHOPS		0x09
+#define ACTION_SETYEASTS	0x0a
+
 int main(int argc, char **argv)
 {
 	int i;
@@ -36,21 +48,27 @@ int main(int argc, char **argv)
 		if (strncmp(argv[i], "action", 6) == 0)
 		{
 			if (strncmp(&argv[i][7], "getbeer", 7) == 0)
-				action = 0;
+				action = ACTION_GETBEER;
 			if (strncmp(&argv[i][7], "addbeer", 7) == 0)
-				action = 1;
+				action = ACTION_ADDBEER;
 			if (strncmp(&argv[i][7], "addmalt", 7) == 0)
-				action = 2;
+				action = ACTION_ADDMALT;
 			if (strncmp(&argv[i][7], "addhop", 6) == 0)
-				action = 3;
+				action = ACTION_ADDHOP;
 			if (strncmp(&argv[i][7], "addyeast", 8) == 0)
-				action = 4;
+				action = ACTION_ADDYEAST;
 			if (strncmp(&argv[i][7], "getmalt", 7) == 0)
-				action = 5;
+				action = ACTION_GETMALT;
 			if (strncmp(&argv[i][7], "gethops", 7) == 0)
-				action = 6;
+				action = ACTION_GETHOPS;
 			if (strncmp(&argv[i][7], "getyeasts", 9) == 0)
-				action = 7;
+				action = ACTION_GETYEASTS;
+			if (strncmp(&argv[i][7], "setmalt", 7) == 0)
+				action = ACTION_SETMALT;
+			if (strncmp(&argv[i][7], "sethops", 7) == 0)
+				action = ACTION_SETHOPS;
+			if (strncmp(&argv[i][7], "setyeasts", 9) == 0)
+				action = ACTION_SETYEASTS;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -80,19 +98,19 @@ int main(int argc, char **argv)
 
 	sqlite3_open(DATABASE, &db);
 
-	if (action == 0)
+	if (action == ACTION_GETBEER)
 		recipe_json(beer_id);
 
-	if (action == 1)
+	if (action == ACTION_ADDBEER)
 		add_recipe(beer_name, style_id, author_name);
 
-	if (action == 5)
+	if (action == ACTION_GETMALT)
 		malt_json();
 
-	if (action == 6)
+	if (action == ACTION_GETHOPS)
 		hops_json();
 
-	if (action == 7)
+	if (action == ACTION_GETYEASTS)
 		yeasts_json();
 
 	sqlite3_close(db);
@@ -124,6 +142,34 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 	write(1, buffer, buf_len);
 	write(1, str(" }\n"));
 
+}
+
+int update_malt(unsigned long int beer_id, unsigned long int index_id, unsigned long int malt_id, unsigned long int mass)
+{
+	sqlite3_prepare_v2(db, str("update recipe set malt_n = ? where id = ?;"), &qry, NULL);
+/*	sqlite3_bind_text(qry, 1, name, -1, SQLITE_STATIC);
+	sqlite3_bind_int64(qry, 2, style_id);
+	sqlite3_bind_text(qry, 3, author, -1, SQLITE_STATIC);
+
+	char sqlstr[512];
+
+	int code, len;
+	while ((code = sqlite3_step(qry)) != SQLITE_DONE)
+	{
+		sprintf(sqlstr,"%d %s\n%n", code, sqlite3_errmsg(db), &len);
+		write(2, sqlstr, len);
+		break;
+	}
+
+	sqlite3_finalize(qry);
+
+	beer_id = sqlite3_last_insert_rowid(db);
+
+	write(1, str("{ \"beer_id\":"));
+	sprintf(buffer, "%d%n", beer_id, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str(" }\n"));
+*/
 }
 
 int malt_json()
