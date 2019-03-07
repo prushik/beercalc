@@ -66,3 +66,8 @@ dkms.conf
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+builder_ajax
+builder_ui
+index
+recipe_ajax
+recipe_from_db
