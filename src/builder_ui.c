@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		"<input type=\"button\" style=\"border-radius:8px; width:75%;\" onclick=\"builder_ajax_send('addbeer', 'name=' + document.getElementById('beername').innerText + '&author=beercalc');\" value=\"create beer\" /><br>\n"
 		"<div class=\"locked\" id=\"editor\">\n"
 		"<div id=\"malts\">"
-		"<select id=\"malt_select\" style=\"height:auto; width:auto;float: left;\"><option value=\"-1\">Select Malt</option></select> <input type=\"button\" value=\" + \" onclick=\"table_add_malt(document.getElementById('malt_select').value);\"></input>"
+		"<select id=\"malt_select\"><option value=\"-1\">Select Malt</option></select> <input type=\"button\" value=\" + \" onclick=\"table_add_malt(document.getElementById('malt_select').value);\"></input>"
 		"<table class=\"ing_table\">"
 		"<tbody id=\"malt_table\">"
 		"<tr><td colspan=\"5\" style=\"text-align: center;\">Malts</td></tr>\n"
