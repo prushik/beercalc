@@ -27,7 +27,7 @@ function process_ajax(action, ajax)
 	if (obj.hasOwnProperty("beer_id"))
 	{
 		beer_id = obj.beer_id;
-		document.getElementById('beer_id').innerText = "#" + beer_id;
+		document.getElementById('beerid').innerText = "#" + beer_id;
 		document.getElementById('editor').classList.remove('locked');
 		builder_ajax_send("getmalt", "");
 		builder_ajax_send("gethops", "");
