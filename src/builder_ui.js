@@ -32,6 +32,7 @@ function process_ajax(action, ajax)
 		builder_ajax_send("getmalt", "");
 		builder_ajax_send("gethops", "");
 		builder_ajax_send("getyeasts", "");
+		builder_ajax_send("getstyles", "");
 	}
 	if (obj.hasOwnProperty("malts"))
 	{

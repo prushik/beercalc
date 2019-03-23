@@ -22,10 +22,11 @@ static sqlite3_stmt *qry;
 #define ACTION_ADDYEAST		0x04
 #define ACTION_GETMALT		0x05
 #define ACTION_GETHOPS		0x06
-#define ACTION_GETYEASTS	0x07
-#define ACTION_SETMALT		0x08
-#define ACTION_SETHOPS		0x09
-#define ACTION_SETYEASTS	0x0a
+#define ACTION_GETSTYLES	0x07
+#define ACTION_GETYEASTS	0x08
+#define ACTION_SETMALT		0x09
+#define ACTION_SETHOPS		0x0a
+#define ACTION_SETYEASTS	0x0b
 
 int main(int argc, char **argv)
 {
@@ -63,6 +64,8 @@ int main(int argc, char **argv)
 				action = ACTION_GETHOPS;
 			if (strncmp(&argv[i][7], "getyeasts", 9) == 0)
 				action = ACTION_GETYEASTS;
+			if (strncmp(&argv[i][7], "getstyles", 9) == 0)
+				action = ACTION_GETSTYLES;
 			if (strncmp(&argv[i][7], "setmalt", 7) == 0)
 				action = ACTION_SETMALT;
 			if (strncmp(&argv[i][7], "sethops", 7) == 0)
@@ -112,6 +115,9 @@ int main(int argc, char **argv)
 
 	if (action == ACTION_GETYEASTS)
 		yeasts_json();
+
+	if (action == ACTION_GETSTYLES)
+		styles_json();
 
 	sqlite3_close(db);
 }
@@ -248,6 +254,79 @@ int yeasts_json()
 		write(1, buffer, strlen(buffer));
 		write(1, str("\", \"id\": \""));
 		strcpy(buffer, sqlite3_column_text(qry, 3));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\" }"));
+	}
+	sqlite3_finalize(qry);
+
+	write(1, str("] }\n"));
+}
+
+int styles_json()
+{
+	int i = 0;
+
+	write(1, str("{ \"styles\": ["));
+
+//	name varchar(64),
+//	og_min double,
+//	og_max double,
+//	fg_min double,
+//	fg_max double,
+//	ibu_min double,
+//	ibu_max double,
+//	color_min double,
+//	color_max double,
+//	carb_min double,
+//	carb_max double,
+//	abv_min double,
+//	abv_max double,
+
+	sqlite3_prepare_v2(db, str("select name, og_min, og_max, fg_min, fg_max, ibu_min, ibu_max, color_min, color_max, carb_min, carb_max, abv_min, abv_max, id from style order by color_max;"), &qry, NULL);
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		if (i) write(1, str(", ")); i++;
+		write(1, str("{ \"name\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 0));
+		write(1, buffer, strlen(buffer));
+		write(1, str("\", \"og\": ["));
+		strcpy(buffer, sqlite3_column_text(qry, 1));
+		write(1, buffer, strlen(buffer));
+		write(1, str(", "));
+		strcpy(buffer, sqlite3_column_text(qry, 2));
+		write(1, buffer, strlen(buffer));
+		write(1, str("], \"fg\": ["));
+		strcpy(buffer, sqlite3_column_text(qry, 3));
+		write(1, buffer, strlen(buffer));
+		write(1, str(", "));
+		strcpy(buffer, sqlite3_column_text(qry, 4));
+		write(1, buffer, strlen(buffer));
+		write(1, str("], \"ibu\": ["));
+		strcpy(buffer, sqlite3_column_text(qry, 5));
+		write(1, buffer, strlen(buffer));
+		write(1, str(", "));
+		strcpy(buffer, sqlite3_column_text(qry, 6));
+		write(1, buffer, strlen(buffer));
+		write(1, str("], \"color\": ["));
+		strcpy(buffer, sqlite3_column_text(qry, 7));
+		write(1, buffer, strlen(buffer));
+		write(1, str(", "));
+		strcpy(buffer, sqlite3_column_text(qry, 8));
+		write(1, buffer, strlen(buffer));
+		write(1, str("], \"carb\": ["));
+		strcpy(buffer, sqlite3_column_text(qry, 9));
+		write(1, buffer, strlen(buffer));
+		write(1, str(", "));
+		strcpy(buffer, sqlite3_column_text(qry, 10));
+		write(1, buffer, strlen(buffer));
+		write(1, str("], \"abv\": ["));
+		strcpy(buffer, sqlite3_column_text(qry, 11));
+		write(1, buffer, strlen(buffer));
+		write(1, str(", "));
+		strcpy(buffer, sqlite3_column_text(qry, 12));
+		write(1, buffer, strlen(buffer));
+		write(1, str("], \"id\": \""));
+		strcpy(buffer, sqlite3_column_text(qry, 13));
 		write(1, buffer, strlen(buffer));
 		write(1, str("\" }"));
 	}
