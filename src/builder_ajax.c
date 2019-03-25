@@ -268,20 +268,6 @@ int styles_json()
 
 	write(1, str("{ \"styles\": ["));
 
-//	name varchar(64),
-//	og_min double,
-//	og_max double,
-//	fg_min double,
-//	fg_max double,
-//	ibu_min double,
-//	ibu_max double,
-//	color_min double,
-//	color_max double,
-//	carb_min double,
-//	carb_max double,
-//	abv_min double,
-//	abv_max double,
-
 	sqlite3_prepare_v2(db, str("select name, og_min, og_max, fg_min, fg_max, ibu_min, ibu_max, color_min, color_max, carb_min, carb_max, abv_min, abv_max, id from style order by color_max;"), &qry, NULL);
 	while (sqlite3_step(qry) != SQLITE_DONE)
 	{

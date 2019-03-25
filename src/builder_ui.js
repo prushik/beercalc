@@ -5,6 +5,7 @@ hops_array = [];
 hops_n = 0;
 yeast_array = [];
 yeast_n = 0;
+style_array = [];
 
 function builder_ajax_send(action, arguments)
 {
@@ -33,6 +34,8 @@ function process_ajax(action, ajax)
 		builder_ajax_send("gethops", "");
 		builder_ajax_send("getyeasts", "");
 		builder_ajax_send("getstyles", "");
+		document.getElementById('save_create').value = "save";
+		document.getElementById('save_create').onclick = save_recipe;
 	}
 	if (obj.hasOwnProperty("malts"))
 	{
@@ -45,6 +48,10 @@ function process_ajax(action, ajax)
 	if (obj.hasOwnProperty("yeasts"))
 	{
 		populate_yeast_select(obj.yeasts);
+	}
+	if (obj.hasOwnProperty("styles"))
+	{
+		populate_style_select(obj.styles);
 	}
 }
 
@@ -84,6 +91,18 @@ function populate_yeast_select(yeasts)
 	document.getElementById('yeast_select').innerHTML = opts;
 }
 
+function populate_style_select(styles)
+{
+	var i, style, opts;
+	opts = "<option>Select Style</option>";
+	for (i = 0; style = styles[i]; i++)
+	{
+		opts += "<option value=" + style.id + ">" + style.name + "</option>";
+		style_array[style.id] = style;
+	}
+	document.getElementById('style_select').innerHTML = opts;
+}
+
 function table_add_malt(malt_id)
 {
 	var table = document.getElementById('malt_table');
@@ -101,7 +120,7 @@ function table_add_hop(hop_id)
 function table_add_yeast(yeast_id)
 {
 	var table = document.getElementById('yeast_table');
-	table.innerHTML += "<tr id=\"yeast_" + yeast_n + "\" data-yeast_id=\"" + yeast_id + "\"><td><input type=\"number\" value=\"0\"></input> pkg</td><td>" + yeast_array[yeast_id].name + "</td><td>" + yeast_array[yeast_id].attenuation + "</td><td>" + (["none","very low","low","mid-low","medium","mid-high","high","extreme"])[yeast_array[yeast_id].flocculation] + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('yeast_" + yeast_n + "'); yeast_n += -1;\"></input></td></tr>";
+	table.innerHTML += "<tr id=\"yeast_" + yeast_n + "\" data-yeast_id=\"" + yeast_id + "\"><td><input type=\"number\" value=\"1\"></input> pkg</td><td>" + yeast_array[yeast_id].name + "</td><td>" + yeast_array[yeast_id].attenuation + "</td><td>" + (["none","very low","low","mid-low","medium","mid-high","high","extreme"])[yeast_array[yeast_id].flocculation] + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('yeast_" + yeast_n + "'); yeast_n += -1;\"></input></td></tr>";
 	yeast_n += 1;
 }
 
@@ -129,8 +148,8 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
-			malt_n += 1;
-			recipe.malts[malt_n] = { "id": row.attributes['data-malt_id'].value, "mass": row.cells[0].children[0].value};
+			recipe.malt_n += 1;
+			recipe.malts[recipe.malt_n-1] = { "id": row.attributes['data-malt_id'].value, "mass": row.cells[0].children[0].value};
 		}
 	}
 
@@ -139,8 +158,8 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
-			hops_n += 1;
-			recipe.hops[hops_n] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
+			recipe.hops_n += 1;
+			recipe.hops[recipe.hops_n-1] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
 		}
 	}
 
@@ -149,8 +168,8 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
-			hops_n += 1;
-			recipe.hops[hops_n] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
+			recipe.yeast_n += 1;
+			recipe.yeasts[recipe.yeast_n-1] = { "id": row.attributes['data-yeast_id'].value, "mass": row.cells[0].children[0].value};
 		}
 	}
 
