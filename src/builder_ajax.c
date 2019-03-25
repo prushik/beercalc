@@ -15,6 +15,9 @@ static sqlite3 *db;
 static sqlite3_stmt *qry;
 
 
+void clear_recipe(unsigned long int beer_id);
+void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity);
+
 #define ACTION_GETBEER		0x00
 #define ACTION_ADDBEER		0x01
 #define ACTION_ADDMALT		0x02
@@ -27,6 +30,8 @@ static sqlite3_stmt *qry;
 #define ACTION_SETMALT		0x09
 #define ACTION_SETHOPS		0x0a
 #define ACTION_SETYEASTS	0x0b
+#define ACTION_CLEARBEER	0x0c
+#define ACTION_CALCULATE	0x0d
 
 int main(int argc, char **argv)
 {
@@ -72,6 +77,10 @@ int main(int argc, char **argv)
 				action = ACTION_SETHOPS;
 			if (strncmp(&argv[i][7], "setyeasts", 9) == 0)
 				action = ACTION_SETYEASTS;
+			if (strncmp(&argv[i][7], "clearbeer", 9) == 0)
+				action = ACTION_CLEARBEER;
+			if (strncmp(&argv[i][7], "calculate", 9) == 0)
+				action = ACTION_CALCULATE;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -119,6 +128,12 @@ int main(int argc, char **argv)
 	if (action == ACTION_GETSTYLES)
 		styles_json();
 
+	if (action == ACTION_CLEARBEER)
+		clear_recipe(beer_id);
+
+	if (action == ACTION_ADDMALT)
+		recipe_add_malt(beer_id, ing_id, amount);
+
 	sqlite3_close(db);
 }
 
@@ -148,6 +163,37 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 	write(1, buffer, buf_len);
 	write(1, str(" }\n"));
 
+}
+
+void clear_recipe(unsigned long int beer_id)
+{
+	sqlite3_prepare_v2(db, str("delete from ingredients where recipe_id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	write(1, str("{}\n"));
+	return;
+}
+
+
+void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity)
+{
+	sqlite3_prepare_v2(db, str("insert into ingredients (recipe_id, ingredient_id, quantity, type) values (?,?,?,?);"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, malt_id);
+	sqlite3_bind_double(qry, 3, quantity);
+	sqlite3_bind_int(qry, 4, ING_TYPE_MALT);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	sqlite3_prepare_v2(db, str("update recipe set malt_n = malt_n+1 where id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	write(1, str("{}\n"));
+	return;
 }
 
 int update_malt(unsigned long int beer_id, unsigned long int index_id, unsigned long int malt_id, unsigned long int mass)

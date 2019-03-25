@@ -7,6 +7,20 @@ yeast_array = [];
 yeast_n = 0;
 style_array = [];
 
+function builder_ajax_send_sync(action, arguments)
+{
+	var ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			process_ajax(action, this);
+		}
+	};
+	ajax.open("GET", "builder_ajax?action=" + action + "&" + arguments, false);
+	ajax.send();
+}
+
 function builder_ajax_send(action, arguments)
 {
 	var ajax = new XMLHttpRequest();
@@ -146,6 +160,9 @@ function table_rm_row(row_id)
 function save_recipe()
 {
 	var i, row, table;
+
+	builder_ajax_send_sync("clearbeer", "beer_id=" + beer_id);
+
 	var recipe =
 	{
 		malt_n: 0,
@@ -161,6 +178,8 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
+			builder_ajax_send_sync("addmalt", "beer_id=" + beer_id + "&ing_id=" + row.attributes['data-malt_id'].value + "&amount=" + row.cells[0].children[0].value);
+
 			recipe.malt_n += 1;
 			recipe.malts[recipe.malt_n-1] = { "id": row.attributes['data-malt_id'].value, "mass": row.cells[0].children[0].value};
 		}
