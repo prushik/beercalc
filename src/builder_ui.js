@@ -103,6 +103,19 @@ function populate_style_select(styles)
 	document.getElementById('style_select').innerHTML = opts;
 }
 
+function populate_style_ranges(style_id)
+{
+	var table = document.getElementById('styles_table');
+	var row = document.getElementById('og_row');
+	row.cells[1].innerHTML = style_array[style_id].og[0] + " - " + style_array[style_id].og[1];
+	var row = document.getElementById('fg_row');
+	row.cells[1].innerHTML = style_array[style_id].fg[0] + " - " + style_array[style_id].fg[1];
+	var row = document.getElementById('ibu_row');
+	row.cells[1].innerHTML = style_array[style_id].ibu[0] + " - " + style_array[style_id].ibu[1];
+	var row = document.getElementById('abv_row');
+	row.cells[1].innerHTML = style_array[style_id].abv[0] + " - " + style_array[style_id].abv[1];
+}
+
 function table_add_malt(malt_id)
 {
 	var table = document.getElementById('malt_table');

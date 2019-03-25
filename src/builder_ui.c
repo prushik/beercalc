@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 		"<div class=\"locked\" id=\"editor\">\n"
 
 		"<div style=\"float:right; width:25%\">"
-		"<select id=\"style_select\" style=\"width: 100%;\"><option value=\"-1\">Select Style</option></select>"
+		"<select id=\"style_select\" style=\"width: 100%;\" onchange=\"populate_style_ranges(document.getElementById('style_select').value);\"><option value=\"-1\">Select Style</option></select>"
 		"<br><input type=\"button\" value=\"auto style\" style=\"width: 100%;\" onclick=\"evaluate_style();\"></input>"
 		"<table class=\"ing_table\" style=\"width: 100%;\">"
 		"<tbody id=\"style_table\">"
