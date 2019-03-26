@@ -67,6 +67,10 @@ function process_ajax(action, ajax)
 	{
 		populate_style_select(obj.styles);
 	}
+	if (obj.hasOwnProperty("og") && obj.hasOwnProperty("fg") && obj.hasOwnProperty("ibu") && obj.hasOwnProperty("abv"))
+	{
+		populate_current_properties(obj);
+	}
 }
 
 function populate_malt_select(malts)
@@ -128,6 +132,19 @@ function populate_style_ranges(style_id)
 	row.cells[1].innerHTML = style_array[style_id].ibu[0] + " - " + style_array[style_id].ibu[1];
 	var row = document.getElementById('abv_row');
 	row.cells[1].innerHTML = style_array[style_id].abv[0] + " - " + style_array[style_id].abv[1];
+}
+
+function populate_current_properties(obj)
+{
+	var table = document.getElementById('styles_table');
+	var row = document.getElementById('og_row');
+	row.cells[2].innerHTML = obj.og;
+	var row = document.getElementById('fg_row');
+	row.cells[2].innerHTML = obj.fg;
+	var row = document.getElementById('ibu_row');
+	row.cells[2].innerHTML = obj.ibu;
+	var row = document.getElementById('abv_row');
+	row.cells[2].innerHTML = obj.abv;
 }
 
 function table_add_malt(malt_id)
@@ -223,4 +240,9 @@ function save_recipe()
 	}
 
 	console.log(recipe);
+}
+
+function calculate()
+{
+	builder_ajax_send("calculate", "beer_id=" + beer_id);
 }
