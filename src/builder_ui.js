@@ -178,7 +178,11 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
-			builder_ajax_send_sync("addmalt", "beer_id=" + beer_id + "&ing_id=" + row.attributes['data-malt_id'].value + "&amount=" + row.cells[0].children[0].value);
+			builder_ajax_send("addmalt", 
+				"beer_id=" + beer_id + 
+				"&ing_id=" + row.attributes['data-malt_id'].value + 
+				"&amount=" + row.cells[0].children[0].value
+			);
 
 			recipe.malt_n += 1;
 			recipe.malts[recipe.malt_n-1] = { "id": row.attributes['data-malt_id'].value, "mass": row.cells[0].children[0].value};
@@ -190,6 +194,13 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
+			builder_ajax_send("addhops", 
+				"beer_id=" + beer_id + 
+				"&ing_id=" + row.attributes['data-hop_id'].value + 
+				"&amount=" + row.cells[0].children[0].value + 
+				"&time=" + row.cells[1].children[0].value
+			);
+
 			recipe.hops_n += 1;
 			recipe.hops[recipe.hops_n-1] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
 		}
@@ -200,6 +211,12 @@ function save_recipe()
 	{
 		for (i = 2; row = table.rows[i]; i++)
 		{
+			builder_ajax_send("addyeast", 
+				"beer_id=" + beer_id + 
+				"&ing_id=" + row.attributes['data-yeast_id'].value + 
+				"&amount=" + row.cells[0].children[0].value
+			);
+
 			recipe.yeast_n += 1;
 			recipe.yeasts[recipe.yeast_n-1] = { "id": row.attributes['data-yeast_id'].value, "mass": row.cells[0].children[0].value};
 		}

@@ -17,6 +17,8 @@ static sqlite3_stmt *qry;
 
 void clear_recipe(unsigned long int beer_id);
 void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity);
+void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time);
+void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity);
 
 #define ACTION_GETBEER		0x00
 #define ACTION_ADDBEER		0x01
@@ -59,7 +61,7 @@ int main(int argc, char **argv)
 				action = ACTION_ADDBEER;
 			if (strncmp(&argv[i][7], "addmalt", 7) == 0)
 				action = ACTION_ADDMALT;
-			if (strncmp(&argv[i][7], "addhop", 6) == 0)
+			if (strncmp(&argv[i][7], "addhops", 7) == 0)
 				action = ACTION_ADDHOP;
 			if (strncmp(&argv[i][7], "addyeast", 8) == 0)
 				action = ACTION_ADDYEAST;
@@ -109,6 +111,7 @@ int main(int argc, char **argv)
 	}
 
 	sqlite3_open(DATABASE, &db);
+	sqlite3_busy_timeout(db, 30000); // 30 seconds...
 
 	if (action == ACTION_GETBEER)
 		recipe_json(beer_id);
@@ -133,6 +136,12 @@ int main(int argc, char **argv)
 
 	if (action == ACTION_ADDMALT)
 		recipe_add_malt(beer_id, ing_id, amount);
+
+	if (action == ACTION_ADDHOP)
+		recipe_add_hops(beer_id, ing_id, amount, time);
+
+	if (action == ACTION_ADDYEAST)
+		recipe_add_yeast(beer_id, ing_id, amount);
 
 	sqlite3_close(db);
 }
@@ -167,6 +176,11 @@ int add_recipe(const char *name, const unsigned long int style_id, const char *a
 
 void clear_recipe(unsigned long int beer_id)
 {
+	sqlite3_prepare_v2(db, str("update recipe set malt_n = 0, hops_n = 0, yeast_n = 0 where id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
 	sqlite3_prepare_v2(db, str("delete from ingredients where recipe_id = ?;"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
@@ -188,6 +202,45 @@ void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, doubl
 	sqlite3_finalize(qry);
 
 	sqlite3_prepare_v2(db, str("update recipe set malt_n = malt_n+1 where id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	write(1, str("{}\n"));
+	return;
+}
+
+void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time)
+{
+	sqlite3_prepare_v2(db, str("insert into ingredients (recipe_id, ingredient_id, quantity, time, type) values (?,?,?,?,?);"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, hop_id);
+	sqlite3_bind_double(qry, 3, quantity);
+	sqlite3_bind_int(qry, 4, time);
+	sqlite3_bind_int(qry, 5, ING_TYPE_HOPS);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	sqlite3_prepare_v2(db, str("update recipe set hops_n = hops_n+1 where id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	write(1, str("{}\n"));
+	return;
+}
+
+void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity)
+{
+	sqlite3_prepare_v2(db, str("insert into ingredients (recipe_id, ingredient_id, quantity, type) values (?,?,?,?);"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, yeast_id);
+	sqlite3_bind_double(qry, 3, quantity);
+	sqlite3_bind_int(qry, 4, ING_TYPE_YEAST);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	sqlite3_prepare_v2(db, str("update recipe set yeast_n = yeast_n+1 where id = ?;"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
