@@ -180,6 +180,8 @@ function save_recipe()
 
 	builder_ajax_send_sync("clearbeer", "beer_id=" + beer_id);
 
+	builder_ajax_send("setstyle", "beer_id=" + beer_id + "&style_id=" + document.getElementById('style_select').value);
+
 	var recipe =
 	{
 		malt_n: 0,

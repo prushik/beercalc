@@ -1,5 +1,6 @@
 #define MENU_OPT_INDEX  0
 #define MENU_OPT_BUILDER 1
 #define MENU_OPT_SOURCE 2
+#define MENU_OPT_ABOUT 3
 
-#define MENU_OPTIONS 3
+#define MENU_OPTIONS 4

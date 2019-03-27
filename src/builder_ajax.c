@@ -19,6 +19,7 @@ void clear_recipe(unsigned long int beer_id);
 void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity);
 void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time);
 void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity);
+void recipe_set_style(unsigned long int beer_id, unsigned long int style_id);
 
 #define ACTION_GETBEER		0x00
 #define ACTION_ADDBEER		0x01
@@ -32,8 +33,9 @@ void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, dou
 #define ACTION_SETMALT		0x09
 #define ACTION_SETHOPS		0x0a
 #define ACTION_SETYEASTS	0x0b
-#define ACTION_CLEARBEER	0x0c
-#define ACTION_CALCULATE	0x0d
+#define ACTION_SETSTYLE		0x0c
+#define ACTION_CLEARBEER	0x0d
+#define ACTION_CALCULATE	0x0e
 
 int main(int argc, char **argv)
 {
@@ -79,6 +81,8 @@ int main(int argc, char **argv)
 				action = ACTION_SETHOPS;
 			if (strncmp(&argv[i][7], "setyeasts", 9) == 0)
 				action = ACTION_SETYEASTS;
+			if (strncmp(&argv[i][7], "setstyle", 8) == 0)
+				action = ACTION_SETSTYLE;
 			if (strncmp(&argv[i][7], "clearbeer", 9) == 0)
 				action = ACTION_CLEARBEER;
 			if (strncmp(&argv[i][7], "calculate", 9) == 0)
@@ -133,6 +137,9 @@ int main(int argc, char **argv)
 
 	if (action == ACTION_CLEARBEER)
 		clear_recipe(beer_id);
+
+	if (action == ACTION_SETSTYLE)
+		recipe_set_style(beer_id, style_id);
 
 	if (action == ACTION_ADDMALT)
 		recipe_add_malt(beer_id, ing_id, amount);
@@ -245,6 +252,18 @@ void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, dou
 
 	sqlite3_prepare_v2(db, str("update recipe set yeast_n = yeast_n+1 where id = ?;"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	write(1, str("{}\n"));
+	return;
+}
+
+void recipe_set_style(unsigned long int beer_id, unsigned long int style_id)
+{
+	sqlite3_prepare_v2(db, str("update recipe set style_id = ? where id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, style_id);
+	sqlite3_bind_int(qry, 2, beer_id);
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 

@@ -7,12 +7,14 @@
 static char menu_links[MENU_OPTIONS][46] = {
 	"index",
 	"builder_ui",
-	"http://prushik.dedyn.io:8083/prushik/beercalc"
+	"http://prushik.dedyn.io:8083/prushik/beercalc",
+	"about"
 };
 static char menu_names[MENU_OPTIONS][15] = {
 	"index",
 	"recipe builder",
-	"source"
+	"source",
+	"about"
 };
 
 void show_menu(unsigned int current)
