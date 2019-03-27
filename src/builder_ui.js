@@ -136,14 +136,15 @@ function populate_style_ranges(style_id)
 
 function populate_current_properties(obj)
 {
-	var table = document.getElementById('styles_table');
-	var row = document.getElementById('og_row');
+	var row;
+//	var table = document.getElementById('styles_table');
+	row = document.getElementById('og_row');
 	row.cells[2].innerHTML = obj.og;
-	var row = document.getElementById('fg_row');
+	row = document.getElementById('fg_row');
 	row.cells[2].innerHTML = obj.fg;
-	var row = document.getElementById('ibu_row');
+	row = document.getElementById('ibu_row');
 	row.cells[2].innerHTML = obj.ibu;
-	var row = document.getElementById('abv_row');
+	row = document.getElementById('abv_row');
 	row.cells[2].innerHTML = obj.abv;
 }
 
@@ -172,6 +173,79 @@ function table_rm_row(row_id)
 {
 	var row = document.getElementById(row_id);
 	row.parentNode.removeChild(row);
+}
+
+function evaluate_style()
+{
+	var i, j, row, og, fg, ibu, abv, style, score, component_score;
+	var candidates = [
+		{id: undefined, score: 0, in_range: 0},
+		{id: undefined, score: 0, in_range: 0},
+		{id: undefined, score: 0, in_range: 0},
+		{id: undefined, score: 0, in_range: 0},
+		{id: undefined, score: 0, in_range: 0},
+	]
+
+	row = document.getElementById('og_row');
+	og = row.cells[2].innerHTML;
+	row = document.getElementById('fg_row');
+	fg = row.cells[2].innerHTML;
+	row = document.getElementById('ibu_row');
+	ibu = row.cells[2].innerHTML;
+	row = document.getElementById('abv_row');
+	abv = row.cells[2].innerHTML;
+
+	for (row = 0; style = style_array[row]; row++)
+	{
+		score = 100; // start out with score of 100
+
+		if (og >= style.og[0] && og <= style.og[1])
+			component_score = 50 / (style.og[1] - style.og[0]); // favor styles that have tighter ranges
+		else
+			component_score = (og < style.og[0]) ? og - style.og[0] : style.og[1] - og; // if out of range, how far?
+
+		score += component_score * 1; // add weighted component score to total score
+
+		if (fg >= style.fg[0] && fg <= style.fg[1])
+			component_score = 50 / (style.fg[1] - style.fg[0]);
+		else
+			component_score = (fg < style.fg[0]) ? fg - style.fg[0] : style.fg[1] - fg;
+
+		score += component_score * 1;
+
+		if (ibu >= style.ibu[0] && ibu <= style.ibu[1])
+			component_score = 50 / (style.ibu[1] - style.ibu[0]);
+		else
+			component_score = (ibu < style.ibu[0]) ? ibu - style.ibu[0] : style.ibu[1] - ibu;
+
+		score += component_score * 1;
+
+		if (abv >= style.abv[0] && abv <= style.abv[1])
+			component_score = 50 / (style.abv[1] - style.abv[0]);
+		else
+			component_score = (abv < style.abv[0]) ? abv - style.abv[0] : style.abv[1] - abv;
+
+		score += component_score * 1;
+
+		for (i = 0; i < 5; i++)
+		{
+			if (score > candidates[i].score)
+			{
+				for (j = 4; j > i+1; j--)
+				{
+					candidates[j].id = candidates[j-1].id;
+					candidates[j].score = candidates[j-1].id;
+				}
+				candidates[i].id = style.id;
+				candidates[i].score = score;
+				break;
+			}
+		}
+	}
+
+	console.log(candidates);
+	document.getElementById('style_select').value = candidates[0].id;
+	populate_style_ranges(candidates[0].id);
 }
 
 function save_recipe()
