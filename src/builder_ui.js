@@ -71,6 +71,16 @@ function process_ajax(action, ajax)
 	{
 		populate_current_properties(obj);
 	}
+	if (obj.hasOwnProperty("style_id"))
+	{
+		document.getElementById('style_select').value = obj.style_id;
+		populate_style_ranges(obj.style_id);
+	}
+	if (obj.hasOwnProperty("ingredients"))
+	{
+		document.getElementById('beername').innerText = obj.name;
+		populate_recipe(obj);
+	}
 }
 
 function populate_malt_select(malts)
@@ -111,6 +121,10 @@ function populate_yeast_select(yeasts)
 
 function populate_style_select(styles)
 {
+	if (style_array.length > 0) {
+		return;
+	}
+
 	var i, style, opts;
 	opts = "<option>Select Style</option>";
 	for (i = 0; style = styles[i]; i++)
@@ -148,24 +162,38 @@ function populate_current_properties(obj)
 	row.cells[2].innerHTML = obj.abv;
 }
 
-function table_add_malt(malt_id)
+function populate_recipe(obj)
+{
+	var i, ing;
+	for (i = 0; ing = obj.ingredients.malts[i]; i++) {
+		table_add_malt(ing.id, ing.weight)
+	}
+	for (i = 0; ing = obj.ingredients.hops[i]; i++) {
+		table_add_hop(ing.id, ing.weight, ing.time)
+	}
+	for (i = 0; ing = obj.ingredients.yeasts[i]; i++) {
+		table_add_yeast(ing.id, ing.amount)
+	}
+}
+
+function table_add_malt(malt_id, qty = 0)
 {
 	var table = document.getElementById('malt_table');
-	table.innerHTML += "<tr id=\"malt_" + malt_n + "\" data-malt_id=\"" + malt_id + "\"><td><input type=\"number\" value=\"0\"></input> lbs</td><td>" + malt_array[malt_id].name + "</td><td>" + malt_array[malt_id].potential + "</td><td>" + malt_array[malt_id].mcu + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('malt_" + malt_n + "'); malt_n += -1;\"></input></td></tr>";
+	table.innerHTML += "<tr id=\"malt_" + malt_n + "\" data-malt_id=\"" + malt_id + "\"><td><input type=\"number\" value=\"" + qty + "\"></input> lbs</td><td>" + malt_array[malt_id].name + "</td><td>" + malt_array[malt_id].potential + "</td><td>" + malt_array[malt_id].mcu + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('malt_" + malt_n + "'); malt_n += -1;\"></input></td></tr>";
 	malt_n += 1;
 }
 
-function table_add_hop(hop_id)
+function table_add_hop(hop_id, qty = 0, time = 0)
 {
 	var table = document.getElementById('hops_table');
-	table.innerHTML += "<tr id=\"hops_" + hops_n + "\" data-hop_id=\"" + hop_id + "\"><td><input type=\"number\" value=\"0\"></input> oz</td><td><input type=\"number\" value=\"0\"></input> min</td><td>" + hops_array[hop_id].name + "</td><td>" + hops_array[hop_id].alpha + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('hops_" + hops_n + "'); hops_n += -1;\"></input></td></tr>";
+	table.innerHTML += "<tr id=\"hops_" + hops_n + "\" data-hop_id=\"" + hop_id + "\"><td><input type=\"number\" value=\"" + qty + "\"></input> oz</td><td><input type=\"number\" value=\"" + time + "\"></input> min</td><td>" + hops_array[hop_id].name + "</td><td>" + hops_array[hop_id].alpha + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('hops_" + hops_n + "'); hops_n += -1;\"></input></td></tr>";
 	hops_n += 1;
 }
 
-function table_add_yeast(yeast_id)
+function table_add_yeast(yeast_id, qty = 1)
 {
 	var table = document.getElementById('yeast_table');
-	table.innerHTML += "<tr id=\"yeast_" + yeast_n + "\" data-yeast_id=\"" + yeast_id + "\"><td><input type=\"number\" value=\"1\"></input> pkg</td><td>" + yeast_array[yeast_id].name + "</td><td>" + yeast_array[yeast_id].attenuation + "</td><td>" + (["none","very low","low","mid-low","medium","mid-high","high","extreme"])[yeast_array[yeast_id].flocculation] + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('yeast_" + yeast_n + "'); yeast_n += -1;\"></input></td></tr>";
+	table.innerHTML += "<tr id=\"yeast_" + yeast_n + "\" data-yeast_id=\"" + yeast_id + "\"><td><input type=\"number\" value=\"" + qty + "\"></input> pkg</td><td>" + yeast_array[yeast_id].name + "</td><td>" + yeast_array[yeast_id].attenuation + "</td><td>" + (["none","very low","low","mid-low","medium","mid-high","high","extreme"])[yeast_array[yeast_id].flocculation] + "</td><td><input type=\"button\" value=\" - \" onclick=\"table_rm_row('yeast_" + yeast_n + "'); yeast_n += -1;\"></input></td></tr>";
 	yeast_n += 1;
 }
 
@@ -200,28 +228,28 @@ function evaluate_style()
 		score = 100; // start out with score of 100
 
 		if (og >= style.og[0] && og <= style.og[1])
-			component_score = 50 / (style.og[1] - style.og[0]); // favor styles that have tighter ranges
+			component_score = 1.5 / (style.og[1] - style.og[0]); // favor styles that have tighter ranges
 		else
 			component_score = (og < style.og[0]) ? og - style.og[0] : style.og[1] - og; // if out of range, how far?
 
 		score += component_score * 1; // add weighted component score to total score
 
 		if (fg >= style.fg[0] && fg <= style.fg[1])
-			component_score = 50 / (style.fg[1] - style.fg[0]);
+			component_score = 1.5 / (style.fg[1] - style.fg[0]);
 		else
 			component_score = (fg < style.fg[0]) ? fg - style.fg[0] : style.fg[1] - fg;
 
 		score += component_score * 1;
 
 		if (ibu >= style.ibu[0] && ibu <= style.ibu[1])
-			component_score = 50 / (style.ibu[1] - style.ibu[0]);
+			component_score = 75 / (style.ibu[1] - style.ibu[0]);
 		else
 			component_score = (ibu < style.ibu[0]) ? ibu - style.ibu[0] : style.ibu[1] - ibu;
 
 		score += component_score * 1;
 
 		if (abv >= style.abv[0] && abv <= style.abv[1])
-			component_score = 50 / (style.abv[1] - style.abv[0]);
+			component_score = 8 / (style.abv[1] - style.abv[0]);
 		else
 			component_score = (abv < style.abv[0]) ? abv - style.abv[0] : style.abv[1] - abv;
 
@@ -321,4 +349,14 @@ function save_recipe()
 function calculate()
 {
 	builder_ajax_send("calculate", "beer_id=" + beer_id);
+}
+
+function load_recipe(beer_id)
+{
+	builder_ajax_send_sync("getmalt", "");
+	builder_ajax_send_sync("gethops", "");
+	builder_ajax_send_sync("getyeasts", "");
+	builder_ajax_send_sync("getstyles", "");
+
+	builder_ajax_send("editbeer", "beer_id=" + beer_id);
 }

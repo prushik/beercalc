@@ -6,6 +6,22 @@
 
 int main(int argc, char **argv)
 {
+	int i;
+	int preload = 0;
+	char *recipe_id;
+
+	for (i=1; i<argc; i++)
+	{
+		if (strncmp(argv[i], "edit", 4) == 0)
+		{
+			preload = 1;
+		}
+		if (strncmp(argv[i], "beer_id", 7) == 0)
+		{
+			recipe_id = &argv[i][8];
+		}
+	}
+	
 	write(1, str(
 		"<html>\n"
 		"<head>\n"
@@ -15,7 +31,22 @@ int main(int argc, char **argv)
 		"<script src=\"include/builder_ui.js\">\n"
 		"</script>\n"
 		"</head>\n"
-		"<body>\n"
+		"<body"
+	));
+
+	if (preload) {
+		write(1, str(
+			" onload=\"load_recipe("
+		));
+		write(1, recipe_id, strlen(recipe_id));
+		write(1, str(
+			");\""
+		));
+		
+	}
+
+	write(1, str(
+		">\n"
 	));
 	show_menu(0);
 	write(1, str(

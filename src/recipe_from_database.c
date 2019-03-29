@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-	int i;
+	int i, j;
 	unsigned long int beer_id = 0;
 	struct recipe beer = {0};
 	char buffer[64];
@@ -22,6 +22,26 @@ int main(int argc, char **argv)
 		if (strncmp(argv[i], "beer_id", 7) == 0)
 		{
 			beer_id = strtoul(&argv[i][8], NULL, 0);
+		}
+		if (strncmp(argv[i], "edit", 4) == 0)
+		{
+			write(1, str(
+				"<html>\n"
+				"<head>\n"
+				"<title>beercalc</title>\n"
+				"<script>window.location = \"builder_ui?"
+			));
+			for (j=1; j<argc; j++)
+			{
+				write(1, argv[j], strlen(argv[j]));
+				write(1, "&", 1);
+			}
+			write(1, str("\";</script>"
+				"</head>\n"
+				"<body>"
+				"</body>"
+				"</html>"
+			));
 		}
 	}
 

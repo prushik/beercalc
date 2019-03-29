@@ -36,6 +36,7 @@ void recipe_set_style(unsigned long int beer_id, unsigned long int style_id);
 #define ACTION_SETSTYLE		0x0c
 #define ACTION_CLEARBEER	0x0d
 #define ACTION_CALCULATE	0x0e
+#define ACTION_EDITBEER		0x0f
 
 int main(int argc, char **argv)
 {
@@ -87,6 +88,8 @@ int main(int argc, char **argv)
 				action = ACTION_CLEARBEER;
 			if (strncmp(&argv[i][7], "calculate", 9) == 0)
 				action = ACTION_CALCULATE;
+			if (strncmp(&argv[i][7], "editbeer", 8) == 0)
+				action = ACTION_EDITBEER;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -152,6 +155,9 @@ int main(int argc, char **argv)
 
 	if (action == ACTION_CALCULATE)
 		calculate_json(beer_id);
+
+	if (action == ACTION_EDITBEER)
+		beer_json(beer_id);
 
 	sqlite3_close(db);
 }
@@ -606,7 +612,7 @@ int recipe_json(unsigned long int beer_id)
 		write(1, buffer, buf_len);
 		write(1, str("\",\n"));
 
-		write(1, str("			\"time\" : \""));
+		write(1, str("			\"alpha\" : \""));
 		sprintf(buffer, "%.1lf%n", beer.hops[i].alpha, &buf_len);
 		write(1, buffer, buf_len);
 		write(1, str("\"\n"));
@@ -755,4 +761,174 @@ int calculate_json(unsigned long int beer_id)
 	));
 
 	return 1;
+}
+
+int beer_json(int beer_id) {
+	struct recipe beer;
+	char buffer[32];
+	int i;
+
+	sqlite3_prepare_v2(db, str("select name, style_id, volume, malt_n, hops_n, yeast_n, id from recipe where id = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		strcpy(beer.name, sqlite3_column_text(qry, 0));
+		strcpy(beer.author, sqlite3_column_text(qry, 1));
+		beer.vol = sqlite3_column_double(qry, 2);
+		beer.malt_n = sqlite3_column_int(qry, 3);
+		beer.hop_n = sqlite3_column_int(qry, 4);
+		beer.yeast_n = sqlite3_column_int(qry, 5);
+		if (beer_id != sqlite3_column_int(qry, 6))
+		{
+			write(1, str("{\"Error\": \"No recipe with that number found. Something is wrong.\"}"));
+		}
+	}
+	sqlite3_finalize(qry);
+
+	beer.malts = malloc(beer.malt_n * sizeof(struct malt));
+	beer.hops = malloc(beer.hop_n * sizeof(struct hop));
+	beer.yeasts = malloc(beer.yeast_n * sizeof(struct yeast));
+
+
+	// Get the malts
+	sqlite3_prepare_v2(db, str("select ingredient_id, malts.pts_potential, malts.mcu, ingredients.quantity, ingredients.adjustment from ingredients left join malts on malts.id = ingredients.ingredient_id where recipe_id = ? and ingredients.type = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, ING_TYPE_MALT);
+
+	i = 0;
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		strcpy(beer.malts[i].name, sqlite3_column_text(qry, 0));
+		beer.malts[i].pts_potential = sqlite3_column_double(qry, 1);
+		beer.malts[i].mcu = sqlite3_column_double(qry, 2);
+		beer.malts[i].mass = sqlite3_column_double(qry, 3);
+		i++;
+	}
+	sqlite3_finalize(qry);
+
+	// Get the hops
+	sqlite3_prepare_v2(db, str("select ingredient_id, hops.alpha, hops.type, ingredients.quantity, ingredients.time, ingredients.adjustment from ingredients left join hops on hops.id = ingredients.ingredient_id where recipe_id = ? and ingredients.type = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, ING_TYPE_HOPS);
+
+	i = 0;
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		strcpy(beer.hops[i].name, sqlite3_column_text(qry, 0));
+		beer.hops[i].alpha = sqlite3_column_double(qry, 1);
+//		beer.hops[i].type = sqlite3_column_int(qry, 2);
+		beer.hops[i].mass = sqlite3_column_double(qry, 3);
+		beer.hops[i].time = sqlite3_column_int(qry, 4);
+		i++;
+	}
+	sqlite3_finalize(qry);
+
+	// Get the hops
+	sqlite3_prepare_v2(db, str("select ingredient_id, yeasts.attenuation, ingredients.quantity, ingredients.time, ingredients.adjustment from ingredients left join yeasts on yeasts.id = ingredients.ingredient_id where recipe_id = ? and ingredients.type = ?;"), &qry, NULL);
+	sqlite3_bind_int(qry, 1, beer_id);
+	sqlite3_bind_int(qry, 2, ING_TYPE_YEAST);
+
+	i = 0;
+	while (sqlite3_step(qry) != SQLITE_DONE)
+	{
+		strcpy(beer.yeasts[i].name, sqlite3_column_text(qry, 0));
+		beer.yeasts[i].attenuation = sqlite3_column_double(qry, 1);
+		beer.yeasts[i].amount = sqlite3_column_double(qry, 2);
+		beer.yeasts[i].time = sqlite3_column_int(qry, 3);
+		i++;
+	}
+	sqlite3_finalize(qry);
+
+	calculate_recipe(&beer);
+
+	write(1, str(
+		"{\n"
+	));
+	write(1, str("	\"beer_id\" : \""));
+	sprintf(buffer, "%d%n", beer_id, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"name\" : \""));
+	write(1, beer.name, strlen(beer.name));
+	write(1, str("\",\n"));
+
+	write(1, str("	\"style_id\" : \""));
+	write(1, beer.author, strlen(beer.author));
+	write(1, str("\",\n"));
+
+	write(1, str("	\"og\" : \""));
+	sprintf(buffer, "%.4lf%n", beer.og, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"fg\": \""));
+	sprintf(buffer, "%.4lf%n", beer.fg, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"abv\": \""));
+	sprintf(buffer, "%.1lf%n", beer.abv, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"ibu\": \""));
+	sprintf(buffer, "%.1lf%n", beer.ibu, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"ingredients\": {\n"));
+	write(1, str("		\"malts\": [\n			"));
+	for (i=0; i < beer.malt_n; i++)
+	{
+		if (i) write(1, str(", "));
+		write(1, str("{\n				\"id\" : \""));
+		write(1, beer.malts[i].name, strlen(beer.malts[i].name));
+		write(1, str("\",\n"));
+
+		write(1, str("				\"weight\" : \""));
+		sprintf(buffer, "%.2lf%n", beer.malts[i].mass, &buf_len);
+		write(1, buffer, buf_len);
+		write(1, str("\"\n			}"));
+	}
+	write(1, str("\n		],\n"));
+	write(1, str("		\"hops\": [\n			"));
+	for (i=0; i < beer.hop_n; i++)
+	{
+		if (i) write(1, str(", "));
+		write(1, str("{\n				\"id\" : \""));
+		write(1, beer.hops[i].name, strlen(beer.hops[i].name));
+		write(1, str("\",\n"));
+
+		write(1, str("				\"weight\" : \""));
+		sprintf(buffer, "%.2lf%n", beer.hops[i].mass, &buf_len);
+		write(1, buffer, buf_len);
+		write(1, str("\",\n"));
+
+		write(1, str("				\"time\" : \""));
+		sprintf(buffer, "%d%n", beer.hops[i].time, &buf_len);
+		write(1, buffer, buf_len);
+		write(1, str("\"\n			}"));
+	}
+	write(1, str("\n		],\n"));
+	write(1, str("		\"yeasts\": [\n			"));
+	for (i=0; i < beer.yeast_n; i++)
+	{
+		if (i) write(1, str(", "));
+		write(1, str("{\n				\"id\" : \""));
+		write(1, beer.yeasts[i].name, strlen(beer.yeasts[i].name));
+		write(1, str("\",\n"));
+
+		write(1, str("				\"amount\" : \""));
+		sprintf(buffer, "%.2lf%n", beer.yeasts[i].amount, &buf_len);
+		write(1, buffer, buf_len);
+		write(1, str("\"\n			}"));
+	}
+	write(1, str("\n		]\n"));
+	write(1, str("	}\n"));
+
+	write(1, str(
+		"}\n"
+	));
 }

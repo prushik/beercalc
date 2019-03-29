@@ -49,7 +49,9 @@ int main(int argc, char **argv)
 	sqlite3_finalize(qry);
 
 	write(1, str(
-		"</select><input type=\"submit\" value=\"brew\">\n"
+		"</select>"
+		"<input type=\"submit\" name=\"edit\" value=\"edit\">"
+		"<input type=\"submit\" name=\"brew\" value=\"brew\">\n"
 	));
 
 	write(1, str(
