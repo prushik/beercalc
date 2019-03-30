@@ -5,6 +5,7 @@
 #include "beer.h"
 #include "ibu.h"
 #include "mash.h"
+#include "srm.h"
 #include "yeast.h"
 #include <sqlite3.h>
 
@@ -420,7 +421,7 @@ int styles_json()
 		write(1, str(", "));
 		strcpy(buffer, sqlite3_column_text(qry, 6));
 		write(1, buffer, strlen(buffer));
-		write(1, str("], \"color\": ["));
+		write(1, str("], \"srm\": ["));
 		strcpy(buffer, sqlite3_column_text(qry, 7));
 		write(1, buffer, strlen(buffer));
 		write(1, str(", "));
@@ -755,6 +756,16 @@ int calculate_json(unsigned long int beer_id)
 	write(1, str("	\"ibu\": \""));
 	sprintf(buffer, "%.1lf%n", beer.ibu, &buf_len);
 	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"srm\": \""));
+	sprintf(buffer, "%.1lf%n", beer.srm, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"rgb\": \""));
+	sprintf(buffer, "%06x%n", srm_to_rgb(beer.srm), &buf_len);
+	write(1, buffer, buf_len);
 	write(1, str("\"\n"));
 	write(1, str(
 		"}\n"
@@ -877,6 +888,17 @@ int beer_json(int beer_id) {
 	sprintf(buffer, "%.1lf%n", beer.ibu, &buf_len);
 	write(1, buffer, buf_len);
 	write(1, str("\",\n"));
+
+	write(1, str("	\"srm\": \""));
+	sprintf(buffer, "%.1lf%n", beer.srm, &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
+	write(1, str("	\"rgb\": \""));
+	sprintf(buffer, "%06x%n", srm_to_rgb(beer.srm), &buf_len);
+	write(1, buffer, buf_len);
+	write(1, str("\",\n"));
+
 
 	write(1, str("	\"ingredients\": {\n"));
 	write(1, str("		\"malts\": [\n			"));

@@ -1,4 +1,4 @@
-COMMON_SRC = src/menu.c src/recipe.c src/mash.c src/ibu.c src/yeast.c
+COMMON_SRC = src/menu.c src/recipe.c src/mash.c src/ibu.c src/yeast.c src/srm.c
 DEBUG ?= -DDEBUG -g -Og
 CFLAGS ?= -Wno-implicit-function-declaration -I./include
 LDFLAGS ?= -lm -lsqlite3

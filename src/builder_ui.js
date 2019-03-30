@@ -67,7 +67,7 @@ function process_ajax(action, ajax)
 	{
 		populate_style_select(obj.styles);
 	}
-	if (obj.hasOwnProperty("og") && obj.hasOwnProperty("fg") && obj.hasOwnProperty("ibu") && obj.hasOwnProperty("abv"))
+	if (obj.hasOwnProperty("og") && obj.hasOwnProperty("fg") && obj.hasOwnProperty("ibu") && obj.hasOwnProperty("abv") && obj.hasOwnProperty("srm"))
 	{
 		populate_current_properties(obj);
 	}
@@ -146,6 +146,8 @@ function populate_style_ranges(style_id)
 	row.cells[1].innerHTML = style_array[style_id].ibu[0] + " - " + style_array[style_id].ibu[1];
 	var row = document.getElementById('abv_row');
 	row.cells[1].innerHTML = style_array[style_id].abv[0] + " - " + style_array[style_id].abv[1];
+	var row = document.getElementById('srm_row');
+	row.cells[1].innerHTML = style_array[style_id].srm[0] + " - " + style_array[style_id].srm[1];
 }
 
 function populate_current_properties(obj)
@@ -160,6 +162,10 @@ function populate_current_properties(obj)
 	row.cells[2].innerHTML = obj.ibu;
 	row = document.getElementById('abv_row');
 	row.cells[2].innerHTML = obj.abv;
+	row = document.getElementById('srm_row');
+	row.cells[2].innerHTML = obj.srm;
+	row.cells[2].style.backgroundColor = "#" + obj.rgb;
+	row.cells[2].style.color = "#" + (obj.srm < 18 ? "000000" : "FFFFFF");
 }
 
 function populate_recipe(obj)
@@ -205,7 +211,7 @@ function table_rm_row(row_id)
 
 function evaluate_style()
 {
-	var i, j, row, og, fg, ibu, abv, style, score, component_score;
+	var i, j, row, og, fg, ibu, abv, srm, style, score, component_score;
 	var candidates = [
 		{id: undefined, score: 0, in_range: 0},
 		{id: undefined, score: 0, in_range: 0},
@@ -222,6 +228,8 @@ function evaluate_style()
 	ibu = row.cells[2].innerHTML;
 	row = document.getElementById('abv_row');
 	abv = row.cells[2].innerHTML;
+	row = document.getElementById('srm_row');
+	srm = row.cells[2].innerHTML;
 
 	for (row = 0; style = style_array[row]; row++)
 	{
@@ -252,6 +260,13 @@ function evaluate_style()
 			component_score = 8 / (style.abv[1] - style.abv[0]);
 		else
 			component_score = (abv < style.abv[0]) ? abv - style.abv[0] : style.abv[1] - abv;
+
+		score += component_score * 1;
+
+		if (srm >= style.srm[0] && srm <= style.srm[1])
+			component_score = 20 / (style.srm[1] - style.srm[0]);
+		else
+			component_score = (srm < style.srm[0]) ? srm - style.srm[0] : style.srm[1] - srm;
 
 		score += component_score * 1;
 

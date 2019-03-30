@@ -84,17 +84,20 @@ insert into ingredient_types values('hops',1);
 insert into ingredient_types values('yeast',2);
 
 insert into malts values('pilsner malt', 1.034, 34, 1, 0);
-insert into malts values('2-row pale malt', 1.037, 37, 2, 1);
-insert into malts values('6-row pale malt', 1.033, 33, 2, 2);
+insert into malts values('2-row pale malt', 1.037, 37, 1.8, 1);
+insert into malts values('6-row pale malt', 1.035, 35, 1.8, 2);
 insert into malts values('maris otter malt', 1.038, 38, 3, 3);
 insert into malts values('red caramel malt', 1.035, 35, 20, 4);
 insert into malts values('crystal 45l malt', 1.034, 34, 45, 5);
 insert into malts values('biscuit malt', 1.030, 30, 45, 6);
-insert into malts values('black patent malt', 1.022, 22, 45, 7);
+insert into malts values('black patent malt', 1.022, 22, 550, 7);
 insert into malts values('special b malt', 1.022, 22, 45, 8);
 insert into malts values('peated malt', 1.037, 37, 1.5, 9);
 insert into malts values('flaked maize', 1.040, 40, 1, 10);
-insert into malts values('molasses', 1.036, 36, 1, 11);
+insert into malts values('molasses', 1.036, 36, 80, 11);
+insert into malts values('munich malt', 1.034, 34, 10, 12);
+insert into malts values('vienna malt', 1.035, 35, 3.75, 13);
+insert into malts values('honey', 1.032, 32, 1, 14);
 
 insert into hops values('tettnanger',3.7,0,0);
 insert into hops values('glacier',5.8,0,1);
