@@ -106,8 +106,22 @@ insert into hops values('wye viking',9.0,0,3);
 insert into hops values('liberty',4.5,0,4);
 insert into hops values('magnum',14.5,0,5);
 insert into hops values('ultra',3,0,6);
-insert into hops values('kent goldings',5,0,7);
-insert into hops values('cascade',5.5,0,7);
+insert into hops values('kent golding',5,0,7);
+insert into hops values('cascade',5.5,0,8);
+insert into hops values('centennial',10.5,0,9);
+insert into hops values('citra',13,0,10);
+insert into hops values('columbus',15.5,0,11);
+insert into hops values('mosaic',12.5,0,12);
+insert into hops values('saaz (czech)',3.5,0,13);
+insert into hops values('simcoe',13,0,14);
+insert into hops values('hallertau',4,0,15);
+insert into hops values('saaz (usa)',4,0,16);
+insert into hops values('spalt',4.1,0,17);
+insert into hops values('amarillo',9.5,0,18);
+insert into hops values('willamette',5.25,0,19);
+insert into hops values('fuggle',4.3,0,20);
+insert into hops values('nugget',14.75,0,21);
+insert into hops values('ahtanum',6,0,22);
 
 insert into yeasts values('american ale 1056', 75, 4, 66, 0);
 insert into yeasts values('american ale II 1272', 74, 5, 66, 1);
@@ -121,7 +135,7 @@ COMMIT;
 BEGIN TRANSACTION;
 
 -- example recipes
-insert into recipe values ("tastes like scotch ale","philip rushik",22,5,5.5,4,2,1,0);
+insert into recipe values ("scotch ale","philip rushik",22,5,5.5,4,2,1,0);
 
 insert into ingredients values (0,1,12,60,null,0,0);
 insert into ingredients values (0,9,2,60,null,0,1);
