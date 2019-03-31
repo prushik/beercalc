@@ -211,7 +211,7 @@ function table_rm_row(row_id)
 
 function evaluate_style()
 {
-	var i, j, row, og, fg, ibu, abv, srm, style, score, component_score;
+	var i, j, row, og, fg, ibu, abv, srm, style, score, component_score, popup_html;
 	var candidates = [
 		{id: undefined, score: 0, in_range: 0},
 		{id: undefined, score: 0, in_range: 0},
@@ -286,8 +286,17 @@ function evaluate_style()
 		}
 	}
 
-	console.log(candidates);
-	document.getElementById('style_select').value = candidates[0].id;
+	popup_html = "Select from the following best matching candidate styles:<br>";
+	for (i = 0; i < 5; i++)
+	{
+		if (candidates[i].id == undefined)
+			break;
+		popup_html += "<input type=\"button\" value=\"" + style_array[candidates[i].id].name + "\" onclick=\"document.getElementById('style_select').value = " + candidates[i].id + "; populate_style_ranges(" + candidates[i].id + "); document.getElementById('mask').style.display = 'none';\"></input> <sup>score: " + parseInt(candidates[i].score) + "</sup><br>\n";
+	}
+	popup_html += "<br><input type=\"button\" value=\"cancel\" onclick=\"document.getElementById('mask').style.display = 'none';\"></input><br><br>\n<sub>note: these styles were selected based solely on abv, ibu, color, and gravity ranges. Many styles have unique characteristics not captured in these values. Recipes may need to be adjusted to match a chosen style, even if it is suggested here.<br>styles are ranked by a scoring system, with closer matches and smaller ranges scoring higher than wide ranged styles and poor matches.</sub>\n";
+	document.getElementById('mask').style.display = "inline";
+	document.getElementById('mask').innerHTML = "<div class=\"popup\">" + popup_html + "</div>";
+//	document.getElementById('style_select').value = candidates[0].id;
 	populate_style_ranges(candidates[0].id);
 }
 

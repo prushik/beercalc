@@ -90,7 +90,7 @@ insert into malts values('maris otter malt', 1.038, 38, 3, 3);
 insert into malts values('red caramel malt', 1.035, 35, 20, 4);
 insert into malts values('crystal 45l malt', 1.034, 34, 45, 5);
 insert into malts values('biscuit malt', 1.030, 30, 45, 6);
-insert into malts values('black patent malt', 1.022, 22, 550, 7);
+insert into malts values('black patent malt', 1.022, 22, 500, 7);
 insert into malts values('special b malt', 1.022, 22, 45, 8);
 insert into malts values('peated malt', 1.037, 37, 1.5, 9);
 insert into malts values('flaked maize', 1.040, 40, 1, 10);
@@ -107,6 +107,7 @@ insert into hops values('liberty',4.5,0,4);
 insert into hops values('magnum',14.5,0,5);
 insert into hops values('ultra',3,0,6);
 insert into hops values('kent goldings',5,0,7);
+insert into hops values('cascade',5.5,0,7);
 
 insert into yeasts values('american ale 1056', 75, 4, 66, 0);
 insert into yeasts values('american ale II 1272', 74, 5, 66, 1);

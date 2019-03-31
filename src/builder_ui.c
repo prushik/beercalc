@@ -117,7 +117,9 @@ int main(int argc, char **argv)
 		"</tbody>"
 		"</table>\n"
 		"</div>\n"
-		"</div>"
-		"</div></body></html>"
+		"</div>\n"
+		"</div>\n"
+		"<div id=\"mask\" class=\"mask\"></div>\n"
+		"</body></html>"
 	));
 }
