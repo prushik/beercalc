@@ -146,6 +146,16 @@ insert into yeasts values('american ale wlp060', 76, 5, 70, 2);
 insert into yeasts values('liberty bell ale m36', 76, 6, 68, 3);
 insert into yeasts values('london fog ale wlp066', 68, 6, 68, 4);
 insert into yeasts values('scottish ale 1728', 76, 7, 70, 5);
+insert into yeasts values('california ale wlp001', 76, 4, 70.5, 6);
+insert into yeasts values('english ale wlp002', 66, 7, 66.5, 7);
+insert into yeasts values('irish ale wlp004', 71, 5, 66.5, 8);
+insert into yeasts values('british ale wlp005', 70, 6, 67.5, 9);
+insert into yeasts values('dry english ale wlp007', 75, 5, 67.5, 10);
+insert into yeasts values('east coast ale wlp008', 72.5, 3, 70.5, 11);
+insert into yeasts values('london ale wlp013', 71, 4, 68.5, 12);
+insert into yeasts values('burton ale wlp023', 72, 4, 70.5, 13);
+insert into yeasts values('edinburg scottish ale wlp028', 72.5, 4, 67.5, 14);
+insert into yeasts values('german/kolsch ale wlp029', 74.5, 4, 67, 15);
 
 COMMIT;
 
