@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 		"<br>"
 		"<font class=\"subtitle beername\" contenteditable=\"true\" id=\"beername\"></font> <font class=\"subtitle\" id=\"beerid\"></font><br>\n"
 //		"<input type=\"button\" onclick=\"builder_ajax_send('getbeer', 'beer_id=2');\" value=\"get\" /><br>\n"
-		"<div class=\"locked\"><table class=\"ing_table\" style=\"width:75%;\"><tbody><tr><td>ABV: </td><td>IBU: </td><td>SRM: </td></tr></tbody></table></div>"
+//		"<div class=\"locked\"><table class=\"ing_table\" style=\"width:75%;\"><tbody><tr><td>ABV: </td><td>IBU: </td><td>SRM: </td></tr></tbody></table></div>"
 		"<input type=\"button\" style=\"border-radius:8px; width:75%;\" onclick=\"builder_ajax_send('addbeer', 'name=' + document.getElementById('beername').innerText + '&author=beercalc');\" value=\"create beer\" id=\"save_create\" /><br>\n"
 		"<div class=\"locked\" id=\"editor\">\n"
 
@@ -86,6 +86,8 @@ int main(int argc, char **argv)
 		"</tr>\n"
 		"</tbody>"
 		"</table>\n"
+		"<br>"
+		"<div style=\"margin: auto; border: 1px solid #000000; border-radius: 0px 0px 8px 8px; width:32px; height:64px;\" id=\"srm_example\"><div style=\"height: 10%; width: 100%; margin: 0px; background-color:#e0d0b0;\"></div></div>"
 		"</div>"
 
 		"<div id=\"malts\">"

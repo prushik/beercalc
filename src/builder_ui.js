@@ -164,8 +164,9 @@ function populate_current_properties(obj)
 	row.cells[2].innerHTML = obj.abv;
 	row = document.getElementById('srm_row');
 	row.cells[2].innerHTML = obj.srm;
-	row.cells[2].style.backgroundColor = "#" + obj.rgb;
-	row.cells[2].style.color = "#" + (obj.srm < 18 ? "000000" : "FFFFFF");
+	row = document.getElementById('srm_example');
+	row.style.backgroundColor = "#" + obj.rgb;
+	row.style.color = "#" + (obj.srm < 18 ? "000000" : "FFFFFF");
 }
 
 function populate_recipe(obj)
