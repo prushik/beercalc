@@ -176,6 +176,18 @@ insert into yeasts values('abbey ale wlp530', 77.5, 5, 69, 32);
 insert into yeasts values('abbey iv ale wlp540', 78, 4, 69, 33);
 insert into yeasts values('belgian strong ale wlp545', 81, 4, 69, 34);
 insert into yeasts values('belgian ale wlp550', 81, 4, 73, 35);
+insert into yeasts values('belgian saison i ale wlp565', 70, 4, 71.5, 36);
+insert into yeasts values('belgian saison ii ale wlp566', 81.5, 4, 73, 37);
+insert into yeasts values('belgian-style saison ale wlp568', 75, 4, 75, 38);
+insert into yeasts values('belgian golden ale wlp570', 75, 2, 70.5, 39);
+insert into yeasts values('belgian-style ale wlp575', 77, 4, 71.5, 40);
+insert into yeasts values('french saison ale wlp590', 76.5, 4, 72, 41);
+insert into yeasts values('saccharomyces "bruxellensis" trois wlp644', 85, 2, 77.5, 42);
+insert into yeasts values('sake wlp705', 90, 4, 85, 43);
+insert into yeasts values('champagne wlp715', 87.5, 2, 77.5, 44);
+insert into yeasts values('french white wine wlp735', 90, 2, 75, 45);
+insert into yeasts values('merlot read wine wlp740', 90, 2, 75, 46);
+insert into yeasts values('english cider wlp775', 90, 4, 71.5, 47);
 
 COMMIT;
 
