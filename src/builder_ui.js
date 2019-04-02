@@ -81,6 +81,15 @@ function process_ajax(action, ajax)
 		document.getElementById('beername').innerText = obj.name;
 		populate_recipe(obj);
 	}
+	if (obj.hasOwnProperty("saved"))
+	{
+		if (obj.saved == "malt")
+			document.getElementById('malt_table').rows[obj.row].classList.remove('dirty');
+		if (obj.saved == "hop")
+			document.getElementById('hops_table').rows[obj.row].classList.remove('dirty');
+		if (obj.saved == "yeast")
+			document.getElementById('yeast_table').rows[obj.row].classList.remove('dirty');
+	}
 }
 
 function populate_malt_select(malts)
@@ -327,11 +336,10 @@ function save_recipe()
 			builder_ajax_send("addmalt", 
 				"beer_id=" + beer_id + 
 				"&ing_id=" + row.attributes['data-malt_id'].value + 
-				"&amount=" + row.cells[0].children[0].value
+				"&amount=" + row.cells[0].children[0].value +
+				"&row=" + i
 			);
-
-			recipe.malt_n += 1;
-			recipe.malts[recipe.malt_n-1] = { "id": row.attributes['data-malt_id'].value, "mass": row.cells[0].children[0].value};
+			table.rows[i].classList.add('dirty');
 		}
 	}
 
@@ -344,11 +352,10 @@ function save_recipe()
 				"beer_id=" + beer_id + 
 				"&ing_id=" + row.attributes['data-hop_id'].value + 
 				"&amount=" + row.cells[0].children[0].value + 
-				"&time=" + row.cells[1].children[0].value
+				"&time=" + row.cells[1].children[0].value +
+				"&row=" + i
 			);
-
-			recipe.hops_n += 1;
-			recipe.hops[recipe.hops_n-1] = { "id": row.attributes['data-hop_id'].value, "mass": row.cells[0].children[0].value, "time": row.cells[1].children[0].value};
+			table.rows[i].classList.add('dirty');
 		}
 	}
 
@@ -360,15 +367,12 @@ function save_recipe()
 			builder_ajax_send("addyeast", 
 				"beer_id=" + beer_id + 
 				"&ing_id=" + row.attributes['data-yeast_id'].value + 
-				"&amount=" + row.cells[0].children[0].value
+				"&amount=" + row.cells[0].children[0].value +
+				"&row=" + i
 			);
-
-			recipe.yeast_n += 1;
-			recipe.yeasts[recipe.yeast_n-1] = { "id": row.attributes['data-yeast_id'].value, "mass": row.cells[0].children[0].value};
+			table.rows[i].classList.add('dirty');
 		}
 	}
-
-	console.log(recipe);
 }
 
 function calculate()

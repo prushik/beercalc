@@ -17,9 +17,9 @@ static sqlite3_stmt *qry;
 
 
 void clear_recipe(unsigned long int beer_id);
-void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity);
-void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time);
-void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity);
+void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity, unsigned long int row_id);
+void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time, unsigned long int row_id);
+void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity, unsigned long int row_id);
 void recipe_set_style(unsigned long int beer_id, unsigned long int style_id);
 
 #define ACTION_GETBEER		0x00
@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 	unsigned long int style_id = 0;
 	unsigned long int action = 0;
 	unsigned long int ing_id = 0;
+	unsigned long int row_id = 0;
 	double amount = 0, time = 0;
 	char *beer_name;
 	char *author_name;
@@ -116,6 +117,10 @@ int main(int argc, char **argv)
 		{
 			style_id = strtoul(&argv[i][9], NULL, 0);
 		}
+		if (strncmp(argv[i], "row", 3) == 0)
+		{
+			row_id = strtoul(&argv[i][4], NULL, 0);
+		}
 	}
 
 	sqlite3_open(DATABASE, &db);
@@ -146,13 +151,13 @@ int main(int argc, char **argv)
 		recipe_set_style(beer_id, style_id);
 
 	if (action == ACTION_ADDMALT)
-		recipe_add_malt(beer_id, ing_id, amount);
+		recipe_add_malt(beer_id, ing_id, amount, row_id);
 
 	if (action == ACTION_ADDHOP)
-		recipe_add_hops(beer_id, ing_id, amount, time);
+		recipe_add_hops(beer_id, ing_id, amount, time, row_id);
 
 	if (action == ACTION_ADDYEAST)
-		recipe_add_yeast(beer_id, ing_id, amount);
+		recipe_add_yeast(beer_id, ing_id, amount, row_id);
 
 	if (action == ACTION_CALCULATE)
 		calculate_json(beer_id);
@@ -208,7 +213,7 @@ void clear_recipe(unsigned long int beer_id)
 }
 
 
-void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity)
+void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, double quantity, unsigned long int row_id)
 {
 	sqlite3_prepare_v2(db, str("insert into ingredients (recipe_id, ingredient_id, quantity, type) values (?,?,?,?);"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
@@ -223,11 +228,12 @@ void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, doubl
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 
-	write(1, str("{}\n"));
+	sprintf(buffer, "{\"saved\":\"malt\",\"row\":%d}%n", row_id, &buf_len);
+	write(1, buffer, buf_len);
 	return;
 }
 
-void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time)
+void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time, unsigned long int row_id)
 {
 	sqlite3_prepare_v2(db, str("insert into ingredients (recipe_id, ingredient_id, quantity, time, type) values (?,?,?,?,?);"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
@@ -243,11 +249,12 @@ void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 
-	write(1, str("{}\n"));
+	sprintf(buffer, "{\"saved\":\"hop\",\"row\":%d}%n", row_id, &buf_len);
+	write(1, buffer, buf_len);
 	return;
 }
 
-void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity)
+void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity, unsigned long int row_id)
 {
 	sqlite3_prepare_v2(db, str("insert into ingredients (recipe_id, ingredient_id, quantity, type) values (?,?,?,?);"), &qry, NULL);
 	sqlite3_bind_int(qry, 1, beer_id);
@@ -262,7 +269,8 @@ void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, dou
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 
-	write(1, str("{}\n"));
+	sprintf(buffer, "{\"saved\":\"yeast\",\"row\":%d}%n", row_id, &buf_len);
+	write(1, buffer, buf_len);
 	return;
 }
 
@@ -276,34 +284,6 @@ void recipe_set_style(unsigned long int beer_id, unsigned long int style_id)
 
 	write(1, str("{}\n"));
 	return;
-}
-
-int update_malt(unsigned long int beer_id, unsigned long int index_id, unsigned long int malt_id, unsigned long int mass)
-{
-	sqlite3_prepare_v2(db, str("update recipe set malt_n = ? where id = ?;"), &qry, NULL);
-/*	sqlite3_bind_text(qry, 1, name, -1, SQLITE_STATIC);
-	sqlite3_bind_int64(qry, 2, style_id);
-	sqlite3_bind_text(qry, 3, author, -1, SQLITE_STATIC);
-
-	char sqlstr[512];
-
-	int code, len;
-	while ((code = sqlite3_step(qry)) != SQLITE_DONE)
-	{
-		sprintf(sqlstr,"%d %s\n%n", code, sqlite3_errmsg(db), &len);
-		write(2, sqlstr, len);
-		break;
-	}
-
-	sqlite3_finalize(qry);
-
-	beer_id = sqlite3_last_insert_rowid(db);
-
-	write(1, str("{ \"beer_id\":"));
-	sprintf(buffer, "%d%n", beer_id, &buf_len);
-	write(1, buffer, buf_len);
-	write(1, str(" }\n"));
-*/
 }
 
 int malt_json()
