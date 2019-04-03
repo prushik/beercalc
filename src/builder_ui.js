@@ -248,35 +248,35 @@ function evaluate_style()
 		if (og >= style.og[0] && og <= style.og[1])
 			component_score = 1.5 / (style.og[1] - style.og[0]); // favor styles that have tighter ranges
 		else
-			component_score = (og < style.og[0]) ? og - style.og[0] : style.og[1] - og; // if out of range, how far?
+			component_score = 75 * ((og < style.og[0]) ? og - style.og[0] : style.og[1] - og); // if out of range, how far?
 
 		score += component_score * 1; // add weighted component score to total score
 
 		if (fg >= style.fg[0] && fg <= style.fg[1])
 			component_score = 1.5 / (style.fg[1] - style.fg[0]);
 		else
-			component_score = (fg < style.fg[0]) ? fg - style.fg[0] : style.fg[1] - fg;
+			component_score = 75 * ((fg < style.fg[0]) ? fg - style.fg[0] : style.fg[1] - fg);
 
 		score += component_score * 1;
 
 		if (ibu >= style.ibu[0] && ibu <= style.ibu[1])
-			component_score = 75 / (style.ibu[1] - style.ibu[0]);
+			component_score = 40 / (style.ibu[1] - style.ibu[0]);
 		else
-			component_score = (ibu < style.ibu[0]) ? ibu - style.ibu[0] : style.ibu[1] - ibu;
+			component_score = 10 * ((ibu < style.ibu[0]) ? ibu - style.ibu[0] : style.ibu[1] - ibu);
 
 		score += component_score * 1;
 
 		if (abv >= style.abv[0] && abv <= style.abv[1])
-			component_score = 8 / (style.abv[1] - style.abv[0]);
+			component_score = 5 / (style.abv[1] - style.abv[0]);
 		else
-			component_score = (abv < style.abv[0]) ? abv - style.abv[0] : style.abv[1] - abv;
+			component_score = 20 * ((abv < style.abv[0]) ? abv - style.abv[0] : style.abv[1] - abv);
 
 		score += component_score * 1;
 
 		if (srm >= style.srm[0] && srm <= style.srm[1])
-			component_score = 20 / (style.srm[1] - style.srm[0]);
+			component_score = 30 / (style.srm[1] - style.srm[0]);
 		else
-			component_score = (srm < style.srm[0]) ? srm - style.srm[0] : style.srm[1] - srm;
+			component_score = 10 * ((srm < style.srm[0]) ? srm - style.srm[0] : style.srm[1] - srm);
 
 		score += component_score * 1;
 
