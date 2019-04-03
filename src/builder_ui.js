@@ -157,12 +157,13 @@ function populate_style_ranges(style_id)
 	row.cells[1].innerHTML = style_array[style_id].abv[0] + " - " + style_array[style_id].abv[1];
 	var row = document.getElementById('srm_row');
 	row.cells[1].innerHTML = style_array[style_id].srm[0] + " - " + style_array[style_id].srm[1];
+
+	compare_to_style();
 }
 
 function populate_current_properties(obj)
 {
 	var row;
-//	var table = document.getElementById('styles_table');
 	row = document.getElementById('og_row');
 	row.cells[2].innerHTML = obj.og;
 	row = document.getElementById('fg_row');
@@ -175,7 +176,41 @@ function populate_current_properties(obj)
 	row.cells[2].innerHTML = obj.srm;
 	row = document.getElementById('srm_example');
 	row.style.backgroundColor = "#" + obj.rgb;
-	row.style.color = "#" + (obj.srm < 18 ? "000000" : "FFFFFF");
+
+	compare_to_style();
+}
+
+function compare_to_style()
+{
+	var row, style, val;
+
+	if (style_array.length > 0 && isFinite(document.getElementById('style_select').value))
+		style = style_array[document.getElementById('style_select').value];
+	else
+		style = 
+	{
+		"og"  : [1.0, 1.12],
+		"fg"  : [1.0, 1.16],
+		"ibu" : [0, 120],
+		"abv" : [0, 16],
+		"srm" : [0, 80]
+	};
+
+	row = document.getElementById('og_row');
+	val = row.cells[2].innerHTML;
+	row.cells[2].style.color = "#" + ((val > style.og[0] && val < style.og[1]) ? "009900" : "ff0000");
+	row = document.getElementById('fg_row');
+	val = row.cells[2].innerHTML;
+	row.cells[2].style.color = "#" + ((val > style.fg[0] && val < style.fg[1]) ? "009900" : "ff0000");
+	row = document.getElementById('ibu_row');
+	val = row.cells[2].innerHTML;
+	row.cells[2].style.color = "#" + ((val > style.ibu[0] && val < style.ibu[1]) ? "009900" : "ff0000");
+	row = document.getElementById('abv_row');
+	val = row.cells[2].innerHTML;
+	row.cells[2].style.color = "#" + ((val > style.abv[0] && val < style.abv[1]) ? "009900" : "ff0000");
+	row = document.getElementById('srm_row');
+	val = row.cells[2].innerHTML;
+	row.cells[2].style.color = "#" + ((val > style.srm[0] && val < style.srm[1]) ? "009900" : "ff0000");
 }
 
 function populate_recipe(obj)
