@@ -6,191 +6,191 @@
         {
           "id": 3,
           "name": "Ordinary Bitter",
-          "Original Gravity (°Plato)": " 1.033-1.038(8.3-9.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.012(1.5-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.4%-3.3%(3.0%-4.2%)",
-          "Bitterness (IBU)": " 20-35",
-          "Color SRM (EBC)": " 5-12(10-24 EBC)"
+          "og": [1.033,1.038],
+          "fg": [1.006,1.012],
+          "abv": [3.0,4.2],
+          "ibu": [20,35],
+          "srm": [5,12]
         },
         {
           "id": 4,
           "name": "Special Bitter or Best Bitter",
-          "Original Gravity (°Plato)": " 1.038-1.045(9.5-11.2 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.012(1.5-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.3%-3.8%(4.2%-4.8%)",
-          "Bitterness (IBU)": " 28-40",
-          "Color SRM (EBC)": " 6-14(12-28 EBC)"
+          "og": [1.038,1.045],
+          "fg": [1.006,1.012],
+          "abv": [4.2,4.8],
+          "ibu": [28,40],
+          "srm": [6,14]
         },
         {
           "id": 5,
           "name": "Extra Special Bitter",
-          "Original Gravity (°Plato)": " 1.046-1.060(11.4-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.016(2.6-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.6%(4.8%-5.8%)",
-          "Bitterness (IBU)": " 30-45",
-          "Color SRM (EBC)": " 8-14(16-28 EBC)"
+          "og": [1.046,1.060],
+          "fg": [1.010,1.016],
+          "abv": [4.8,5.8],
+          "ibu": [30,45],
+          "srm": [8,14]
         },
         {
           "id": 7,
           "name": "Scottish-Style Light Ale",
-          "Original Gravity (°Plato)": " 1.030-1.035(7.6-8.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.012(1.5-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.2%-2.8%(2.8%-3.5%)",
-          "Bitterness (IBU)": " 9-20",
-          "Color SRM (EBC)": " 6-15(12-30 EBC)"
+          "og": [1.030,1.035],
+          "fg": [1.006,1.012],
+          "abv": [2.8,3.5],
+          "ibu": [9,20],
+          "srm": [6,15]
         },
         {
           "id": 8,
           "name": "Scottish-Style Heavy Ale",
-          "Original Gravity (°Plato)": " 1.035-1.040(8.8-10 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.014(2.6-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.8%-3.2%(3.5%-4.1%)",
-          "Bitterness (IBU)": " 12-20",
-          "Color SRM (EBC)": " 8-30(16-60 EBC)"
+          "og": [1.035,1.040],
+          "fg": [1.010,1.014],
+          "abv": [3.5,4.1],
+          "ibu": [12,20],
+          "srm": [8,30]
         },
         {
           "id": 9,
           "name": "Scottish-Style Export Ale",
-          "Original Gravity (°Plato)": " 1.040-1.050(10-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.018(2.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.2%(4.1%-5.3%)",
-          "Bitterness (IBU)": " 15-25",
-          "Color SRM (EBC)": " 9-19(18-38 EBC)"
+          "og": [1.040,1.050],
+          "fg": [1.010,1.018],
+          "abv": [4.1,5.3],
+          "ibu": [15,25],
+          "srm": [9,19]
         },
         {
           "id": 6,
           "name": "English-Style Summer Ale",
-          "Original Gravity (°Plato)": " 1.036-1.050(9-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.012(1.5-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.9%-4.0%(3.7%-5.1%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.036,1.050],
+          "fg": [1.006,1.012],
+          "abv": [3.7,5.1],
+          "ibu": [20,30],
+          "srm": [3,6]
         },
         {
           "id": 1,
           "name": "Classic English-Style Pale Ale",
-          "Original Gravity (°Plato)": " 1.040-1.056(10-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.2%(4.4%-5.3%)",
-          "Bitterness (IBU)": " 20-40",
-          "Color SRM (EBC)": " 5-12(10-24 EBC)"
+          "og": [1.040,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.4,5.3],
+          "ibu": [20,40],
+          "srm": [5,12]
         },
         {
           "id": 2,
           "name": "English-Style India Pale Ale",
-          "Original Gravity (°Plato)": " 1.046-1.064(11.4-15.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.018(3.1-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.6%-5.6%(4.5%-7.1%)",
-          "Bitterness (IBU)": " 35-63",
-          "Color SRM (EBC)": " 6-14(12-28 EBC)"
+          "og": [1.046,1.064],
+          "fg": [1.012,1.018],
+          "abv": [4.5,7.1],
+          "ibu": [35,63],
+          "srm": [6,14]
         },
         {
           "id": 14,
           "name": "Strong Ale",
-          "Original Gravity (°Plato)": " 1.060-1.125(14.7-29 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.040(3.6-10 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.5%-8.9%(7.0%-11.3%)",
-          "Bitterness (IBU)": " 30-65",
-          "Color SRM (EBC)": " 8-21(16-42 EBC)"
+          "og": [1.060,1.125],
+          "fg": [1.014,1.040],
+          "abv": [7.0,11.3],
+          "ibu": [30,65],
+          "srm": [8,21]
         },
         {
           "id": 13,
           "name": "Old Ale",
-          "Original Gravity (°Plato)": " 1.058-1.088(14.3-21.1 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.030(3.6-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-7.2%(6.3%-9.1%)",
-          "Bitterness (IBU)": " 30-65",
-          "Color SRM (EBC)": " 12-30(24-60 EBC)"
+          "og": [1.058,1.088],
+          "fg": [1.014,1.030],
+          "abv": [6.3,9.1],
+          "ibu": [30,65],
+          "srm": [12,30]
         },
         {
           "id": 10,
           "name": "English-Style Pale Mild Ale",
-          "Original Gravity (°Plato)": " 1.030-1.036(7.6-9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.008(1-2.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.7%-3.4%(3.4%-4.4%)",
-          "Bitterness (IBU)": " 10-20",
-          "Color SRM (EBC)": " 6-9(12-18 EBC)"
+          "og": [1.030,1.036],
+          "fg": [1.004,1.008],
+          "abv": [3.4,4.4],
+          "ibu": [10,20],
+          "srm": [6,9]
         },
         {
           "id": 11,
           "name": "English-Style Dark Mild Ale",
-          "Original Gravity (°Plato)": " 1.030-1.036(7.6-9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.008(1-2.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.7%-3.4%(3.4%-4.4%)",
-          "Bitterness (IBU)": " 10-24",
-          "Color SRM (EBC)": " 17-34(34-68 EBC)"
+          "og": [1.030,1.036],
+          "fg": [1.004,1.008],
+          "abv": [3.4,4.4],
+          "ibu": [10,24],
+          "srm": [17,34]
         },
         {
           "id": 12,
           "name": "English-Style Brown Ale",
-          "Original Gravity (°Plato)": " 1.040-1.050(10-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.1-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.3%-4.7%(4.2%-6.0%)",
-          "Bitterness (IBU)": " 12-25",
-          "Color SRM (EBC)": " 12-17(24-34 EBC)"
+          "og": [1.040,1.050],
+          "fg": [1.008,1.014],
+          "abv": [4.2,6.0],
+          "ibu": [12,25],
+          "srm": [12,17]
         },
         {
           "id": 18,
           "name": "Brown Porter",
-          "Original Gravity (°Plato)": " 1.040-1.050(10-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.014(1.5-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.7%(4.4%-6.0%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 20-35(40-70 EBC)"
+          "og": [1.040,1.050],
+          "fg": [1.006,1.014],
+          "abv": [4.4,6.0],
+          "ibu": [20,30],
+          "srm": [20,35]
         },
         {
           "id": 19,
           "name": "Robust Porter",
-          "Original Gravity (°Plato)": " 1.045-1.060(11.2-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-5.2%(5.1%-6.6%)",
-          "Bitterness (IBU)": " 25-40",
-          "Color SRM (EBC)": " 30+(60+ EBC)"
+          "og": [1.045,1.060],
+          "fg": [1.008,1.016],
+          "abv": [5.1,6.6],
+          "ibu": [25,40],
+          "srm": [30,80]
         },
         {
           "id": 20,
           "name": "Sweet Stout or Cream Stout",
-          "Original Gravity (°Plato)": " 1.045-1.056(11.2-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.5%-5.0%(3.2%-6.3%)",
-          "Bitterness (IBU)": " 15-25",
-          "Color SRM (EBC)": " 40+(80+ EBC)"
+          "og": [1.045,1.056],
+          "fg": [1.012,1.020],
+          "abv": [3.2,6.3],
+          "ibu": [15,25],
+          "srm": [40,80]
         },
         {
           "id": 21,
           "name": "Oatmeal Stout",
-          "Original Gravity (°Plato)": " 1.038-1.056(9.5-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.020(2.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.0%-4.8%(3.8%-6.1%)",
-          "Bitterness (IBU)": " 20-40",
-          "Color SRM (EBC)": " 20+(40+ EBC)"
+          "og": [1.038,1.056],
+          "fg": [1.008,1.020],
+          "abv": [3.8,6.1],
+          "ibu": [20,40],
+          "srm": [20,80]
         },
         {
           "id": 15,
           "name": "Scotch Ale",
-          "Original Gravity (°Plato)": " 1.072-1.085(17.5-20.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.016-1.028(4.1-7.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.2%-6.7%(6.6%-8.5%)",
-          "Bitterness (IBU)": " 25-35",
-          "Color SRM (EBC)": " 15-30(30-60 EBC)"
+          "og": [1.072,1.085],
+          "fg": [1.016,1.028],
+          "abv": [6.6,8.5],
+          "ibu": [25,35],
+          "srm": [15,30]
         },
         {
           "id": 16,
           "name": "British-Style Imperial Stout",
-          "Original Gravity (°Plato)": " 1.080-1.100(19.3-23.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.020-1.030(5.1-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.5%-9.5%(7.0%-12.0%)",
-          "Bitterness (IBU)": " 45-65",
-          "Color SRM (EBC)": " 20-35+(40-70+ EBC)"
+          "og": [1.080,1.100],
+          "fg": [1.020,1.030],
+          "abv": [7.0,12.0],
+          "ibu": [45,65],
+          "srm": [20,35]
         },
         {
           "id": 17,
           "name": "British-Style Barley Wine Ale",
-          "Original Gravity (°Plato)": " 1.085-1.120(20.4-28 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.024-1.028(6.1-7.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.7%-9.6%(8.5%-12.2%)",
-          "Bitterness (IBU)": " 40-65",
-          "Color SRM (EBC)": " 11-20(22-40 EBC)"
+          "og": [1.085,1.120],
+          "fg": [1.024,1.028],
+          "abv": [8.5,12.2],
+          "ibu": [40,65],
+          "srm": [11,20]
         }
       ]
     },
@@ -200,29 +200,29 @@
         {
           "id": 22,
           "name": "Irish-Style Red Ale",
-          "Original Gravity (°Plato)": " 1.040-1.048(10-11.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.014(2.6-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-3.8%(4.0%-4.8%)",
-          "Bitterness (IBU)": " 20-28",
-          "Color SRM (EBC)": " 11-18(22-36 EBC)"
+          "og": [1.040,1.048],
+          "fg": [1.010,1.014],
+          "abv": [4.0,4.8],
+          "ibu": [20,28],
+          "srm": [11,18]
         },
         {
           "id": 23,
           "name": "Classic Irish-Style Dry Stout",
-          "Original Gravity (°Plato)": " 1.038-1.048(9.5-11.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.012(2.1-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.2%(4.1%-5.3%)",
-          "Bitterness (IBU)": " 30-40",
-          "Color SRM (EBC)": " 40+(80+ EBC)"
+          "og": [1.038,1.048],
+          "fg": [1.008,1.012],
+          "abv": [4.1,5.3],
+          "ibu": [30,40],
+          "srm": [40,80]
         },
         {
           "id": 24,
           "name": "Export-Style Stout",
-          "Original Gravity (°Plato)": " 1.052-1.072(12.9-17.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.020(2.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.5%-6.4%(5.6%-8.0%)",
-          "Bitterness (IBU)": " 30-60",
-          "Color SRM (EBC)": " 40+(80+ EBC)"
+          "og": [1.052,1.072],
+          "fg": [1.008,1.020],
+          "abv": [5.6,8.0],
+          "ibu": [30,60],
+          "srm": [40,80]
         }
       ]
     },
@@ -232,209 +232,209 @@
         {
           "id": 36,
           "name": "Golden or Blonde Ale",
-          "Original Gravity (°Plato)": " 1.045-1.054(11.2-13.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.0%(4.1%-5.1%)",
-          "Bitterness (IBU)": " 15-25",
-          "Color SRM (EBC)": " 3-7(6-14 EBC)"
+          "og": [1.045,1.054],
+          "fg": [1.008,1.016],
+          "abv": [4.1,5.1],
+          "ibu": [15,25],
+          "srm": [3,7]
         },
         {
           "id": 32,
           "name": "American-Style Amber/Red Ale",
-          "Original Gravity (°Plato)": " 1.048-1.058(11.9-14.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.018(2.5-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.8%(4.4%-6.1%)",
-          "Bitterness (IBU)": " 25-45",
-          "Color SRM (EBC)": " 11-18(22-36 EBC)"
+          "og": [1.048,1.058],
+          "fg": [1.010,1.018],
+          "abv": [4.4,6.1],
+          "ibu": [25,45],
+          "srm": [11,18]
         },
         {
           "id": 25,
           "name": "American-Style Pale Ale",
-          "Original Gravity (°Plato)": " 1.044-1.050(11-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.1-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.3%(4.4%-5.4%)",
-          "Bitterness (IBU)": " 30-50",
-          "Color SRM (EBC)": " 6-14(12-28 EBC)"
+          "og": [1.044,1.050],
+          "fg": [1.008,1.014],
+          "abv": [4.4,5.4],
+          "ibu": [30,50],
+          "srm": [6,14]
         },
         {
           "id": 223,
           "name": "Juicy or Hazy Pale Ale",
-          "Original Gravity (°Plato)": " 1.044-1.050(11-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.1-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.3%(4.4%-5.4%)",
-          "Bitterness (IBU)": " 30-50; may differ from perceived bitterness",
-          "Color SRM (EBC)": " 4-7(8-14 EBC)"
+          "og": [1.044,1.050],
+          "fg": [1.008,1.014],
+          "abv": [4.4,5.4],
+          "ibu": [0,120],
+          "srm": [4,7]
         },
         {
           "id": 29,
           "name": "American-Style Strong Pale Ale",
-          "Original Gravity (°Plato)": " 1.050-1.065(12.4-15.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.4%-5.6%(5.6%-7.0%)",
-          "Bitterness (IBU)": " 40-50",
-          "Color SRM (EBC)": " 6-14(12-28 EBC)"
+          "og": [1.050,1.065],
+          "fg": [1.008,1.016],
+          "abv": [5.6,7.0],
+          "ibu": [40,50],
+          "srm": [6,14]
         },
         {
           "id": 142,
           "name": "Session India Pale Ale",
-          "Original Gravity (°Plato)": " 1.038-1.052(9.5-12.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.0%-4.0%(3.7%-5.0%)",
-          "Bitterness (IBU)": " 40-55",
-          "Color SRM (EBC)": " 4-12(8-24 EBC)"
+          "og": [1.038,1.052],
+          "fg": [1.008,1.014],
+          "abv": [3.7,5.0],
+          "ibu": [40,55],
+          "srm": [4,12]
         },
         {
           "id": 30,
           "name": "American-Style India Pale Ale",
-          "Original Gravity (°Plato)": " 1.060-1.070(14.7-17.1 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.016(2.5-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.5%)",
-          "Bitterness (IBU)": " 50-70",
-          "Color SRM (EBC)": " 6-12(12-24 EBC)"
+          "og": [1.060,1.070],
+          "fg": [1.010,1.016],
+          "abv": [6.3,7.5],
+          "ibu": [50,70],
+          "srm": [6,12]
         },
         {
           "id": 216,
           "name": "Juicy or Hazy India Pale Ale",
-          "Original Gravity (°Plato)": " 1.060-1.070(14.7-17.1 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.0-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.5%)",
-          "Bitterness (IBU)": " 50-70; may differ from perceived bitterness",
-          "Color SRM (EBC)": " 4-7(8-14 EBC)"
+          "og": [1.060,1.070],
+          "fg": [1.008,1.016],
+          "abv": [6.3,7.5],
+          "ibu": [0,120],
+          "srm": [4,7]
         },
         {
           "id": 27,
           "name": "Pale American-Belgo-Style Ale",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " 5-15(10-30 EBC)"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [5,15]
         },
         {
           "id": 28,
           "name": "Dark American-Belgo-Style Ale",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " 16+(32+ EBC)"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [16,80]
         },
         {
           "id": 37,
           "name": "American-Style Brown Ale",
-          "Original Gravity (°Plato)": " 1.040-1.060(10-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.018(2.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.3%-5.0%(4.2%-6.3%)",
-          "Bitterness (IBU)": " 25-45",
-          "Color SRM (EBC)": " 15-26(30-52 EBC)"
+          "og": [1.040,1.060],
+          "fg": [1.010,1.018],
+          "abv": [4.2,6.3],
+          "ibu": [25,45],
+          "srm": [15,26]
         },
         {
           "id": 41,
           "name": "American-Style Black Ale",
-          "Original Gravity (°Plato)": " 1.056-1.075(13.8-18.2 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.018(3.1-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.6%)",
-          "Bitterness (IBU)": " 50-70",
-          "Color SRM (EBC)": " 35+(70+ EBC)"
+          "og": [1.056,1.075],
+          "fg": [1.012,1.018],
+          "abv": [6.3,7.6],
+          "ibu": [50,70],
+          "srm": [35,80]
         },
         {
           "id": 42,
           "name": "American-Style Stout",
-          "Original Gravity (°Plato)": " 1.050-1.075(12.4-18.2 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.022(2.6-5.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.5%-6.4%(5.7%-8.0%)",
-          "Bitterness (IBU)": " 35-60",
-          "Color SRM (EBC)": " 40+(80+ EBC)"
+          "og": [1.050,1.075],
+          "fg": [1.010,1.022],
+          "abv": [5.7,8.0],
+          "ibu": [35,60],
+          "srm": [40,80]
         },
         {
           "id": 44,
           "name": "American-Style Imperial Porter",
-          "Original Gravity (°Plato)": " 1.080-1.100(19.3-23.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.020-1.030(5.1-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.5%-9.5%(7.0%-12.0%)",
-          "Bitterness (IBU)": " 35-50",
-          "Color SRM (EBC)": " 40+(80+ EBC)"
+          "og": [1.080,1.100],
+          "fg": [1.020,1.030],
+          "abv": [7.0,12.0],
+          "ibu": [35,50],
+          "srm": [40,80]
         },
         {
           "id": 43,
           "name": "American-Style Imperial Stout",
-          "Original Gravity (°Plato)": " 1.080-1.100(19.3-23.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.020-1.030(5.1-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.5%-9.5%(7.0%-12.0%)",
-          "Bitterness (IBU)": " 50-80",
-          "Color SRM (EBC)": " 40+(80+ EBC)"
+          "og": [1.080,1.100],
+          "fg": [1.020,1.030],
+          "abv": [7.0,12.0],
+          "ibu": [50,80],
+          "srm": [40,80]
         },
         {
           "id": 143,
           "name": "Double Hoppy Red Ale",
-          "Original Gravity (°Plato)": " 1.058-1.080(14.3-19.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.015-1.024(3.9-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.9%-6.3%(6.1%-7.9%)",
-          "Bitterness (IBU)": " 45-80",
-          "Color SRM (EBC)": " 10-17(20-34 EBC)"
+          "og": [1.058,1.080],
+          "fg": [1.015,1.024],
+          "abv": [6.1,7.9],
+          "ibu": [45,80],
+          "srm": [10,17]
         },
         {
           "id": 33,
           "name": "Imperial Red Ale",
-          "Original Gravity (°Plato)": " 1.080-1.100(19.3-23.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.020-1.028(5.1-7.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.3%-8.4%(8.0%-10.6%)",
-          "Bitterness (IBU)": " 55-85",
-          "Color SRM (EBC)": " 10-17(20-34 EBC)"
+          "og": [1.080,1.100],
+          "fg": [1.020,1.028],
+          "abv": [8.0,10.6],
+          "ibu": [55,85],
+          "srm": [10,17]
         },
         {
           "id": 31,
           "name": "American-Style Imperial or Double India Pale Ale",
-          "Original Gravity (°Plato)": " 1.070-1.100(17.1-23.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.0%-8.4%(7.6%-10.6%)",
-          "Bitterness (IBU)": " 65-100",
-          "Color SRM (EBC)": " 5-13(10-26 EBC)"
+          "og": [1.070,1.100],
+          "fg": [1.012,1.020],
+          "abv": [7.6,10.6],
+          "ibu": [65,100],
+          "srm": [5,13]
         },
         {
           "id": 222,
           "name": "Juicy or Hazy Imperial or Double India Pale Ale",
-          "Original Gravity (°Plato)": " 1.070-1.100(17.1-23.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.0%-8.4%(7.6%-10.6%)",
-          "Bitterness (IBU)": " 65-100; may differ from perceived bitterness",
-          "Color SRM (EBC)": " 4-7(8-14 EBC)"
+          "og": [1.070,1.100],
+          "fg": [1.012,1.020],
+          "abv": [7.6,10.6],
+          "ibu": [65,100],
+          "srm": [4,7]
         },
         {
           "id": 34,
           "name": "American-Style Barley Wine Ale",
-          "Original Gravity (°Plato)": " 1.090-1.120(21.6-28 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.024-1.028(6.1-7.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.7%-9.6%(8.5%-12.2%)",
-          "Bitterness (IBU)": " 60-100",
-          "Color SRM (EBC)": " 11-18(22-36 EBC)"
+          "og": [1.090,1.120],
+          "fg": [1.024,1.028],
+          "abv": [8.5,12.2],
+          "ibu": [60,100],
+          "srm": [11,18]
         },
         {
           "id": 35,
           "name": "American-Style Wheat Wine Ale",
-          "Original Gravity (°Plato)": " 1.088-1.120(21.1-28 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.024-1.032(6.1-8 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.7%-9.6%(8.5%-12.2%)",
-          "Bitterness (IBU)": " 45-85",
-          "Color SRM (EBC)": " 5+(10+ EBC)"
+          "og": [1.088,1.120],
+          "fg": [1.024,1.032],
+          "abv": [8.5,12.2],
+          "ibu": [45,85],
+          "srm": [5,80]
         },
         {
           "id": 38,
           "name": "Smoke Porter",
-          "Original Gravity (°Plato)": " 1.050-1.065(12.4-15.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.018(2.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-7.0%(5.1%-8.9%)",
-          "Bitterness (IBU)": " 20-40",
-          "Color SRM (EBC)": " 20+(40+ EBC)"
+          "og": [1.050,1.065],
+          "fg": [1.010,1.018],
+          "abv": [5.1,8.9],
+          "ibu": [20,40],
+          "srm": [20,80]
         },
         {
           "id": 40,
           "name": "American-Style Sour Ale",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         }
       ]
     },
@@ -444,128 +444,128 @@
         {
           "id": 45,
           "name": "German-Style Koelsch",
-          "Original Gravity (°Plato)": " 1.042-1.048(10.5-11.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.2%(4.8%-5.3%)",
-          "Bitterness (IBU)": " 22-30",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.042,1.048],
+          "fg": [1.006,1.010],
+          "abv": [4.8,5.3],
+          "ibu": [22,30],
+          "srm": [3,6]
         },
         {
           "id": 55,
           "name": "German-Style Altbier",
-          "Original Gravity (°Plato)": " 1.044-1.052(11-12.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.1-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.6%-4.4%(4.6%-5.6%)",
-          "Bitterness (IBU)": " 25-52",
-          "Color SRM (EBC)": " 11-19(22-38 EBC)"
+          "og": [1.044,1.052],
+          "fg": [1.008,1.014],
+          "abv": [4.6,5.6],
+          "ibu": [25,52],
+          "srm": [11,19]
         },
         {
           "id": 56,
           "name": "Kellerbier or Zwickelbier Ale",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 46,
           "name": "Berliner-Style Weisse",
-          "Original Gravity (°Plato)": " 1.028-1.044(7.1-11 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.006(1-1.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.2%-4.0%(2.8%-5.0%)",
-          "Bitterness (IBU)": " 3-6",
-          "Color SRM (EBC)": " 2-4(4-8 EBC)"
+          "og": [1.028,1.044],
+          "fg": [1.004,1.006],
+          "abv": [2.8,5.0],
+          "ibu": [3,6],
+          "srm": [2,4]
         },
         {
           "id": 47,
           "name": "Leipzig-Style Gose",
-          "Original Gravity (°Plato)": " 1.036-1.056(9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.012(2.1-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.3%(4.4%-5.4%)",
-          "Bitterness (IBU)": " 5-15",
-          "Color SRM (EBC)": " 2-7(4-14 EBC)"
+          "og": [1.036,1.056],
+          "fg": [1.008,1.012],
+          "abv": [4.4,5.4],
+          "ibu": [5,15],
+          "srm": [2,7]
         },
         {
           "id": 144,
           "name": "Contemporary-Style Gose",
-          "Original Gravity (°Plato)": " 1.036-1.056(9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.012(2.1-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-4.3%(4.4%-5.4%)",
-          "Bitterness (IBU)": " 5-30",
-          "Color SRM (EBC)": " 3-9(6-18 EBC)"
+          "og": [1.036,1.056],
+          "fg": [1.004,1.012],
+          "abv": [4.4,5.4],
+          "ibu": [5,30],
+          "srm": [3,9]
         },
         {
           "id": 48,
           "name": "South German-Style Hefeweizen",
-          "Original Gravity (°Plato)": " 1.047-1.056(11.7-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.9%-4.4%(4.9%-5.6%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 3-9(6-18 EBC)"
+          "og": [1.047,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.9,5.6],
+          "ibu": [10,15],
+          "srm": [3,9]
         },
         {
           "id": 49,
           "name": "South German-Style Kristal Weizen",
-          "Original Gravity (°Plato)": " 1.047-1.056(11.7-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.9%-4.4%(4.9%-5.6%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 3-9(6-18 EBC)"
+          "og": [1.047,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.9,5.6],
+          "ibu": [10,15],
+          "srm": [3,9]
         },
         {
           "id": 50,
           "name": "German-Style Leichtes Weizen",
-          "Original Gravity (°Plato)": " 1.028-1.044(7.1-11 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.008(1-2.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-2.8%(2.5%-3.5%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 3.5-15(7-30 EBC)"
+          "og": [1.028,1.044],
+          "fg": [1.004,1.008],
+          "abv": [2.5,3.5],
+          "ibu": [10,15],
+          "srm": [3.5,15]
         },
         {
           "id": 51,
           "name": "South German-Style Bernsteinfarbenes Weizen",
-          "Original Gravity (°Plato)": " 1.048-1.056(11.9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.3%(4.8%-5.4%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 9-13(18-26 EBC)"
+          "og": [1.048,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.8,5.4],
+          "ibu": [10,15],
+          "srm": [9,13]
         },
         {
           "id": 52,
           "name": "South German-Style Dunkel Weizen",
-          "Original Gravity (°Plato)": " 1.048-1.056(11.9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.3%(4.8%-5.4%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 10-25(20-50 EBC)"
+          "og": [1.048,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.8,5.4],
+          "ibu": [10,15],
+          "srm": [10,25]
         },
         {
           "id": 53,
           "name": "South German-Style Weizenbock",
-          "Original Gravity (°Plato)": " 1.066-1.080(16.1-19.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.016-1.028(4.1-7.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.5%-7.5%(7.0%-9.5%)",
-          "Bitterness (IBU)": " 15-35",
-          "Color SRM (EBC)": " 4.5-30(9-60 EBC)"
+          "og": [1.066,1.080],
+          "fg": [1.016,1.028],
+          "abv": [7.0,9.5],
+          "ibu": [15,35],
+          "srm": [4.5,30]
         },
         {
           "id": 145,
           "name": "German-Style Rye Ale",
-          "Original Gravity (°Plato)": " 1.047-1.056(11.7-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.9%-4.4%(4.9%-5.6%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 4-25(8-50 EBC)"
+          "og": [1.047,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.9,5.6],
+          "ibu": [10,15],
+          "srm": [4,25]
         },
         {
           "id": 54,
           "name": "Bamberg-Style Weiss Rauchbier",
-          "Original Gravity (°Plato)": " 1.047-1.056(11.7-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.9%-4.4%(4.9%-5.6%)",
-          "Bitterness (IBU)": " 10-15",
-          "Color SRM (EBC)": " 4-18(8-36 EBC)"
+          "og": [1.047,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.9,5.6],
+          "ibu": [10,15],
+          "srm": [4,18]
         }
       ]
     },
@@ -575,155 +575,155 @@
         {
           "id": 63,
           "name": "Belgian-Style Blonde Ale",
-          "Original Gravity (°Plato)": " 1.054-1.068(13.3-16.6 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.1-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.2%(6.3%-7.9%)",
-          "Bitterness (IBU)": " 15-30",
-          "Color SRM (EBC)": " 4-7(8-14 EBC)"
+          "og": [1.054,1.068],
+          "fg": [1.008,1.014],
+          "abv": [6.3,7.9],
+          "ibu": [15,30],
+          "srm": [4,7]
         },
         {
           "id": 64,
           "name": "Belgian-Style Pale Ale",
-          "Original Gravity (°Plato)": " 1.044-1.054(11-13.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.1-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-5.0%(4.1%-6.3%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 6-12(12-24 EBC)"
+          "og": [1.044,1.054],
+          "fg": [1.008,1.014],
+          "abv": [4.1,6.3],
+          "ibu": [20,30],
+          "srm": [6,12]
         },
         {
           "id": 65,
           "name": "Belgian-Style Pale Strong Ale",
-          "Original Gravity (°Plato)": " 1.064-1.096(15.7-22.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.024(2-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.6%-8.8%(7.1%-11.2%)",
-          "Bitterness (IBU)": " 20-50",
-          "Color SRM (EBC)": " 3.5-10(7-20 EBC)"
+          "og": [1.064,1.096],
+          "fg": [1.008,1.024],
+          "abv": [7.1,11.2],
+          "ibu": [20,50],
+          "srm": [3.5,10]
         },
         {
           "id": 66,
           "name": "Belgian-Style Dark Strong Ale",
-          "Original Gravity (°Plato)": " 1.064-1.096(15.7-22.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.024(3.1-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.6%-8.8%(7.1%-11.2%)",
-          "Bitterness (IBU)": " 20-50",
-          "Color SRM (EBC)": " 9-35(18-70 EBC)"
+          "og": [1.064,1.096],
+          "fg": [1.012,1.024],
+          "abv": [7.1,11.2],
+          "ibu": [20,50],
+          "srm": [9,35]
         },
         {
           "id": 60,
           "name": "Belgian-Style Dubbel",
-          "Original Gravity (°Plato)": " 1.060-1.075(14.7-18.2 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.016(3.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.6%)",
-          "Bitterness (IBU)": " 20-35",
-          "Color SRM (EBC)": " 16-36(32-72 EBC)"
+          "og": [1.060,1.075],
+          "fg": [1.012,1.016],
+          "abv": [6.3,7.6],
+          "ibu": [20,35],
+          "srm": [16,36]
         },
         {
           "id": 61,
           "name": "Belgian-Style Tripel",
-          "Original Gravity (°Plato)": " 1.070-1.092(17.1-22 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.018(2.1-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.6%-8.0%(7.1%-10.1%)",
-          "Bitterness (IBU)": " 20-45",
-          "Color SRM (EBC)": " 4-7(8-14 EBC)"
+          "og": [1.070,1.092],
+          "fg": [1.008,1.018],
+          "abv": [7.1,10.1],
+          "ibu": [20,45],
+          "srm": [4,7]
         },
         {
           "id": 62,
           "name": "Belgian-Style Quadrupel",
-          "Original Gravity (°Plato)": " 1.084-1.120(20.2-28 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.020(3.6-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 7.2%-11.2%(9.1%-14.2%)",
-          "Bitterness (IBU)": " 25-50",
-          "Color SRM (EBC)": " 8-25(16-50 EBC)"
+          "og": [1.084,1.120],
+          "fg": [1.014,1.020],
+          "abv": [9.1,14.2],
+          "ibu": [25,50],
+          "srm": [8,25]
         },
         {
           "id": 67,
           "name": "Belgian-Style Witbier",
-          "Original Gravity (°Plato)": " 1.044-1.050(11-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.4%(4.8%-5.6%)",
-          "Bitterness (IBU)": " 10-17",
-          "Color SRM (EBC)": " 2-4(4-8 EBC)"
+          "og": [1.044,1.050],
+          "fg": [1.006,1.010],
+          "abv": [4.8,5.6],
+          "ibu": [10,17],
+          "srm": [2,4]
         },
         {
           "id": 74,
           "name": "Classic French &amp; Belgian-Style Saison",
-          "Original Gravity (°Plato)": " 1.040-1.060(10-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-5.4%(4.4%-6.8%)",
-          "Bitterness (IBU)": " 20-38",
-          "Color SRM (EBC)": " 4-7(8-14 EBC)"
+          "og": [1.040,1.060],
+          "fg": [1.006,1.010],
+          "abv": [4.4,6.8],
+          "ibu": [20,38],
+          "srm": [4,7]
         },
         {
           "id": 148,
           "name": "Specialty Saison",
-          "Original Gravity (°Plato)": " 1.040-1.080(10-19.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.014(2.0-3.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-6.6%(4.4%-8.4%)",
-          "Bitterness (IBU)": " 20-40",
-          "Color SRM (EBC)": " 4-20(8-40 EBC)"
+          "og": [1.040,1.080],
+          "fg": [1.008,1.014],
+          "abv": [4.4,8.4],
+          "ibu": [20,40],
+          "srm": [4,20]
         },
         {
           "id": 73,
           "name": "French-Style Bière de Garde",
-          "Original Gravity (°Plato)": " 1.060-1.080(14.7-19.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.024(3.1-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-6.3%(4.4%-8.0%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 7-16(14-32 EBC)"
+          "og": [1.060,1.080],
+          "fg": [1.012,1.024],
+          "abv": [4.4,8.0],
+          "ibu": [20,30],
+          "srm": [7,16]
         },
         {
           "id": 59,
           "name": "Belgian-Style Flanders Oud Bruin or Oud Red Ale",
-          "Original Gravity (°Plato)": " 1.044-1.056(11-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-5.2%(4.8%-6.6%)",
-          "Bitterness (IBU)": " 5-18",
-          "Color SRM (EBC)": " 12-25(24-50 EBC)"
+          "og": [1.044,1.056],
+          "fg": [1.008,1.016],
+          "abv": [4.8,6.6],
+          "ibu": [5,18],
+          "srm": [12,25]
         },
         {
           "id": 68,
           "name": "Belgian-Style Lambic",
-          "Original Gravity (°Plato)": " 1.047-1.056(11.7-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.000-1.010(0-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-6.5%(5.0%-8.2%)",
-          "Bitterness (IBU)": " 9-23",
-          "Color SRM (EBC)": " 6-13(12-26 EBC)"
+          "og": [1.047,1.056],
+          "fg": [1.000,1.010],
+          "abv": [5.0,8.2],
+          "ibu": [9,23],
+          "srm": [6,13]
         },
         {
           "id": 69,
           "name": "Belgian-Style Gueuze Lambic",
-          "Original Gravity (°Plato)": " 1.044-1.056(11-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.000-1.010(0-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-7.0%(5.0%-8.9%)",
-          "Bitterness (IBU)": " 11-23",
-          "Color SRM (EBC)": " 6-13(12-26 EBC)"
+          "og": [1.044,1.056],
+          "fg": [1.000,1.010],
+          "abv": [5.0,8.9],
+          "ibu": [11,23],
+          "srm": [6,13]
         },
         {
           "id": 70,
           "name": "Belgian-Style Fruit Lambic",
-          "Original Gravity (°Plato)": " 1.040-1.072(10-17.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.016(2.1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-7.0%(5.0%-8.9%)",
-          "Bitterness (IBU)": " 15-21",
-          "Color SRM (EBC)": " Color takes on hue of fruit(Color takes on hue of fruit EBC)"
+          "og": [1.040,1.072],
+          "fg": [1.008,1.016],
+          "abv": [5.0,8.9],
+          "ibu": [15,21],
+          "srm": [0,80]
         },
         {
           "id": 72,
           "name": "Other Belgian-Style Ale",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style(Varies with style EBC)"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 71,
           "name": "Belgian-Style Table Beer",
-          "Original Gravity (°Plato)": " 1.008-1.038(2.1-9.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.034(1-8.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 0.4%-2.8%(0.5%-3.5%)",
-          "Bitterness (IBU)": " 5-15",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.008,1.038],
+          "fg": [1.004,1.034],
+          "abv": [0.5,3.5],
+          "ibu": [5,15],
+          "srm": [5,50]
         }
       ]
     },
@@ -733,92 +733,92 @@
         {
           "id": 57,
           "name": "Grodziskie",
-          "Original Gravity (°Plato)": " 1.028-1.036(7.1-9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.1%-2.9%(2.7%-3.7%)",
-          "Bitterness (IBU)": " 15-25",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.028,1.036],
+          "fg": [1.006,1.010],
+          "abv": [2.7,3.7],
+          "ibu": [15,25],
+          "srm": [3,6]
         },
         {
           "id": 58,
           "name": "Adambier",
-          "Original Gravity (°Plato)": " 1.070-1.090(17.1-21.6 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.020(2.6-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 7.1%-8.7%(9.0%-11.0%)",
-          "Bitterness (IBU)": " 30-50",
-          "Color SRM (EBC)": " 15-35(30-70 EBC)"
+          "og": [1.070,1.090],
+          "fg": [1.010,1.020],
+          "abv": [9.0,11.0],
+          "ibu": [30,50],
+          "srm": [15,35]
         },
         {
           "id": 141,
           "name": "Dutch-Style Kuit, Kuyt, or Koyt",
-          "Original Gravity (°Plato)": " 1.050-1.080(12.4-19.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.015(1.5-3.7 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-6.3%(4.7%-7.9%)",
-          "Bitterness (IBU)": " 25-35",
-          "Color SRM (EBC)": " 5-12.5(10-25 EBC)"
+          "og": [1.050,1.080],
+          "fg": [1.006,1.015],
+          "abv": [4.7,7.9],
+          "ibu": [25,35],
+          "srm": [5,12.5]
         },
         {
           "id": 139,
           "name": "Classic Australian-Style Pale Ale",
-          "Original Gravity (°Plato)": " 1.040-1.052(10-13 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.010(1-2.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.7%(4.0%-6.0%)",
-          "Bitterness (IBU)": " 15-35",
-          "Color SRM (EBC)": " 3-10(6-20 EBC)"
+          "og": [1.040,1.052],
+          "fg": [1.004,1.010],
+          "abv": [4.0,6.0],
+          "ibu": [15,35],
+          "srm": [3,10]
         },
         {
           "id": 225,
           "name": "Australian-Style Pale Ale",
-          "Original Gravity (°Plato)": " 1.040-1.052(10-13 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2-4.7(4-6)",
-          "Bitterness (IBU)": " 15-40",
-          "Color SRM (EBC)": " 3-9(6-18 EBC)"
+          "og": [1.040,1.052],
+          "fg": [1.006,1.010],
+          "abv": [3.2,4.7],
+          "ibu": [15,40],
+          "srm": [3,9]
         },
         {
           "id": 75,
           "name": "International-Style Pale Ale",
-          "Original Gravity (°Plato)": " 1.040-1.060(10-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.014(1.5-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.5%-5.2%(4.4%-6.6%)",
-          "Bitterness (IBU)": " 20-42",
-          "Color SRM (EBC)": " 5-14(10-28 EBC)"
+          "og": [1.040,1.060],
+          "fg": [1.006,1.014],
+          "abv": [4.4,6.6],
+          "ibu": [20,42],
+          "srm": [5,14]
         },
         {
           "id": 149,
           "name": "Finnish-Style Sahti",
-          "Original Gravity (°Plato)": " 1.060-1.090(14.7-21.6 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.016-1.040(4-10 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.6%-6.8%(7.0%-8.5%)",
-          "Bitterness (IBU)": " 3-16",
-          "Color SRM (EBC)": " 4-12(8-24 EBC)"
+          "og": [1.060,1.090],
+          "fg": [1.016,1.040],
+          "abv": [7.0,8.5],
+          "ibu": [3,16],
+          "srm": [4,12]
         },
         {
           "id": 150,
           "name": "Swedish-Style Gotlandsdricke",
-          "Original Gravity (°Plato)": " 1.040-1.050(10-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.014(2.5-3.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.4%-5.2%(5.5%-6.5%)",
-          "Bitterness (IBU)": " 15-25",
-          "Color SRM (EBC)": " 4-12(8-24 EBC)"
+          "og": [1.040,1.050],
+          "fg": [1.010,1.014],
+          "abv": [5.5,6.5],
+          "ibu": [15,25],
+          "srm": [4,12]
         },
         {
           "id": 146,
           "name": "Breslau-Style Pale Schoeps",
-          "Original Gravity (°Plato)": " 1.067-1.072(16.5-17.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.016-1.024(4.5-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.8%-5.6%(6.0%-7.0%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 2-8+(4-16+ EBC)"
+          "og": [1.067,1.072],
+          "fg": [1.016,1.024],
+          "abv": [6.0,7.0],
+          "ibu": [20,30],
+          "srm": [2,8]
         },
         {
           "id": 153,
           "name": "Breslau-Style Dark Schoeps",
-          "Original Gravity (°Plato)": " 1.067-1.072(16.5-17.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.016-1.024(4.5-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.8%-5.6%(6.0%-7.0%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 25-40+(50-80+ EBC)"
+          "og": [1.067,1.072],
+          "fg": [1.016,1.024],
+          "abv": [6.0,7.0],
+          "ibu": [20,30],
+          "srm": [25,40]
         }
       ]
     },
@@ -828,173 +828,173 @@
         {
           "id": 77,
           "name": "German-Style Pilsener",
-          "Original Gravity (°Plato)": " 1.044-1.055(11-13.6 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.012(1.5-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.6%-4.2%(4.6%-5.3%)",
-          "Bitterness (IBU)": " 25-40",
-          "Color SRM (EBC)": " 3-4(6-8 EBC)"
+          "og": [1.044,1.055],
+          "fg": [1.006,1.012],
+          "abv": [4.6,5.3],
+          "ibu": [25,40],
+          "srm": [3,4]
         },
         {
           "id": 78,
           "name": "Bohemian-Style Pilsener",
-          "Original Gravity (°Plato)": " 1.044-1.056(11-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.018(3.6-4.5 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.0%(4.1%-5.1%)",
-          "Bitterness (IBU)": " 30-45",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.044,1.056],
+          "fg": [1.014,1.018],
+          "abv": [4.1,5.1],
+          "ibu": [30,45],
+          "srm": [3,6]
         },
         {
           "id": 80,
           "name": "Munich-Style Helles",
-          "Original Gravity (°Plato)": " 1.044-1.050(11-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.012(2.1-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.4%(4.8%-5.6%)",
-          "Bitterness (IBU)": " 18-25",
-          "Color SRM (EBC)": " 4-5.5(8-11 EBC)"
+          "og": [1.044,1.050],
+          "fg": [1.008,1.012],
+          "abv": [4.8,5.6],
+          "ibu": [18,25],
+          "srm": [4,5.5]
         },
         {
           "id": 81,
           "name": "Dortmunder/European-Style Export",
-          "Original Gravity (°Plato)": " 1.048-1.056(11.9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.014(2.6-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-4.8%(5.1%-6.1%)",
-          "Bitterness (IBU)": " 23-29",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.048,1.056],
+          "fg": [1.010,1.014],
+          "abv": [5.1,6.1],
+          "ibu": [23,29],
+          "srm": [3,6]
         },
         {
           "id": 82,
           "name": "Vienna-Style Lager",
-          "Original Gravity (°Plato)": " 1.046-1.056(11.4-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.018(3.1-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.3%(4.8%-5.4%)",
-          "Bitterness (IBU)": " 22-28",
-          "Color SRM (EBC)": " 10-18(20-36 EBC)"
+          "og": [1.046,1.056],
+          "fg": [1.012,1.018],
+          "abv": [4.8,5.4],
+          "ibu": [22,28],
+          "srm": [10,18]
         },
         {
           "id": 83,
           "name": "German-Style Maerzen",
-          "Original Gravity (°Plato)": " 1.050-1.060(12.4-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-4.7%(5.1%-6.0%)",
-          "Bitterness (IBU)": " 18-25",
-          "Color SRM (EBC)": " 4-15(8-30 EBC)"
+          "og": [1.050,1.060],
+          "fg": [1.012,1.020],
+          "abv": [5.1,6.0],
+          "ibu": [18,25],
+          "srm": [4,15]
         },
         {
           "id": 84,
           "name": "German-Style Oktoberfest/Wiesn",
-          "Original Gravity (°Plato)": " 1.048-1.056(11.9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.014(2.6-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-4.8%(5.1%-6.1%)",
-          "Bitterness (IBU)": " 23-29",
-          "Color SRM (EBC)": " 3-5(6-10 EBC)"
+          "og": [1.048,1.056],
+          "fg": [1.010,1.014],
+          "abv": [5.1,6.1],
+          "ibu": [23,29],
+          "srm": [3,5]
         },
         {
           "id": 85,
           "name": "Munich-Style Dunkel",
-          "Original Gravity (°Plato)": " 1.048-1.056(11.9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.018(3.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.2%(4.8%-5.3%)",
-          "Bitterness (IBU)": " 16-25",
-          "Color SRM (EBC)": " 15-17(30-34 EBC)"
+          "og": [1.048,1.056],
+          "fg": [1.014,1.018],
+          "abv": [4.8,5.3],
+          "ibu": [16,25],
+          "srm": [15,17]
         },
         {
           "id": 151,
           "name": "European-Style Dark Lager",
-          "Original Gravity (°Plato)": " 1.048-1.056(11.9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.018(3.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.2%(4.8%-5.3%)",
-          "Bitterness (IBU)": " 20-35",
-          "Color SRM (EBC)": " 15-24(30-48 EBC)"
+          "og": [1.048,1.056],
+          "fg": [1.014,1.018],
+          "abv": [4.8,5.3],
+          "ibu": [20,35],
+          "srm": [15,24]
         },
         {
           "id": 86,
           "name": "German-Style Schwarzbier",
-          "Original Gravity (°Plato)": " 1.044-1.052(11-12.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.016(2.6-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.0%-3.9%(3.8%-4.9%)",
-          "Bitterness (IBU)": " 22-30",
-          "Color SRM (EBC)": " 25-40(50-80 EBC)"
+          "og": [1.044,1.052],
+          "fg": [1.010,1.016],
+          "abv": [3.8,4.9],
+          "ibu": [22,30],
+          "srm": [25,40]
         },
         {
           "id": 79,
           "name": "German-Style Leichtbier",
-          "Original Gravity (°Plato)": " 1.026-1.034(6.6-8.5 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-2.9%(2.5%-3.7%)",
-          "Bitterness (IBU)": " 16-24",
-          "Color SRM (EBC)": " 2-4(4-8 EBC)"
+          "og": [1.026,1.034],
+          "fg": [1.006,1.010],
+          "abv": [2.5,3.7],
+          "ibu": [16,24],
+          "srm": [2,4]
         },
         {
           "id": 88,
           "name": "Bamberg-Style Helles Rauchbier",
-          "Original Gravity (°Plato)": " 1.044-1.050(11-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.012(2.1-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.4%(4.8%-5.6%)",
-          "Bitterness (IBU)": " 18-25",
-          "Color SRM (EBC)": " 4-5.5(8-11 EBC)"
+          "og": [1.044,1.050],
+          "fg": [1.008,1.012],
+          "abv": [4.8,5.6],
+          "ibu": [18,25],
+          "srm": [4,5.5]
         },
         {
           "id": 87,
           "name": "Bamberg-Style Maerzen Rauchbier",
-          "Original Gravity (°Plato)": " 1.050-1.060(12.4-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-4.7%(5.1%-6.0%)",
-          "Bitterness (IBU)": " 18-25",
-          "Color SRM (EBC)": " 4-15(8-30 EBC)"
+          "og": [1.050,1.060],
+          "fg": [1.012,1.020],
+          "abv": [5.1,6.0],
+          "ibu": [18,25],
+          "srm": [4,15]
         },
         {
           "id": 89,
           "name": "Bamberg-Style Bock Rauchbier",
-          "Original Gravity (°Plato)": " 1.066-1.074(16.1-18 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.018-1.024(4.6-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.6%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 20-30(40-60 EBC)"
+          "og": [1.066,1.074],
+          "fg": [1.018,1.024],
+          "abv": [6.3,7.6],
+          "ibu": [20,30],
+          "srm": [20,30]
         },
         {
           "id": 91,
           "name": "German-Style Heller Bock/Maibock",
-          "Original Gravity (°Plato)": " 1.066-1.074(16.1-18 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.4%(6.3%-8.1%)",
-          "Bitterness (IBU)": " 20-38",
-          "Color SRM (EBC)": " 4-9(8-18 EBC)"
+          "og": [1.066,1.074],
+          "fg": [1.012,1.020],
+          "abv": [6.3,8.1],
+          "ibu": [20,38],
+          "srm": [4,9]
         },
         {
           "id": 90,
           "name": "Traditional German-Style Bock",
-          "Original Gravity (°Plato)": " 1.066-1.074(16.1-18 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.018-1.024(4.6-6.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.6%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 20-30(40-60 EBC)"
+          "og": [1.066,1.074],
+          "fg": [1.018,1.024],
+          "abv": [6.3,7.6],
+          "ibu": [20,30],
+          "srm": [20,30]
         },
         {
           "id": 92,
           "name": "German-Style Doppelbock",
-          "Original Gravity (°Plato)": " 1.074-1.080(18-19.3 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.014-1.020(3.6-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.2%-6.2%(6.6%-7.9%)",
-          "Bitterness (IBU)": " 17-27",
-          "Color SRM (EBC)": " 12-30(24-60 EBC)"
+          "og": [1.074,1.080],
+          "fg": [1.014,1.020],
+          "abv": [6.6,7.9],
+          "ibu": [17,27],
+          "srm": [12,30]
         },
         {
           "id": 93,
           "name": "German-Style Eisbock",
-          "Original Gravity (°Plato)": " 1.074-1.116(18-27.2 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " N/A",
-          "Alcohol by Weight (Volume)": " 6.8%-11.3%(8.6%-14.3%)",
-          "Bitterness (IBU)": " 26-33",
-          "Color SRM (EBC)": " 15-50(30-100 EBC)"
+          "og": [1.074,1.116],
+          "fg": [1.006,1.030],
+          "abv": [8.6,14.3],
+          "ibu": [26,33],
+          "srm": [15,50]
         },
         {
           "id": 94,
           "name": "Kellerbier or Zwickelbier Lager",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         }
       ]
     },
@@ -1004,92 +1004,92 @@
         {
           "id": 95,
           "name": "American-Style Lager",
-          "Original Gravity (°Plato)": " 1.040-1.048(10-11.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.014(1.5-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.0%(4.1%-5.1%)",
-          "Bitterness (IBU)": " 5-15",
-          "Color SRM (EBC)": " 2-4(4-8 EBC)"
+          "og": [1.040,1.048],
+          "fg": [1.006,1.014],
+          "abv": [4.1,5.1],
+          "ibu": [5,15],
+          "srm": [2,4]
         },
         {
           "id": 96,
           "name": "American-Style Light Lager",
-          "Original Gravity (°Plato)": " 1.024-1.040(6.1-10 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 0.992-1.008(minus 2.1-2.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.8%-3.5%(3.5%-4.4%)",
-          "Bitterness (IBU)": " 4-10",
-          "Color SRM (EBC)": " 1.5-4(3-8 EBC)"
+          "og": [1.024,1.040],
+          "fg": [0.992,1.008],
+          "abv": [3.5,4.4],
+          "ibu": [4,10],
+          "srm": [1.5,4]
         },
         {
           "id": 97,
           "name": "American-Style Amber Light Lager",
-          "Original Gravity (°Plato)": " 1.024-1.040(6.1-10 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.002-1.008(0.5-2.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.8%-3.5%(3.5%-4.4%)",
-          "Bitterness (IBU)": " 8-15",
-          "Color SRM (EBC)": " 4-12(8-24 EBC)"
+          "og": [1.024,1.040],
+          "fg": [1.002,1.008],
+          "abv": [3.5,4.4],
+          "ibu": [8,15],
+          "srm": [4,12]
         },
         {
           "id": 98,
           "name": "American-Style Pilsener",
-          "Original Gravity (°Plato)": " 1.045-1.060(11.2-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.018(3.1-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.9%-4.7%(4.9%-6.0%)",
-          "Bitterness (IBU)": " 25-40",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.045,1.060],
+          "fg": [1.012,1.018],
+          "abv": [4.9,6.0],
+          "ibu": [25,40],
+          "srm": [3,6]
         },
         {
           "id": 224,
           "name": "Contemporary American-Style Pilsener",
-          "Original Gravity (°Plato)": " 1.045-1.060(11.2-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.018(3.1-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.9%-4.7%(4.9%-6.0%)",
-          "Bitterness (IBU)": " 25-40",
-          "Color SRM (EBC)": " 3-6(6-12 EBC)"
+          "og": [1.045,1.060],
+          "fg": [1.012,1.018],
+          "abv": [4.9,6.0],
+          "ibu": [25,40],
+          "srm": [3,6]
         },
         {
           "id": 99,
           "name": "American-Style Ice Lager",
-          "Original Gravity (°Plato)": " 1.040-1.060(10-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.014(1.5-3.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-5.0%(4.8%-6.3%)",
-          "Bitterness (IBU)": " 7-20",
-          "Color SRM (EBC)": " 2-8(4-16 EBC)"
+          "og": [1.040,1.060],
+          "fg": [1.006,1.014],
+          "abv": [4.8,6.3],
+          "ibu": [7,20],
+          "srm": [2,8]
         },
         {
           "id": 100,
           "name": "American-Style Malt Liquor",
-          "Original Gravity (°Plato)": " 1.050-1.060(12.4-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.010(1-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 5.0%-6.0%(6.3%-7.6%)",
-          "Bitterness (IBU)": " 12-23",
-          "Color SRM (EBC)": " 2-6(4-12 EBC)"
+          "og": [1.050,1.060],
+          "fg": [1.004,1.010],
+          "abv": [6.3,7.6],
+          "ibu": [12,23],
+          "srm": [2,6]
         },
         {
           "id": 101,
           "name": "American-Style Amber Lager",
-          "Original Gravity (°Plato)": " 1.042-1.056(10.5-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.018(2.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.8%-4.3%(4.8%-5.4%)",
-          "Bitterness (IBU)": " 18-30",
-          "Color SRM (EBC)": " 6-14(12-28 EBC)"
+          "og": [1.042,1.056],
+          "fg": [1.010,1.018],
+          "abv": [4.8,5.4],
+          "ibu": [18,30],
+          "srm": [6,14]
         },
         {
           "id": 102,
           "name": "American-Style Maerzen/Oktoberfest",
-          "Original Gravity (°Plato)": " 1.050-1.060(12.4-14.7 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.012-1.020(3.1-5.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 4.0%-4.7%(5.1%-6.0%)",
-          "Bitterness (IBU)": " 20-30",
-          "Color SRM (EBC)": " 4-15(8-30 EBC)"
+          "og": [1.050,1.060],
+          "fg": [1.012,1.020],
+          "abv": [5.1,6.0],
+          "ibu": [20,30],
+          "srm": [4,15]
         },
         {
           "id": 103,
           "name": "American-Style Dark Lager",
-          "Original Gravity (°Plato)": " 1.040-1.050(10-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.012(2.1-3.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.4%(4.1%-5.6%)",
-          "Bitterness (IBU)": " 14-24",
-          "Color SRM (EBC)": " 14-25(28-50 EBC)"
+          "og": [1.040,1.050],
+          "fg": [1.008,1.012],
+          "abv": [4.1,5.6],
+          "ibu": [14,24],
+          "srm": [14,25]
         }
       ]
     },
@@ -1099,29 +1099,29 @@
         {
           "id": 104,
           "name": "Baltic-Style Porter",
-          "Original Gravity (°Plato)": " 1.072-1.092(17.5-22 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.016-1.022(4.1-5.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 6.0%-7.4%(7.6%-9.3%)",
-          "Bitterness (IBU)": " 35-40",
-          "Color SRM (EBC)": " 20+(40+ EBC)"
+          "og": [1.072,1.092],
+          "fg": [1.016,1.022],
+          "abv": [7.6,9.3],
+          "ibu": [35,40],
+          "srm": [20,80]
         },
         {
           "id": 105,
           "name": "Australasian, Latin American, or Tropical-Style Light Lager",
-          "Original Gravity (°Plato)": " 1.038-1.046(9.5-11.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.010(1.5-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.2%-4.0%(4.1%-5.1%)",
-          "Bitterness (IBU)": " 9-18",
-          "Color SRM (EBC)": " 2-5(4-10 EBC)"
+          "og": [1.038,1.046],
+          "fg": [1.006,1.010],
+          "abv": [4.1,5.1],
+          "ibu": [9,18],
+          "srm": [2,5]
         },
         {
           "id": 106,
           "name": "International-Style Pilsener",
-          "Original Gravity (°Plato)": " 1.044-1.050(11-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.010(2.1-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.6%-4.2%(4.6%-5.3%)",
-          "Bitterness (IBU)": " 17-30",
-          "Color SRM (EBC)": " 3-4(6-8 EBC)"
+          "og": [1.044,1.050],
+          "fg": [1.008,1.010],
+          "abv": [4.6,5.3],
+          "ibu": [17,30],
+          "srm": [3,4]
         }
       ]
     },
@@ -1131,335 +1131,335 @@
         {
           "id": 107,
           "name": "Session Beer",
-          "Original Gravity (°Plato)": " 1.034-1.040(8.5-10 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.010(1-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.8%-4.0%(3.5%-5.0%)",
-          "Bitterness (IBU)": " 10-35",
-          "Color SRM (EBC)": " 2+(4+ EBC)"
+          "og": [1.034,1.040],
+          "fg": [1.004,1.010],
+          "abv": [3.5,5.0],
+          "ibu": [10,35],
+          "srm": [2,80]
         },
         {
           "id": 108,
           "name": "American-Style Cream Ale",
-          "Original Gravity (°Plato)": " 1.044-1.052(11-12.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.010(1-2.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.4%-4.5%(4.3%-5.7%)",
-          "Bitterness (IBU)": " 10-22",
-          "Color SRM (EBC)": " 2-5(4-10 EBC)"
+          "og": [1.044,1.052],
+          "fg": [1.004,1.010],
+          "abv": [4.3,5.7],
+          "ibu": [10,22],
+          "srm": [2,5]
         },
         {
           "id": 109,
           "name": "California Common Beer",
-          "Original Gravity (°Plato)": " 1.045-1.056(11.2-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.010-1.018(2.6-4.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.6%-4.5%(4.6%-5.7%)",
-          "Bitterness (IBU)": " 35-45",
-          "Color SRM (EBC)": " 8-15(16-30 EBC)"
+          "og": [1.045,1.056],
+          "fg": [1.010,1.018],
+          "abv": [4.6,5.7],
+          "ibu": [35,45],
+          "srm": [8,15]
         },
         {
           "id": 111,
           "name": "Light American Wheat Beer with Yeast",
-          "Original Gravity (°Plato)": " 1.036-1.056(9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.016(1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.8%-4.4%(3.5%-5.6%)",
-          "Bitterness (IBU)": " 10-35",
-          "Color SRM (EBC)": " 4-10(8-20 EBC)"
+          "og": [1.036,1.056],
+          "fg": [1.006,1.016],
+          "abv": [3.5,5.6],
+          "ibu": [10,35],
+          "srm": [4,10]
         },
         {
           "id": 112,
           "name": "Light American Wheat Beer without Yeast",
-          "Original Gravity (°Plato)": " 1.036-1.050(9-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.016(1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.0%-4.0%(3.8%-5.1%)",
-          "Bitterness (IBU)": " 10-35",
-          "Color SRM (EBC)": " 2-10(4-20 EBC)"
+          "og": [1.036,1.050],
+          "fg": [1.004,1.016],
+          "abv": [3.8,5.1],
+          "ibu": [10,35],
+          "srm": [2,10]
         },
         {
           "id": 114,
           "name": "Dark American Wheat Beer with Yeast",
-          "Original Gravity (°Plato)": " 1.036-1.056(9-13.8 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.016(1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.8%-4.4%(3.8%-5.6%)",
-          "Bitterness (IBU)": " 10-25",
-          "Color SRM (EBC)": " 9-22(18-44 EBC)"
+          "og": [1.036,1.056],
+          "fg": [1.006,1.016],
+          "abv": [3.8,5.6],
+          "ibu": [10,25],
+          "srm": [9,22]
         },
         {
           "id": 115,
           "name": "Dark American Wheat Beer without Yeast",
-          "Original Gravity (°Plato)": " 1.036-1.050(9-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.016(1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.0%-4.0%(3.8%-5.1%)",
-          "Bitterness (IBU)": " 10-25",
-          "Color SRM (EBC)": " 9-22(18-44 EBC)"
+          "og": [1.036,1.050],
+          "fg": [1.004,1.016],
+          "abv": [3.8,5.1],
+          "ibu": [10,25],
+          "srm": [9,22]
         },
         {
           "id": 118,
           "name": "American-Style Fruit Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-9.5%(2.5%-12.0%)",
-          "Bitterness (IBU)": " 5-70",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,12.0],
+          "ibu": [5,70],
+          "srm": [5,50]
         },
         {
           "id": 113,
           "name": "Fruit Wheat Beer",
-          "Original Gravity (°Plato)": " 1.036-1.050(9-12.4 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.004-1.016(1-4.1 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.0%-4.0%(3.8%-5.1%)",
-          "Bitterness (IBU)": " 10-35",
-          "Color SRM (EBC)": " 2-10, or color of fruit(4-20, or color of fruit EBC)"
+          "og": [1.036,1.050],
+          "fg": [1.004,1.016],
+          "abv": [3.8,5.1],
+          "ibu": [10,35],
+          "srm": [2,10]
         },
         {
           "id": 138,
           "name": "Belgian-Style Fruit Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-9.5%(2.5%-12.0%)",
-          "Bitterness (IBU)": " 5-70",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,12.0],
+          "ibu": [5,70],
+          "srm": [5,50]
         },
         {
           "id": 119,
           "name": "Field Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-10.5%(2.5%-13.3%)",
-          "Bitterness (IBU)": " 5-70",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,13.3],
+          "ibu": [5,70],
+          "srm": [5,50]
         },
         {
           "id": 120,
           "name": "Pumpkin Spice Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-9.5%(2.5%-12.0%)",
-          "Bitterness (IBU)": " 5-35",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,12.0],
+          "ibu": [5,35],
+          "srm": [5,50]
         },
         {
           "id": 152,
           "name": "Pumpkin/Squash Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-9.5%(2.5%-12.0%)",
-          "Bitterness (IBU)": " 5-35",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,12.0],
+          "ibu": [5,35],
+          "srm": [5,50]
         },
         {
           "id": 121,
           "name": "Chocolate or Cocoa Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 122,
           "name": "Coffee Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 200,
           "name": "Chili Pepper Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-10.5%(2.5%-13.3%)",
-          "Bitterness (IBU)": " 5-70",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,13.3],
+          "ibu": [5,70],
+          "srm": [5,50]
         },
         {
           "id": 123,
           "name": "Herb and Spice Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-9.5%(2.5%-12.0%)",
-          "Bitterness (IBU)": " 5-40",
-          "Color SRM (EBC)": " 5-50(10-100 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,12.0],
+          "ibu": [5,40],
+          "srm": [5,50]
         },
         {
           "id": 124,
           "name": "Specialty Beer",
-          "Original Gravity (°Plato)": " 1.030-1.140+(7.6-32.1+ °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030+(1.5-7.6+ °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-20+%(2.5%-25+%)",
-          "Bitterness (IBU)": " 1-100",
-          "Color SRM (EBC)": " 1-100(2-200 EBC)"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [2.0,20],
+          "ibu": [1,100],
+          "srm": [1,100]
         },
         {
           "id": 125,
           "name": "Specialty Honey Beer",
-          "Original Gravity (°Plato)": " 1.030-1.110(7.6-25.9 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.006-1.030(1.5-7.6 °Plato)",
-          "Alcohol by Weight (Volume)": " 2.0%-9.5%(2.5%-12.0%)",
-          "Bitterness (IBU)": " 1-100",
-          "Color SRM (EBC)": " 1-100(2-200 EBC)"
+          "og": [1.030,1.110],
+          "fg": [1.006,1.030],
+          "abv": [2.5,12.0],
+          "ibu": [1,100],
+          "srm": [1,100]
         },
         {
           "id": 116,
           "name": "Rye Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 39,
           "name": "Brett Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 117,
           "name": "Mixed-Culture Brett Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 110,
           "name": "Ginjo Beer or Sake-Yeast Beer",
-          "Original Gravity (°Plato)": " 1.040-1.090(10-21.6 °Plato)",
-          "Apparent Extract/Final Gravity (°Plato)": " 1.008-1.020(2.1-5 °Plato)",
-          "Alcohol by Weight (Volume)": " 3.4%-8.2%(4.3%-10.2%)",
-          "Bitterness (IBU)": " 12-35",
-          "Color SRM (EBC)": " 4-20(8-40 EBC)"
+          "og": [1.040,1.090],
+          "fg": [1.008,1.020],
+          "abv": [4.3,10.2],
+          "ibu": [12,35],
+          "srm": [4,20]
         },
         {
           "id": 26,
           "name": "Fresh Hop Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 130,
           "name": "Wood- and Barrel-Aged Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 131,
           "name": "Wood- and Barrel-Aged Pale to Amber Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " 3.0%-5.0%(3.8%-6.3%)",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " 4-18(8-36 EBC)"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [3.8,6.3],
+          "ibu": [0,120],
+          "srm": [4,18]
         },
         {
           "id": 132,
           "name": "Wood- and Barrel-Aged Dark Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " 3.0%-5.0%(3.8%-6.3%)",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " &gt;18(&gt;36 EBC)"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [3.8,6.3],
+          "ibu": [0,120],
+          "srm": [18,80]
         },
         {
           "id": 133,
           "name": "Wood- and Barrel-Aged Strong Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " &gt;5.0% (&gt;6.3%)",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [5.0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 134,
           "name": "Wood- and Barrel-Aged Sour Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 135,
           "name": "Aged Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 129,
           "name": "Experimental Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 127,
           "name": "Historical Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 140,
           "name": "Wild Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 128,
           "name": "Smoke Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 136,
           "name": "Other Strong Ale or Lager",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " 6.4%+ (8%+)",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [6.4,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 126,
           "name": "Gluten-Free Beer",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " Varies with style",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0,16],
+          "ibu": [0,120],
+          "srm": [0,80]
         },
         {
           "id": 137,
           "name": "Non-Alcoholic Malt Beverage",
-          "Original Gravity (°Plato)": " Varies with style",
-          "Apparent Extract/Final Gravity (°Plato)": " Varies with style",
-          "Alcohol by Weight (Volume)": " &lt;0.5% (&lt;0.63%)",
-          "Bitterness (IBU)": " Varies with style",
-          "Color SRM (EBC)": " Varies with style"
+          "og": [1.030,1.140],
+          "fg": [1.006,1.030],
+          "abv": [0.0,0.63],
+          "ibu": [0,120],
+          "srm": [0,80]
         }
       ]
     }
