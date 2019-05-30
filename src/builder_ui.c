@@ -88,8 +88,9 @@ int main(int argc, char **argv)
 		"</table>\n"
 		"<br>"
 		"<div style=\"margin: auto; border: 1px solid #000000; border-radius: 0px 0px 8px 8px; width:32px; height:64px;\" id=\"srm_example\"><div style=\"height: 10%; width: 100%; margin: 0px; background-color:#e0d0b0;\"></div></div>"
-		"</div>"
+		"</div>\n"
 
+		"<div style=\"text-align: right; width: 100%;\"><input id=\"volume\" style=\"border-radius: 8px; width:3em\" type=\"number\" value=\"5\"></input> gallons</div>\n"
 		"<div id=\"malts\">"
 		"<select id=\"malt_select\"><option value=\"-1\">Select Malt</option></select> <input type=\"button\" value=\" + \" onclick=\"table_add_malt(document.getElementById('malt_select').value);\"></input>"
 		"<table class=\"ing_table\">"

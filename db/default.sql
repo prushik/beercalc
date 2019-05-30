@@ -115,6 +115,8 @@ insert into malts values('caramel/crystal malt 90', 1.035, 36, 90, 28);
 insert into malts values('caramel/crystal malt 120', 1.035, 36, 120, 29);
 insert into malts values('caramel/crystal malt 150', 1.035, 36, 150, 30);
 insert into malts values('carapils malt', 1.033, 33, 2, 31);
+insert into malts values('flaked rice', 1.040, 40, 1, 32);
+insert into malts values('sorghum', 1.037, 37, 1, 33); -- this is just a guess....
 
 insert into hops values('tettnanger',3.7,0,0);
 insert into hops values('glacier',5.8,0,1);

@@ -21,6 +21,7 @@ void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, doubl
 void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double quantity, unsigned int time, unsigned long int row_id);
 void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, double quantity, unsigned long int row_id);
 void recipe_set_style(unsigned long int beer_id, unsigned long int style_id);
+void recipe_update(unsigned long int beer_id, const char* name, double size);
 
 #define ACTION_GETBEER		0x00
 #define ACTION_ADDBEER		0x01
@@ -38,6 +39,7 @@ void recipe_set_style(unsigned long int beer_id, unsigned long int style_id);
 #define ACTION_CLEARBEER	0x0d
 #define ACTION_CALCULATE	0x0e
 #define ACTION_EDITBEER		0x0f
+#define ACTION_UPDATEBEER	0x10
 
 int main(int argc, char **argv)
 {
@@ -92,6 +94,8 @@ int main(int argc, char **argv)
 				action = ACTION_CALCULATE;
 			if (strncmp(&argv[i][7], "editbeer", 8) == 0)
 				action = ACTION_EDITBEER;
+			if (strncmp(&argv[i][7], "updatebeer", 10) == 0)
+				action = ACTION_UPDATEBEER;
 		}
 		if (strncmp(argv[i], "ing_id", 6) == 0)
 		{
@@ -165,6 +169,9 @@ int main(int argc, char **argv)
 	if (action == ACTION_EDITBEER)
 		beer_json(beer_id);
 
+	if (action == ACTION_UPDATEBEER)
+		recipe_update(beer_id, beer_name, amount);
+
 	sqlite3_close(db);
 }
 
@@ -228,7 +235,7 @@ void recipe_add_malt(unsigned long int beer_id, unsigned long int malt_id, doubl
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 
-	sprintf(buffer, "{\"saved\":\"malt\",\"row\":%d}%n", row_id, &buf_len);
+	sprintf(buffer, "{\"saved\":\"malt\",\"row\":%ld}%n", row_id, &buf_len);
 	write(1, buffer, buf_len);
 	return;
 }
@@ -249,7 +256,7 @@ void recipe_add_hops(unsigned long int beer_id, unsigned long int hop_id, double
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 
-	sprintf(buffer, "{\"saved\":\"hop\",\"row\":%d}%n", row_id, &buf_len);
+	sprintf(buffer, "{\"saved\":\"hop\",\"row\":%ld}%n", row_id, &buf_len);
 	write(1, buffer, buf_len);
 	return;
 }
@@ -269,7 +276,7 @@ void recipe_add_yeast(unsigned long int beer_id, unsigned long int yeast_id, dou
 	while (sqlite3_step(qry) != SQLITE_DONE) ;
 	sqlite3_finalize(qry);
 
-	sprintf(buffer, "{\"saved\":\"yeast\",\"row\":%d}%n", row_id, &buf_len);
+	sprintf(buffer, "{\"saved\":\"yeast\",\"row\":%ld}%n", row_id, &buf_len);
 	write(1, buffer, buf_len);
 	return;
 }
@@ -283,6 +290,19 @@ void recipe_set_style(unsigned long int beer_id, unsigned long int style_id)
 	sqlite3_finalize(qry);
 
 	write(1, str("{}\n"));
+	return;
+}
+
+void recipe_update(unsigned long int beer_id, const char* name, double size)
+{
+	sqlite3_prepare_v2(db, str("update recipe set name = ?, volume = ? where id = ?;"), &qry, NULL);
+	sqlite3_bind_text(qry, 1, name, -1, SQLITE_STATIC);
+	sqlite3_bind_double(qry, 2, size);
+	sqlite3_bind_int(qry, 3, beer_id);
+	while (sqlite3_step(qry) != SQLITE_DONE) ;
+	sqlite3_finalize(qry);
+
+	write(1, str("{\"saved\":\"name\",\"saved\":\"volume\"}\n"));
 	return;
 }
 
@@ -521,8 +541,16 @@ int recipe_json(unsigned long int beer_id)
 		"	\"author\" : \""
 	));
 	write(1, beer.author, strlen(beer.author));
+
 	write(1, str(
 		"\",\n"
+		"	\"volume\" : "
+	));
+	sprintf(buffer, "%.2lf%n", beer.vol, &buf_len);
+	write(1, buffer, buf_len);
+
+	write(1, str(
+		",\n"
 	));
 
 	write(1, str("	\"og\" : \""));
@@ -843,6 +871,11 @@ int beer_json(int beer_id) {
 
 	write(1, str("	\"name\" : \""));
 	write(1, beer.name, strlen(beer.name));
+	write(1, str("\",\n"));
+
+	write(1, str("	\"volume\" : \""));
+	sprintf(buffer, "%.4lf%n", beer.vol, &buf_len);
+	write(1, buffer, buf_len);
 	write(1, str("\",\n"));
 
 	write(1, str("	\"style_id\" : \""));

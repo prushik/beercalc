@@ -79,6 +79,7 @@ function process_ajax(action, ajax)
 	if (obj.hasOwnProperty("ingredients"))
 	{
 		document.getElementById('beername').innerText = obj.name;
+		document.getElementById('volume').value = obj.volume;
 		populate_recipe(obj);
 	}
 	if (obj.hasOwnProperty("saved"))
@@ -187,14 +188,14 @@ function compare_to_style()
 	if (style_array.length > 0 && isFinite(document.getElementById('style_select').value))
 		style = style_array[document.getElementById('style_select').value];
 	else
-		style = 
-	{
-		"og"  : [1.0, 1.12],
-		"fg"  : [1.0, 1.16],
-		"ibu" : [0, 120],
-		"abv" : [0, 16],
-		"srm" : [0, 80]
-	};
+		style =
+		{
+			"og"  : [1.0, 1.12],
+			"fg"  : [1.0, 1.16],
+			"ibu" : [0, 120],
+			"abv" : [0, 16],
+			"srm" : [0, 80]
+		};
 
 	row = document.getElementById('og_row');
 	val = row.cells[2].innerHTML;
@@ -350,6 +351,8 @@ function save_recipe()
 	var i, row, table;
 
 	builder_ajax_send_sync("clearbeer", "beer_id=" + beer_id);
+
+	builder_ajax_send_sync("updatebeer", "beer_id=" + beer_id + "&name=" + document.getElementById('beername').innerText + "&amount=" + document.getElementById('volume').value);
 
 	builder_ajax_send("setstyle", "beer_id=" + beer_id + "&style_id=" + document.getElementById('style_select').value);
 
